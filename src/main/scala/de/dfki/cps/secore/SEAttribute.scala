@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.{EAttribute, EObject}
 import collection.JavaConverters._
 import scala.beans.BeanProperty
 
-class SAttributeValue(owner: SEObject, attr: EAttribute) extends SAnnotation[String] {
+class SAttributeValue(val owner: SEObject, val attr: EAttribute) extends SAnnotation[String] {
   lazy val tpe = attr.getEAttributeType
   lazy val factory = tpe.getEPackage.getEFactoryInstance
 

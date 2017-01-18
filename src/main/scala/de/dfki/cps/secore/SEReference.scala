@@ -104,4 +104,6 @@ class SEReference(val owner: SEObject, val ref: EReference) extends SElement[Any
     result.setEditScript(getEditScript())
     result
   }
+
+  override def toString = s"$getType[$getLabel]"
 }

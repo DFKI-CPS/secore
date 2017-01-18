@@ -55,7 +55,7 @@ equivspec ecore {
     }
   }
 
-  element EClass {
+  element EObject.Named {
     annotations {
       name!
     }

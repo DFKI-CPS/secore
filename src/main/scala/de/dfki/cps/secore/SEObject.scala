@@ -3,8 +3,7 @@ package de.dfki.cps.secore
 import de.dfki.cps.stools.{ISElement, SAnnotation, SElement}
 import de.dfki.cps.stools.similarityspec.ElementSimilaritySpec
 import org.eclipse.emf.ecore.{EAttribute, ENamedElement, EObject, EReference}
-import org.eclipse.uml2.uml.{Model, NamedElement}
-
+import org.eclipse.uml2.uml
 import scala.beans.BeanProperty
 import scala.collection.JavaConverters._
 
@@ -30,6 +29,8 @@ class SEObject(val underlying: EObject) extends SElement[EObject] {
     Option(underlying.eContainer()).map(new SEObject(_)).getOrElse(new SResource(underlying.eResource()))
 
   def getType(): String = underlying match {
+    case c: uml.NamedElement if c.getName != null => "EObject.Named"
+    case p: ENamedElement if p.getName != null => "EObject.Named"
     case other => "EObject"
   }
 

@@ -35,9 +35,10 @@ block Door
       derive: dap->notEmpty()
     red: Boolean
   operations
-    accept(p: Person)
+    accept(p1: Person, p2: Person)
       pre: not (green or red)
-      pre: p(0).admitted(self) and p(1).admitted(self)
+      pre: p1.admitted(self) and p2.admitted(self)
+      pre: p1 <> p2
       post: dap = p and p.dap_dom = self
     refuse(p: Person)
       pre: not (green or red)

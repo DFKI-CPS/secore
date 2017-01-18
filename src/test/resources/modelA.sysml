@@ -37,7 +37,7 @@ block Door
   operations
     accept(p: Person)
       pre: not (green or red)
-      pre: p(0).admitted(self) and p(1).admitted(self)
+      pre: p.admitted(self)
       post: dap = p and p.dap_dom = self
     refuse(p: Person)
       pre: not (green or red)
@@ -55,9 +55,9 @@ block Door
     off_red()
       post: not red
   references
+    dap:  Person[0..2] <- dap_dom
     org:  Building[1] <- org_dom
     dest: Building[1]
-    dap:  Person[0..2] <- dap_dom
   ports
     incoming: Person
     passing: Person
