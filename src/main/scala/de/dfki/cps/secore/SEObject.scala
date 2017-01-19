@@ -14,7 +14,7 @@ class SEObject(val underlying: EObject) extends SElement[EObject] {
   def getObject(): EObject = underlying
 
   lazy val features = underlying.eClass().getEAllStructuralFeatures.asScala
-    .filter(underlying.eIsSet)
+    .filter(f => underlying.eIsSet(f) || f.isInstanceOf[EAttribute] && !f.isUnsettable)
     .filter(f => !f.isTransient && !f.isDerived && !f.isVolatile)
 
   lazy val getChildren: java.util.List[ISElement[_]] =
@@ -28,17 +28,9 @@ class SEObject(val underlying: EObject) extends SElement[EObject] {
   lazy val getParent: ISElement[_] =
     Option(underlying.eContainer()).map(new SEObject(_)).getOrElse(new SResource(underlying.eResource()))
 
-  def getType(): String = underlying match {
-    case c: uml.NamedElement if c.getName != null => "EObject.Named"
-    case p: ENamedElement if p.getName != null => "EObject.Named"
-    case other => "EObject"
-  }
-
-  def getNamespace(): String =
-    ""//underlying.eClass().getEPackage.getNsURI
-
-  def getLabel(): String =
-    underlying.eClass().getName()
+  def getType(): String = underlying.eClass().getName
+  def getNamespace(): String = underlying.eClass().getEPackage.getNsURI
+  def getLabel(): String = getType()
 
   lazy val annotations = features.collect {
     case attr: EAttribute if !attr.isMany =>
@@ -71,6 +63,6 @@ class SEObject(val underlying: EObject) extends SElement[EObject] {
   }
 
   override def toString = {
-    s"$getType[$getLabel]"
+    getType()
   }
 }

@@ -1,0 +1,148 @@
+equivspec ecore xmlns 'http://www.eclipse.org/emf/2002/Ecore' {
+  element EAttribute {
+    annotations { name unique lowerBound upperBound changeable volatile transient defaultValueLiteral unsettable derived iD }
+    constituents { unordered { EModelElement_eAnnotations } }
+  }
+  element EAnnotation {
+    annotations { source }
+    constituents { unordered { EModelElement_eAnnotations, EAnnotation_details, EAnnotation_contents, EAnnotation_references } }
+  }
+  element EAnnotation_details {
+    constituents { ordered { EStringToStringMapEntry } }
+  }
+  element EAnnotation_contents {
+    constituents { ordered { EObject } }
+  }
+  element EAnnotation_references {
+    constituents { ordered { <TEXT> } }
+  }
+  element EClass {
+    annotations { name abstract interface }
+    constituents { unordered { EModelElement_eAnnotations, EClassifier_eTypeParameters, EClass_eSuperTypes, EClass_eOperations, EClass_eStructuralFeatures, EClass_eGenericSuperTypes } }
+  }
+  element EClass_eSuperTypes {
+    constituents { ordered { <TEXT> } }
+  }
+  element EClass_eOperations {
+    constituents { ordered { EOperation } }
+  }
+  element EClass_eStructuralFeatures {
+    constituents { ordered { EStructuralFeature } }
+  }
+  element EClass_eGenericSuperTypes {
+    constituents { ordered { EGenericType } }
+  }
+  element EClassifier {
+    annotations { name }
+    constituents { unordered { EModelElement_eAnnotations, EClassifier_eTypeParameters } }
+  }
+  element EClassifier_eTypeParameters {
+    constituents { ordered { ETypeParameter } }
+  }
+  element EDataType {
+    annotations { name serializable }
+    constituents { unordered { EModelElement_eAnnotations, EClassifier_eTypeParameters } }
+  }
+  element EEnum {
+    annotations { name serializable }
+    constituents { unordered { EModelElement_eAnnotations, EClassifier_eTypeParameters, EEnum_eLiterals } }
+  }
+  element EEnum_eLiterals {
+    constituents { ordered { EEnumLiteral } }
+  }
+  element EEnumLiteral {
+    annotations { name value literal }
+    constituents { unordered { EModelElement_eAnnotations } }
+  }
+  element EFactory {
+    constituents { unordered { EModelElement_eAnnotations } }
+  }
+  element EModelElement {
+    constituents { unordered { EModelElement_eAnnotations } }
+  }
+  element EModelElement_eAnnotations {
+    constituents { ordered { EAnnotation } }
+  }
+  element ENamedElement {
+    annotations { name }
+    constituents { unordered { EModelElement_eAnnotations } }
+  }
+  element EObject {
+  }
+  element EOperation {
+    annotations { name unique lowerBound upperBound }
+    constituents { unordered { EModelElement_eAnnotations, EOperation_eTypeParameters, EOperation_eParameters, EOperation_eExceptions, EOperation_eGenericExceptions } }
+  }
+  element EOperation_eTypeParameters {
+    constituents { ordered { ETypeParameter } }
+  }
+  element EOperation_eParameters {
+    constituents { ordered { EParameter } }
+  }
+  element EOperation_eExceptions {
+    constituents { ordered { <TEXT> } }
+  }
+  element EOperation_eGenericExceptions {
+    constituents { ordered { EGenericType } }
+  }
+  element EPackage {
+    annotations { name nsURI nsPrefix }
+    constituents { unordered { EModelElement_eAnnotations, EPackage_eClassifiers, EPackage_eSubpackages } }
+  }
+  element EPackage_eClassifiers {
+    constituents { ordered { EClassifier } }
+  }
+  element EPackage_eSubpackages {
+    constituents { ordered { EPackage } }
+  }
+  element EParameter {
+    annotations { name unique lowerBound upperBound }
+    constituents { unordered { EModelElement_eAnnotations } }
+  }
+  element EReference {
+    annotations { name unique lowerBound upperBound changeable volatile transient defaultValueLiteral unsettable derived containment resolveProxies }
+    constituents { unordered { EModelElement_eAnnotations, EReference_eOpposite, EReference_eKeys } }
+  }
+  element EReference_eOpposite {
+    constituents { ordered { <TEXT> } }
+  }
+  element EReference_eKeys {
+    constituents { ordered { <TEXT> } }
+  }
+  element EStructuralFeature {
+    annotations { name unique lowerBound upperBound changeable volatile transient defaultValueLiteral unsettable derived }
+    constituents { unordered { EModelElement_eAnnotations } }
+  }
+  element ETypedElement {
+    annotations { name unique lowerBound upperBound }
+    constituents { unordered { EModelElement_eAnnotations } }
+  }
+  element EStringToStringMapEntry {
+    annotations { key value }
+  }
+  element EGenericType {
+    constituents { unordered { EGenericType_eUpperBound, EGenericType_eTypeArguments, EGenericType_eLowerBound, EGenericType_eTypeParameter, EGenericType_eClassifier } }
+  }
+  element EGenericType_eUpperBound {
+    constituents { ordered { EGenericType } }
+  }
+  element EGenericType_eTypeArguments {
+    constituents { ordered { EGenericType } }
+  }
+  element EGenericType_eLowerBound {
+    constituents { ordered { EGenericType } }
+  }
+  element EGenericType_eTypeParameter {
+    constituents { ordered { <TEXT> } }
+  }
+  element EGenericType_eClassifier {
+    constituents { ordered { <TEXT> } }
+  }
+  element ETypeParameter {
+    annotations { name }
+    constituents { unordered { EModelElement_eAnnotations, ETypeParameter_eBounds } }
+  }
+  element ETypeParameter_eBounds {
+    constituents { ordered { EGenericType } }
+  }
+}

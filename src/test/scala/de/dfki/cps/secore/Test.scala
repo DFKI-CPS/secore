@@ -6,12 +6,18 @@ import de.dfki.cps.specific.sysml.{Model, Synthesis}
 import de.dfki.cps.stools.{STools}
 import org.eclipse.emf.ecore.resource.impl.{ResourceImpl, ResourceSetImpl}
 import org.scalatest.FunSuite
+import scala.collection.JavaConverters._
 
 /**
   * @author Martin Ring <martin.ring@dfki.de>
   */
 class Test extends FunSuite {
-  val stools = new STools(new File(getClass.getResource("/ecore.simeq").getFile))
+  val files = SimSpecGen.getClass.getClassLoader.getResources("de/dfki/cps/secore").asScala
+    .map(url => new File(url.getFile))
+    .flatMap(_.listFiles().toIterable)
+    .filter(_.getName.endsWith(".simeq"))
+
+  val stools = new STools(files.toSeq :_*)
 
   implicit val lib = new ResourceSetImpl
   Synthesis.prepareLibrary(lib)
@@ -29,7 +35,7 @@ class Test extends FunSuite {
     val sresA = new SResource(resA)
     val sresB = new SResource(resB)
 
-    val stool = stools.getSTool("ecore")
+    val stool = stools.getSTool("SysML")
 
     val script = stool.sdiff(sresA,sresB)
 

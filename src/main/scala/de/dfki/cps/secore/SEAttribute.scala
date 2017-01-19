@@ -14,11 +14,13 @@ import scala.beans.BeanProperty
 class SAttributeValue(val owner: SEObject, val attr: EAttribute) extends SAnnotation[String] {
   lazy val tpe = attr.getEAttributeType
   lazy val factory = tpe.getEPackage.getEFactoryInstance
+  lazy val value = if (owner.underlying.eIsSet(attr)) owner.underlying.eGet(attr) else attr.getDefaultValue
 
-  def getObject(): String =
-    factory.convertToString(tpe,owner.underlying.eGet(attr))
+  def getObject(): String = {
+    factory.convertToString(tpe,value)
+  }
   def getName(): String = attr.getName
-  def getValue(): String = getObject()
+  def getValue(): String = Option(getObject()).getOrElse("<NULL>")
   def getNameSpace(): String = ""
   def getParent(): ISElement[_] = owner
 
@@ -42,9 +44,9 @@ class SEAttribute(val owner: SEObject, val attr: EAttribute) extends SElement[An
     Nil.asJava
   }
 
-  def getType(): String = "Attribute." + (if (attr.isOrdered) "Ordered" else "Unordered")
-  def getNamespace(): String = ""
-  def getLabel(): String = attr.getName()
+  def getType(): String = attr.getEContainingClass.getName + "_" + attr.getName
+  def getNamespace(): String = attr.getEContainingClass.getEPackage.getNsURI
+  def getLabel(): String = getType()
 
   def getAnnotations(): util.List[SAnnotation[_]] = Nil.asJava
 
@@ -64,5 +66,5 @@ class SEAttribute(val owner: SEObject, val attr: EAttribute) extends SElement[An
     result
   }
 
-  override def toString: String = s"$getType[$getLabel]"
+  override def toString: String = s"$getType"
 }

@@ -3,7 +3,8 @@ package de.dfki.cps
 import de.dfki.cps.stools.SAtomicString
 import de.dfki.cps.stools.editscript._
 import org.eclipse.emf.common.util.{EList, URI}
-import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.emf.ecore.{EAttribute, EObject, EReference}
 
 import scala.collection.JavaConverters._
 
@@ -12,6 +13,54 @@ import scala.collection.JavaConverters._
   */
 package object secore {
   def applyEditScript(editScript: SEditScript) = {
+
+    editScript.entries.foreach {
+      case (res: SResource, entry) =>
+      case (obj: SEObject, entry) =>
+        entry.updateAnnotations.foreach {
+          case UpdateAnnotation(_,o: SAttributeValue,n: SAttributeValue) =>
+            val tpe = n.attr.getEAttributeType
+            val nv = tpe.getEPackage.getEFactoryInstance.createFromString(tpe,n.getValue())
+            obj.underlying.eSet(n.attr,nv)
+        }
+      case (attr: SEAttribute, entry) =>
+        entry.appendElements.foreach {
+          case AppendElements(_,elems) =>
+            val tpe = attr.attr.getEAttributeType
+            val factory = tpe.getEPackage.getEFactoryInstance
+            val values = elems.asScala.map {
+              case s: SAtomicString =>
+                factory.createFromString(tpe,s.getObject())
+            }
+            val v = attr.owner.underlying.eGet(attr.attr).asInstanceOf[EList[AnyRef]]
+            v.addAll(values.asJava)
+        }
+        entry.removeElements.foreach {
+          case RemoveElements(_,elems) =>
+            val tpe = attr.attr.getEAttributeType
+            val factory = tpe.getEPackage.getEFactoryInstance
+            val values = elems.asScala.map {
+              case s: SAtomicString =>
+                factory.createFromString(tpe,s.getObject())
+            }
+            val v = attr.owner.underlying.eGet(attr.attr).asInstanceOf[EList[AnyRef]]
+            v.removeAll(values.asJava)
+        }
+
+      case (ref: SEReference, entry) =>
+        entry.appendElements.foreach {
+          case AppendElements(_,elems) =>
+            val values = elems.asScala.collect {
+              case o: SEObject => EcoreUtil.copy(o.underlying)
+              case s: SAtomicString => ref.owner.underlying.eResource().getEObject(s.getObject())
+            }
+            if (ref.ref.isMany) {
+              val v = ref.owner.underlying.eGet(ref.ref).asInstanceOf[EList[EObject]]
+              v.addAll(values.asJava)
+            }
+        }
+    }
+    /*
     editScript.entries.foreach {
       case (obj: SEObject, entry) =>
         println((obj,entry))
@@ -109,6 +158,6 @@ package object secore {
             val i = r.indexOf(after)
             r.addAll(i,values.asJava)
         }
-    }
+    }*/
   }
 }

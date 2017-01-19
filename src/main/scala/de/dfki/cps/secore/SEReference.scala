@@ -7,69 +7,59 @@ import de.dfki.cps.stools.similarityspec.ElementSimilaritySpec
 import de.dfki.cps.stools.{ISElement, SAnnotation, SAtomicString, SElement}
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.util.EcoreUtil
-import org.eclipse.emf.ecore.{EAttribute, EObject, EReference}
+import org.eclipse.emf.ecore.{EAttribute, EObject, EReference, EcorePackage}
 
 import collection.JavaConverters._
 import scala.beans.BeanProperty
 
-
-
-class SEReferenceLink(ref: SEReference, obj: EObject) extends SElement[String] { self =>
-  lazy val uri = if (obj.eResource().getURI == ref.owner.underlying.eResource().getURI) {
-    EcoreUtil.getRelativeURIFragmentPath(EcoreUtil.getRootContainer(obj),obj)
-    obj.eResource().getURIFragment(obj)
-  } else {
-    EcoreUtil.getURI(obj).toString
-  }
-
-  lazy val uriAnnotation = new SAnnotation[String] {
-    def getObject(): String = uri
-    def getName(): String = "value"
-    def getValue(): String = uri
-    def getNameSpace(): String = ""
-    def getParent(): ISElement[_] = self
-  }
-
-  def getObject() = uri
-
-  def getName(): String = "uri"
+class Null(val getParent: ISElement[_]) extends SElement[scala.Null] {
+  def getObject(): scala.Null = null
   def getChildren(): util.List[ISElement[_]] = Nil.asJava
-
-  def getType(): String = "SEReferenceLink"
-
+  def getType: String = "NULL"
   def getNamespace(): String = ""
-
-  def getLabel(): String = getType()
-
-  def getAnnotations(): util.List[SAnnotation[_]] = List[SAnnotation[_]](uriAnnotation).asJava
-
-  def hasAnnotation(namespace: String, name: String): Boolean = name == "value"
-
-  def getAnnotation(namespace: String, name: String): SAnnotation[_] = if (name == "value") {
-    uriAnnotation
-  } else null
-
+  def copy(): de.dfki.cps.stools.ISElement[_] = {
+    val res = new Null(getParent)
+    res.equivSpec = this.equivSpec
+    res.similaritySpec = this.similaritySpec
+    res
+  }
+  def getAnnotation(namespace: String,name: String): de.dfki.cps.stools.SAnnotation[_] = null
+  def getAnnotations(): java.util.List[de.dfki.cps.stools.SAnnotation[_]] = Nil.asJava
   @BeanProperty var equivSpec: String = null
   @BeanProperty var similaritySpec: ElementSimilaritySpec = null
-
-  def getParent(): ISElement[_] = ref
-
-  def copy(): SElement[String] = {
-    val result = new SEReferenceLink(ref,obj)
-    result.equivSpec = this.equivSpec
-    result.similaritySpec = this.similaritySpec
-    result.setEditScript(getEditScript())
-    result
-  }
-
-  override def toString: String = s"link<$uri>"
+  def getLabel(): String = getType
+  def hasAnnotation(namespace: String,name: String): Boolean = false
 }
 
+class SReferenceValue(val owner: SEObject, val ref: EReference) extends SAnnotation[String] {
+  lazy val tpe = attr.getEAttributeType
+  lazy val factory = tpe.getEPackage.getEFactoryInstance
+  lazy val value = if (owner.underlying.eIsSet(attr)) owner.underlying.eGet(attr) else attr.getDefaultValue
+
+  def getObject(): String = {
+    factory.convertToString(tpe,value)
+  }
+  def getName(): String = attr.getName
+  def getValue(): String = Option(getObject()).getOrElse("<NULL>")
+  def getNameSpace(): String = ""
+  def getParent(): ISElement[_] = owner
+
+  override def toString = s"$getName=$getValue"
+}
 /**
   * @author Martin Ring <martin.ring@dfki.de>
   */
 class SEReference(val owner: SEObject, val ref: EReference) extends SElement[AnyRef] {
   def getObject(): AnyRef = owner.underlying.eGet(ref)
+
+  private def getUri(obj: EObject): String = {
+    if (obj.eResource().getURI == owner.underlying.eResource().getURI) {
+      EcoreUtil.getRelativeURIFragmentPath(EcoreUtil.getRootContainer(obj),obj)
+      obj.eResource().getURIFragment(obj)
+    } else {
+      EcoreUtil.getURI(obj).toString
+    }
+  }
 
   def getChildren(): util.List[ISElement[_]] = if (ref.isMany) {
     val list = owner.underlying.eGet(ref).asInstanceOf[EList[EObject]]
@@ -77,18 +67,23 @@ class SEReference(val owner: SEObject, val ref: EReference) extends SElement[Any
     if (ref.isContainment)
       reprs.map(new SEObject(_) : ISElement[_]).asJava
     else
-      reprs.map(new SEReferenceLink(this,_) : ISElement[_]).asJava
+      reprs.map(getUri).map(new SAtomicString(_,null,null) : ISElement[_]).asJava
   } else if (ref.isContainment) {
-    List[ISElement[_]](new SEObject(owner.underlying.eGet(ref).asInstanceOf[EObject])).asJava
+    val obj = Option(owner.underlying.eGet(ref).asInstanceOf[EObject]).map(new SEObject(_)).getOrElse(new Null(this))
+    List[ISElement[_]](obj).asJava
   } else {
-    List[ISElement[_]](new SEReferenceLink(this,owner.underlying.eGet(ref).asInstanceOf[EObject])).asJava
+    Nil.asJava
   }
 
-  def getType(): String = "Reference." + (if (ref.isOrdered) "Ordered" else "Unordered")
-  def getNamespace(): String = ""
-  def getLabel(): String = ref.getName
+  def getType(): String = ref.getEContainingClass.getName + "_" + ref.getName
+  def getNamespace(): String = ref.getEContainingClass.getEPackage.getNsURI
+  def getLabel(): String = getType()
 
-  def getAnnotations(): util.List[SAnnotation[_]] = Nil.asJava
+  val uriAnnotation = if (!ref.isMany && !ref.isContainment) Some()
+
+  def getAnnotations(): util.List[SAnnotation[_]] = if (!ref.isMany && !ref.isContainment) {
+
+  }
   def hasAnnotation(namespace: String, name: String): Boolean = false
   def getAnnotation(namespace: String, name: String): SAnnotation[_] = null
 
@@ -105,5 +100,5 @@ class SEReference(val owner: SEObject, val ref: EReference) extends SElement[Any
     result
   }
 
-  override def toString = s"$getType[$getLabel]"
+  override def toString = s"$getType"
 }

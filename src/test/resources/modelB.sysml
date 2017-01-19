@@ -17,8 +17,8 @@ block Person
         self.aut->includes(q.dest) and
         self.dap_dom->isEmpty()
   references
-    aut: Building[7]
-    sit: Building[1] { subsets aut }
+    aut: Building[*]
+    sit: Building[2] { subsets aut }
     dap_dom: Door[0..1] <- dap
   constraints
     inv: aut->forAll(b|self.aut.building->includes(b))
@@ -56,11 +56,11 @@ block Door
     off_red()
       post: not red
   references
-    org:  Building[1] <- org_dom
-    dest: Building[1]
     dap:  Person[0..2] <- dap_dom
+    org:  Building[1] <- org_dom
+    dest: Person[1]
   ports
-    incoming: Person
+    incoming: Building
     passing: Person
   owned behaviors
     state machine DoorBehavior

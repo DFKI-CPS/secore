@@ -1,0 +1,2241 @@
+equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
+  element ActivityContent {
+  }
+  element Activity {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isReentrant? isReadOnly! isSingleExecution! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_specification, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior, Activity_ownedGroup, Activity_edge, Activity_variable, Activity_ownedNode, Activity_partition, Activity_structuredNode } }
+  }
+  element Activity_ownedGroup {
+    constituents { unordered { ActivityGroup } }
+  }
+  element Activity_edge {
+    constituents { unordered { ActivityEdge } }
+  }
+  element Activity_variable {
+    constituents { unordered { Variable } }
+  }
+  element Activity_ownedNode {
+    constituents { unordered { ActivityNode } }
+  }
+  element Activity_partition {
+    constituents { unordered { <TEXT> } }
+  }
+  element Activity_structuredNode {
+    constituents { unordered { StructuredActivityNode } }
+  }
+  element Behavior {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isReentrant? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_specification, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior } }
+  }
+  element Behavior_specification {
+    constituents { unordered { <TEXT> } }
+  }
+  element Behavior_ownedParameter {
+    constituents { ordered { Parameter } }
+  }
+  element Behavior_ownedParameterSet {
+    constituents { unordered { ParameterSet } }
+  }
+  element Behavior_postcondition {
+    constituents { unordered { <TEXT> } }
+  }
+  element Behavior_precondition {
+    constituents { unordered { <TEXT> } }
+  }
+  element Behavior_redefinedBehavior {
+    constituents { unordered { <TEXT> } }
+  }
+  element Class {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception } }
+  }
+  element Class_ownedOperation {
+    constituents { ordered { Operation } }
+  }
+  element Class_nestedClassifier {
+    constituents { ordered { Classifier } }
+  }
+  element Class_ownedReception {
+    constituents { unordered { Reception } }
+  }
+  element BehavioredClassifier {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior } }
+  }
+  element BehavioredClassifier_classifierBehavior {
+    constituents { unordered { <TEXT> } }
+  }
+  element BehavioredClassifier_interfaceRealization {
+    constituents { unordered { InterfaceRealization } }
+  }
+  element BehavioredClassifier_ownedBehavior {
+    constituents { unordered { Behavior } }
+  }
+  element Classifier {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution } }
+  }
+  element Classifier_collaborationUse {
+    constituents { unordered { CollaborationUse } }
+  }
+  element Classifier_generalization {
+    constituents { unordered { Generalization } }
+  }
+  element Classifier_powertypeExtent {
+    constituents { unordered { <TEXT> } }
+  }
+  element Classifier_ownedUseCase {
+    constituents { unordered { UseCase } }
+  }
+  element Classifier_useCase {
+    constituents { unordered { <TEXT> } }
+  }
+  element Classifier_redefinedClassifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element Classifier_representation {
+    constituents { unordered { <TEXT> } }
+  }
+  element Classifier_substitution {
+    constituents { unordered { Substitution } }
+  }
+  element Namespace {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport } }
+  }
+  element Namespace_ownedRule {
+    constituents { unordered { Constraint } }
+  }
+  element Namespace_elementImport {
+    constituents { unordered { ElementImport } }
+  }
+  element Namespace_packageImport {
+    constituents { unordered { PackageImport } }
+  }
+  element NamedElement {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
+  }
+  element NamedElement_nameExpression {
+    constituents { unordered { StringExpression } }
+  }
+  element Element {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
+  }
+  element Element_ownedComment {
+    constituents { unordered { Comment } }
+  }
+  element Comment {
+    annotations { body? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, Comment_annotatedElement } }
+  }
+  element Comment_annotatedElement {
+    constituents { unordered { <TEXT> } }
+  }
+  element Stereotype {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Stereotype_icon } }
+  }
+  element Stereotype_icon {
+    constituents { unordered { Image } }
+  }
+  element Image {
+    annotations { content? format? location? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
+  }
+  element Profile {
+    annotations { name? visibility? URI }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Package_packageMerge, Package_packagedElement, Package_profileApplication, Profile_metaclassReference, Profile_metamodelReference } }
+  }
+  element Profile_metaclassReference {
+    constituents { unordered { <TEXT> } }
+  }
+  element Profile_metamodelReference {
+    constituents { unordered { <TEXT> } }
+  }
+  element Package {
+    annotations { name? visibility? URI }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Package_packageMerge, Package_packagedElement, Package_profileApplication } }
+  }
+  element Package_packageMerge {
+    constituents { unordered { PackageMerge } }
+  }
+  element Package_packagedElement {
+    constituents { unordered { PackageableElement } }
+  }
+  element Package_profileApplication {
+    constituents { unordered { ProfileApplication } }
+  }
+  element PackageableElement {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter } }
+  }
+  element ParameterableElement {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter } }
+  }
+  element ParameterableElement_owningTemplateParameter {
+    constituents { unordered { <TEXT> } }
+  }
+  element ParameterableElement_templateParameter {
+    constituents { unordered { <TEXT> } }
+  }
+  element TemplateParameter {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateParameter_default, TemplateParameter_ownedDefault, TemplateParameter_parameteredElement, TemplateParameter_signature, TemplateParameter_ownedParameteredElement } }
+  }
+  element TemplateParameter_default {
+    constituents { unordered { <TEXT> } }
+  }
+  element TemplateParameter_ownedDefault {
+    constituents { unordered { ParameterableElement } }
+  }
+  element TemplateParameter_parameteredElement {
+    constituents { unordered { <TEXT> } }
+  }
+  element TemplateParameter_signature {
+    constituents { unordered { <TEXT> } }
+  }
+  element TemplateParameter_ownedParameteredElement {
+    constituents { unordered { ParameterableElement } }
+  }
+  element TemplateSignature {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateSignature_parameter, TemplateSignature_template, TemplateSignature_ownedParameter } }
+  }
+  element TemplateSignature_parameter {
+    constituents { ordered { <TEXT> } }
+  }
+  element TemplateSignature_template {
+    constituents { unordered { <TEXT> } }
+  }
+  element TemplateSignature_ownedParameter {
+    constituents { ordered { TemplateParameter } }
+  }
+  element TemplateableElement {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature } }
+  }
+  element TemplateableElement_templateBinding {
+    constituents { unordered { TemplateBinding } }
+  }
+  element TemplateableElement_ownedTemplateSignature {
+    constituents { unordered { TemplateSignature } }
+  }
+  element TemplateBinding {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateBinding_parameterSubstitution, TemplateBinding_signature, TemplateBinding_boundElement } }
+  }
+  element TemplateBinding_parameterSubstitution {
+    constituents { unordered { TemplateParameterSubstitution } }
+  }
+  element TemplateBinding_signature {
+    constituents { unordered { <TEXT> } }
+  }
+  element TemplateBinding_boundElement {
+    constituents { unordered { <TEXT> } }
+  }
+  element DirectedRelationship {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
+  }
+  element Relationship {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
+  }
+  element TemplateParameterSubstitution {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateParameterSubstitution_actual, TemplateParameterSubstitution_formal, TemplateParameterSubstitution_ownedActual, TemplateParameterSubstitution_templateBinding } }
+  }
+  element TemplateParameterSubstitution_actual {
+    constituents { unordered { <TEXT> } }
+  }
+  element TemplateParameterSubstitution_formal {
+    constituents { unordered { <TEXT> } }
+  }
+  element TemplateParameterSubstitution_ownedActual {
+    constituents { unordered { ParameterableElement } }
+  }
+  element TemplateParameterSubstitution_templateBinding {
+    constituents { unordered { <TEXT> } }
+  }
+  element Type {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter } }
+  }
+  element Association {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isDerived! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, Association_memberEnd, Association_ownedEnd, Association_navigableOwnedEnd } }
+  }
+  element Association_memberEnd {
+    constituents { ordered { <TEXT> } }
+  }
+  element Association_ownedEnd {
+    constituents { ordered { Property } }
+  }
+  element Association_navigableOwnedEnd {
+    constituents { unordered { <TEXT> } }
+  }
+  element Property {
+    annotations { name? visibility? isLeaf! isStatic! isOrdered! isUnique! isReadOnly! aggregation! isDerived! isDerivedUnion! isID! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TypedElement_type, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, DeploymentTarget_deployment, Property_datatype, Property_interface, Property_associationEnd, Property_qualifier, Property_defaultValue, Property_owningAssociation, Property_redefinedProperty, Property_subsettedProperty, Property_association } }
+  }
+  element Property_datatype {
+    constituents { unordered { <TEXT> } }
+  }
+  element Property_interface {
+    constituents { unordered { <TEXT> } }
+  }
+  element Property_associationEnd {
+    constituents { unordered { <TEXT> } }
+  }
+  element Property_qualifier {
+    constituents { ordered { Property } }
+  }
+  element Property_defaultValue {
+    constituents { unordered { ValueSpecification } }
+  }
+  element Property_owningAssociation {
+    constituents { unordered { <TEXT> } }
+  }
+  element Property_redefinedProperty {
+    constituents { unordered { <TEXT> } }
+  }
+  element Property_subsettedProperty {
+    constituents { unordered { <TEXT> } }
+  }
+  element Property_association {
+    constituents { unordered { <TEXT> } }
+  }
+  element ConnectableElement {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TypedElement_type, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter } }
+  }
+  element TypedElement {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TypedElement_type } }
+  }
+  element TypedElement_type {
+    constituents { unordered { <TEXT> } }
+  }
+  element ConnectorEnd {
+    annotations { isOrdered! isUnique! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, ConnectorEnd_partWithPort, ConnectorEnd_role } }
+  }
+  element ConnectorEnd_partWithPort {
+    constituents { unordered { <TEXT> } }
+  }
+  element ConnectorEnd_role {
+    constituents { unordered { <TEXT> } }
+  }
+  element MultiplicityElement {
+    annotations { isOrdered! isUnique! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, MultiplicityElement_lowerValue, MultiplicityElement_upperValue } }
+  }
+  element MultiplicityElement_lowerValue {
+    constituents { unordered { ValueSpecification } }
+  }
+  element MultiplicityElement_upperValue {
+    constituents { unordered { ValueSpecification } }
+  }
+  element ValueSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type } }
+  }
+  element ConnectableElementTemplateParameter {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateParameter_default, TemplateParameter_ownedDefault, TemplateParameter_parameteredElement, TemplateParameter_signature, TemplateParameter_ownedParameteredElement } }
+  }
+  element DeploymentTarget {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, DeploymentTarget_deployment } }
+  }
+  element DeploymentTarget_deployment {
+    constituents { unordered { Deployment } }
+  }
+  element Deployment {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier, Deployment_configuration, Deployment_deployedArtifact, Deployment_location } }
+  }
+  element Deployment_configuration {
+    constituents { unordered { DeploymentSpecification } }
+  }
+  element Deployment_deployedArtifact {
+    constituents { unordered { <TEXT> } }
+  }
+  element Deployment_location {
+    constituents { unordered { <TEXT> } }
+  }
+  element Dependency {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier } }
+  }
+  element Dependency_client {
+    constituents { unordered { <TEXT> } }
+  }
+  element Dependency_supplier {
+    constituents { unordered { <TEXT> } }
+  }
+  element DeploymentSpecification {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! fileName? deploymentLocation? executionLocation? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, Artifact_manifestation, Artifact_nestedArtifact, Artifact_ownedAttribute, Artifact_ownedOperation, DeploymentSpecification_deployment } }
+  }
+  element DeploymentSpecification_deployment {
+    constituents { unordered { <TEXT> } }
+  }
+  element Artifact {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! fileName? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, Artifact_manifestation, Artifact_nestedArtifact, Artifact_ownedAttribute, Artifact_ownedOperation } }
+  }
+  element Artifact_manifestation {
+    constituents { unordered { Manifestation } }
+  }
+  element Artifact_nestedArtifact {
+    constituents { unordered { Artifact } }
+  }
+  element Artifact_ownedAttribute {
+    constituents { ordered { Property } }
+  }
+  element Artifact_ownedOperation {
+    constituents { ordered { Operation } }
+  }
+  element DeployedArtifact {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
+  }
+  element Manifestation {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier, Abstraction_mapping, Manifestation_utilizedElement } }
+  }
+  element Manifestation_utilizedElement {
+    constituents { unordered { <TEXT> } }
+  }
+  element Abstraction {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier, Abstraction_mapping } }
+  }
+  element Abstraction_mapping {
+    constituents { unordered { OpaqueExpression } }
+  }
+  element OpaqueExpression {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, OpaqueExpression_behavior, OpaqueExpression_body, OpaqueExpression_language } }
+  }
+  element OpaqueExpression_behavior {
+    constituents { unordered { <TEXT> } }
+  }
+  element OpaqueExpression_body {
+    constituents { ordered { <TEXT> } }
+  }
+  element OpaqueExpression_language {
+    constituents { ordered { <TEXT> } }
+  }
+  element Parameter {
+    annotations { name? visibility? isOrdered! isUnique! direction! effect? isException! isStream! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TypedElement_type, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, Parameter_defaultValue, Parameter_parameterSet } }
+  }
+  element Parameter_defaultValue {
+    constituents { unordered { ValueSpecification } }
+  }
+  element Parameter_parameterSet {
+    constituents { unordered { <TEXT> } }
+  }
+  element Operation {
+    annotations { name? visibility? isLeaf! isStatic! concurrency! isAbstract! isQuery! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, BehavioralFeature_method, BehavioralFeature_ownedParameter, BehavioralFeature_ownedParameterSet, BehavioralFeature_raisedException, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Operation_bodyCondition, Operation_class, Operation_datatype, Operation_interface, Operation_postcondition, Operation_precondition, Operation_redefinedOperation } }
+  }
+  element Operation_bodyCondition {
+    constituents { unordered { <TEXT> } }
+  }
+  element Operation_class {
+    constituents { unordered { <TEXT> } }
+  }
+  element Operation_datatype {
+    constituents { unordered { <TEXT> } }
+  }
+  element Operation_interface {
+    constituents { unordered { <TEXT> } }
+  }
+  element Operation_postcondition {
+    constituents { unordered { <TEXT> } }
+  }
+  element Operation_precondition {
+    constituents { unordered { <TEXT> } }
+  }
+  element Operation_redefinedOperation {
+    constituents { unordered { <TEXT> } }
+  }
+  element BehavioralFeature {
+    annotations { name? visibility? isLeaf! isStatic! concurrency! isAbstract! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, BehavioralFeature_method, BehavioralFeature_ownedParameter, BehavioralFeature_ownedParameterSet, BehavioralFeature_raisedException } }
+  }
+  element BehavioralFeature_method {
+    constituents { unordered { <TEXT> } }
+  }
+  element BehavioralFeature_ownedParameter {
+    constituents { ordered { Parameter } }
+  }
+  element BehavioralFeature_ownedParameterSet {
+    constituents { unordered { ParameterSet } }
+  }
+  element BehavioralFeature_raisedException {
+    constituents { unordered { <TEXT> } }
+  }
+  element Feature {
+    annotations { name? visibility? isLeaf! isStatic! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
+  }
+  element RedefinableElement {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
+  }
+  element ParameterSet {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterSet_condition, ParameterSet_parameter } }
+  }
+  element ParameterSet_condition {
+    constituents { unordered { Constraint } }
+  }
+  element ParameterSet_parameter {
+    constituents { unordered { <TEXT> } }
+  }
+  element Constraint {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Constraint_constrainedElement, Constraint_context, Constraint_specification } }
+  }
+  element Constraint_constrainedElement {
+    constituents { ordered { <TEXT> } }
+  }
+  element Constraint_context {
+    constituents { unordered { <TEXT> } }
+  }
+  element Constraint_specification {
+    constituents { unordered { ValueSpecification } }
+  }
+  element DataType {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, DataType_ownedAttribute, DataType_ownedOperation } }
+  }
+  element DataType_ownedAttribute {
+    constituents { ordered { Property } }
+  }
+  element DataType_ownedOperation {
+    constituents { ordered { Operation } }
+  }
+  element Interface {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, Interface_nestedClassifier, Interface_ownedAttribute, Interface_ownedReception, Interface_protocol, Interface_redefinedInterface, Interface_ownedOperation } }
+  }
+  element Interface_nestedClassifier {
+    constituents { ordered { Classifier } }
+  }
+  element Interface_ownedAttribute {
+    constituents { ordered { Property } }
+  }
+  element Interface_ownedReception {
+    constituents { unordered { Reception } }
+  }
+  element Interface_protocol {
+    constituents { unordered { ProtocolStateMachine } }
+  }
+  element Interface_redefinedInterface {
+    constituents { unordered { <TEXT> } }
+  }
+  element Interface_ownedOperation {
+    constituents { ordered { Operation } }
+  }
+  element Reception {
+    annotations { name? visibility? isLeaf! isStatic! concurrency! isAbstract! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, BehavioralFeature_method, BehavioralFeature_ownedParameter, BehavioralFeature_ownedParameterSet, BehavioralFeature_raisedException, Reception_signal } }
+  }
+  element Reception_signal {
+    constituents { unordered { <TEXT> } }
+  }
+  element Signal {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, Signal_ownedAttribute } }
+  }
+  element Signal_ownedAttribute {
+    constituents { ordered { Property } }
+  }
+  element ProtocolStateMachine {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isReentrant? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_specification, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior, StateMachine_connectionPoint, StateMachine_submachineState, StateMachine_region, StateMachine_extendedStateMachine, ProtocolStateMachine_conformance } }
+  }
+  element ProtocolStateMachine_conformance {
+    constituents { unordered { ProtocolConformance } }
+  }
+  element StateMachine {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isReentrant? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_specification, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior, StateMachine_connectionPoint, StateMachine_submachineState, StateMachine_region, StateMachine_extendedStateMachine } }
+  }
+  element StateMachine_connectionPoint {
+    constituents { unordered { Pseudostate } }
+  }
+  element StateMachine_submachineState {
+    constituents { unordered { <TEXT> } }
+  }
+  element StateMachine_region {
+    constituents { unordered { Region } }
+  }
+  element StateMachine_extendedStateMachine {
+    constituents { unordered { <TEXT> } }
+  }
+  element Pseudostate {
+    annotations { name? visibility? kind! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Vertex_container, Pseudostate_state, Pseudostate_stateMachine } }
+  }
+  element Pseudostate_state {
+    constituents { unordered { <TEXT> } }
+  }
+  element Pseudostate_stateMachine {
+    constituents { unordered { <TEXT> } }
+  }
+  element Vertex {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Vertex_container } }
+  }
+  element Vertex_container {
+    constituents { unordered { <TEXT> } }
+  }
+  element Region {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, Region_extendedRegion, Region_state, Region_stateMachine, Region_transition, Region_subvertex } }
+  }
+  element Region_extendedRegion {
+    constituents { unordered { <TEXT> } }
+  }
+  element Region_state {
+    constituents { unordered { <TEXT> } }
+  }
+  element Region_stateMachine {
+    constituents { unordered { <TEXT> } }
+  }
+  element Region_transition {
+    constituents { unordered { Transition } }
+  }
+  element Region_subvertex {
+    constituents { unordered { Vertex } }
+  }
+  element State {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, Vertex_container, State_connection, State_connectionPoint, State_deferrableTrigger, State_doActivity, State_entry, State_exit, State_redefinedState, State_stateInvariant, State_submachine, State_region } }
+  }
+  element State_connection {
+    constituents { unordered { ConnectionPointReference } }
+  }
+  element State_connectionPoint {
+    constituents { unordered { Pseudostate } }
+  }
+  element State_deferrableTrigger {
+    constituents { unordered { Trigger } }
+  }
+  element State_doActivity {
+    constituents { unordered { Behavior } }
+  }
+  element State_entry {
+    constituents { unordered { Behavior } }
+  }
+  element State_exit {
+    constituents { unordered { Behavior } }
+  }
+  element State_redefinedState {
+    constituents { unordered { <TEXT> } }
+  }
+  element State_stateInvariant {
+    constituents { unordered { <TEXT> } }
+  }
+  element State_submachine {
+    constituents { unordered { <TEXT> } }
+  }
+  element State_region {
+    constituents { unordered { Region } }
+  }
+  element ConnectionPointReference {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Vertex_container, ConnectionPointReference_entry, ConnectionPointReference_exit, ConnectionPointReference_state } }
+  }
+  element ConnectionPointReference_entry {
+    constituents { unordered { <TEXT> } }
+  }
+  element ConnectionPointReference_exit {
+    constituents { unordered { <TEXT> } }
+  }
+  element ConnectionPointReference_state {
+    constituents { unordered { <TEXT> } }
+  }
+  element Trigger {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Trigger_event, Trigger_port } }
+  }
+  element Trigger_event {
+    constituents { unordered { <TEXT> } }
+  }
+  element Trigger_port {
+    constituents { unordered { <TEXT> } }
+  }
+  element Event {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter } }
+  }
+  element Port {
+    annotations { name? visibility? isLeaf! isStatic! isOrdered! isUnique! isReadOnly! aggregation! isDerived! isDerivedUnion! isID! isBehavior! isConjugated! isService! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TypedElement_type, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, DeploymentTarget_deployment, Property_datatype, Property_interface, Property_associationEnd, Property_qualifier, Property_defaultValue, Property_owningAssociation, Property_redefinedProperty, Property_subsettedProperty, Property_association, Port_protocol, Port_redefinedPort } }
+  }
+  element Port_protocol {
+    constituents { unordered { <TEXT> } }
+  }
+  element Port_redefinedPort {
+    constituents { unordered { <TEXT> } }
+  }
+  element Transition {
+    annotations { name? visibility? isLeaf! kind! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, Transition_effect, Transition_guard, Transition_redefinedTransition, Transition_source, Transition_target, Transition_trigger, Transition_container } }
+  }
+  element Transition_effect {
+    constituents { unordered { Behavior } }
+  }
+  element Transition_guard {
+    constituents { unordered { <TEXT> } }
+  }
+  element Transition_redefinedTransition {
+    constituents { unordered { <TEXT> } }
+  }
+  element Transition_source {
+    constituents { unordered { <TEXT> } }
+  }
+  element Transition_target {
+    constituents { unordered { <TEXT> } }
+  }
+  element Transition_trigger {
+    constituents { unordered { Trigger } }
+  }
+  element Transition_container {
+    constituents { unordered { <TEXT> } }
+  }
+  element ProtocolConformance {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, ProtocolConformance_generalMachine, ProtocolConformance_specificMachine } }
+  }
+  element ProtocolConformance_generalMachine {
+    constituents { unordered { <TEXT> } }
+  }
+  element ProtocolConformance_specificMachine {
+    constituents { unordered { <TEXT> } }
+  }
+  element OperationTemplateParameter {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateParameter_default, TemplateParameter_ownedDefault, TemplateParameter_parameteredElement, TemplateParameter_signature, TemplateParameter_ownedParameteredElement } }
+  }
+  element StructuralFeature {
+    annotations { name? visibility? isLeaf! isStatic! isOrdered! isUnique! isReadOnly! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TypedElement_type, MultiplicityElement_lowerValue, MultiplicityElement_upperValue } }
+  }
+  element PackageMerge {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, PackageMerge_mergedPackage, PackageMerge_receivingPackage } }
+  }
+  element PackageMerge_mergedPackage {
+    constituents { unordered { <TEXT> } }
+  }
+  element PackageMerge_receivingPackage {
+    constituents { unordered { <TEXT> } }
+  }
+  element ProfileApplication {
+    annotations { isStrict! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, ProfileApplication_appliedProfile, ProfileApplication_applyingPackage } }
+  }
+  element ProfileApplication_appliedProfile {
+    constituents { unordered { <TEXT> } }
+  }
+  element ProfileApplication_applyingPackage {
+    constituents { unordered { <TEXT> } }
+  }
+  element Enumeration {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, DataType_ownedAttribute, DataType_ownedOperation, Enumeration_ownedLiteral } }
+  }
+  element Enumeration_ownedLiteral {
+    constituents { ordered { EnumerationLiteral } }
+  }
+  element EnumerationLiteral {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, DeploymentTarget_deployment, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, InstanceSpecification_classifier, InstanceSpecification_slot, InstanceSpecification_specification, EnumerationLiteral_enumeration } }
+  }
+  element EnumerationLiteral_enumeration {
+    constituents { unordered { <TEXT> } }
+  }
+  element InstanceSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, DeploymentTarget_deployment, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, InstanceSpecification_classifier, InstanceSpecification_slot, InstanceSpecification_specification } }
+  }
+  element InstanceSpecification_classifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element InstanceSpecification_slot {
+    constituents { unordered { Slot } }
+  }
+  element InstanceSpecification_specification {
+    constituents { unordered { ValueSpecification } }
+  }
+  element Slot {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, Slot_definingFeature, Slot_value, Slot_owningInstance } }
+  }
+  element Slot_definingFeature {
+    constituents { unordered { <TEXT> } }
+  }
+  element Slot_value {
+    constituents { ordered { ValueSpecification } }
+  }
+  element Slot_owningInstance {
+    constituents { unordered { <TEXT> } }
+  }
+  element PrimitiveType {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, DataType_ownedAttribute, DataType_ownedOperation } }
+  }
+  element ElementImport {
+    annotations { alias? visibility! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, ElementImport_importedElement, ElementImport_importingNamespace } }
+  }
+  element ElementImport_importedElement {
+    constituents { unordered { <TEXT> } }
+  }
+  element ElementImport_importingNamespace {
+    constituents { unordered { <TEXT> } }
+  }
+  element PackageImport {
+    annotations { visibility! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, PackageImport_importedPackage, PackageImport_importingNamespace } }
+  }
+  element PackageImport_importedPackage {
+    constituents { unordered { <TEXT> } }
+  }
+  element PackageImport_importingNamespace {
+    constituents { unordered { <TEXT> } }
+  }
+  element Extension {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isDerived! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, Association_memberEnd, Association_ownedEnd, Association_navigableOwnedEnd } }
+  }
+  element ExtensionEnd {
+    annotations { name? visibility? isLeaf! isStatic! isOrdered! isUnique! isReadOnly! aggregation! isDerived! isDerivedUnion! isID! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TypedElement_type, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, DeploymentTarget_deployment, Property_datatype, Property_interface, Property_associationEnd, Property_qualifier, Property_defaultValue, Property_owningAssociation, Property_redefinedProperty, Property_subsettedProperty, Property_association } }
+  }
+  element Model {
+    annotations { name? visibility? URI viewpoint? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Package_packageMerge, Package_packagedElement, Package_profileApplication } }
+  }
+  element StringExpression {
+    annotations { name? visibility? symbol? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, Expression_operand, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, StringExpression_owningExpression, StringExpression_subExpression } }
+  }
+  element StringExpression_owningExpression {
+    constituents { unordered { <TEXT> } }
+  }
+  element StringExpression_subExpression {
+    constituents { ordered { StringExpression } }
+  }
+  element Expression {
+    annotations { name? visibility? symbol? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, Expression_operand } }
+  }
+  element Expression_operand {
+    constituents { ordered { ValueSpecification } }
+  }
+  element Usage {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier } }
+  }
+  element CollaborationUse {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, CollaborationUse_roleBinding, CollaborationUse_type } }
+  }
+  element CollaborationUse_roleBinding {
+    constituents { unordered { Dependency } }
+  }
+  element CollaborationUse_type {
+    constituents { unordered { <TEXT> } }
+  }
+  element Collaboration {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Collaboration_collaborationRole } }
+  }
+  element Collaboration_collaborationRole {
+    constituents { unordered { <TEXT> } }
+  }
+  element StructuredClassifier {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector } }
+  }
+  element StructuredClassifier_ownedAttribute {
+    constituents { ordered { Property } }
+  }
+  element StructuredClassifier_ownedConnector {
+    constituents { unordered { Connector } }
+  }
+  element Connector {
+    annotations { name? visibility? isLeaf! isStatic! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Connector_contract, Connector_end, Connector_redefinedConnector, Connector_type } }
+  }
+  element Connector_contract {
+    constituents { unordered { <TEXT> } }
+  }
+  element Connector_end {
+    constituents { ordered { ConnectorEnd } }
+  }
+  element Connector_redefinedConnector {
+    constituents { unordered { <TEXT> } }
+  }
+  element Connector_type {
+    constituents { unordered { <TEXT> } }
+  }
+  element Generalization {
+    annotations { isSubstitutable }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, Generalization_general, Generalization_generalizationSet, Generalization_specific } }
+  }
+  element Generalization_general {
+    constituents { unordered { <TEXT> } }
+  }
+  element Generalization_generalizationSet {
+    constituents { unordered { <TEXT> } }
+  }
+  element Generalization_specific {
+    constituents { unordered { <TEXT> } }
+  }
+  element GeneralizationSet {
+    annotations { name? visibility? isCovering! isDisjoint! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, GeneralizationSet_powertype, GeneralizationSet_generalization } }
+  }
+  element GeneralizationSet_powertype {
+    constituents { unordered { <TEXT> } }
+  }
+  element GeneralizationSet_generalization {
+    constituents { unordered { <TEXT> } }
+  }
+  element RedefinableTemplateSignature {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TemplateSignature_parameter, TemplateSignature_template, TemplateSignature_ownedParameter, RedefinableTemplateSignature_extendedSignature } }
+  }
+  element RedefinableTemplateSignature_extendedSignature {
+    constituents { unordered { <TEXT> } }
+  }
+  element UseCase {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, UseCase_extend, UseCase_extensionPoint, UseCase_include, UseCase_subject } }
+  }
+  element UseCase_extend {
+    constituents { unordered { Extend } }
+  }
+  element UseCase_extensionPoint {
+    constituents { unordered { ExtensionPoint } }
+  }
+  element UseCase_include {
+    constituents { unordered { Include } }
+  }
+  element UseCase_subject {
+    constituents { unordered { <TEXT> } }
+  }
+  element Extend {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Extend_condition, Extend_extendedCase, Extend_extensionLocation, Extend_extension } }
+  }
+  element Extend_condition {
+    constituents { unordered { Constraint } }
+  }
+  element Extend_extendedCase {
+    constituents { unordered { <TEXT> } }
+  }
+  element Extend_extensionLocation {
+    constituents { ordered { <TEXT> } }
+  }
+  element Extend_extension {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExtensionPoint {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ExtensionPoint_useCase } }
+  }
+  element ExtensionPoint_useCase {
+    constituents { unordered { <TEXT> } }
+  }
+  element Include {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Include_addition, Include_includingCase } }
+  }
+  element Include_addition {
+    constituents { unordered { <TEXT> } }
+  }
+  element Include_includingCase {
+    constituents { unordered { <TEXT> } }
+  }
+  element Substitution {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier, Abstraction_mapping, Substitution_contract, Substitution_substitutingClassifier } }
+  }
+  element Substitution_contract {
+    constituents { unordered { <TEXT> } }
+  }
+  element Substitution_substitutingClassifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element Realization {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier, Abstraction_mapping } }
+  }
+  element ClassifierTemplateParameter {
+    annotations { allowSubstitutable! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateParameter_default, TemplateParameter_ownedDefault, TemplateParameter_parameteredElement, TemplateParameter_signature, TemplateParameter_ownedParameteredElement, ClassifierTemplateParameter_constrainingClassifier } }
+  }
+  element ClassifierTemplateParameter_constrainingClassifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element InterfaceRealization {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier, Abstraction_mapping, InterfaceRealization_contract, InterfaceRealization_implementingClassifier } }
+  }
+  element InterfaceRealization_contract {
+    constituents { unordered { <TEXT> } }
+  }
+  element InterfaceRealization_implementingClassifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element EncapsulatedClassifier {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector } }
+  }
+  element ActivityGroup {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
+  }
+  element ActivityEdge {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityEdge_activity, ActivityEdge_guard, ActivityEdge_inPartition, ActivityEdge_interrupts, ActivityEdge_inStructuredNode, ActivityEdge_target, ActivityEdge_source, ActivityEdge_redefinedEdge, ActivityEdge_weight } }
+  }
+  element ActivityEdge_activity {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityEdge_guard {
+    constituents { unordered { ValueSpecification } }
+  }
+  element ActivityEdge_inPartition {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityEdge_interrupts {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityEdge_inStructuredNode {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityEdge_target {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityEdge_source {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityEdge_redefinedEdge {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityEdge_weight {
+    constituents { unordered { ValueSpecification } }
+  }
+  element ActivityPartition {
+    annotations { name? visibility? isDimension! isExternal! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityPartition_node, ActivityPartition_represents, ActivityPartition_subpartition, ActivityPartition_superPartition, ActivityPartition_edge } }
+  }
+  element ActivityPartition_node {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityPartition_represents {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityPartition_subpartition {
+    constituents { unordered { ActivityPartition } }
+  }
+  element ActivityPartition_superPartition {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityPartition_edge {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
+  }
+  element ActivityNode_inInterruptibleRegion {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityNode_inStructuredNode {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityNode_incoming {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityNode_outgoing {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityNode_redefinedNode {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActivityNode_inPartition {
+    constituents { unordered { <TEXT> } }
+  }
+  element InterruptibleActivityRegion {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InterruptibleActivityRegion_interruptingEdge, InterruptibleActivityRegion_node } }
+  }
+  element InterruptibleActivityRegion_interruptingEdge {
+    constituents { unordered { <TEXT> } }
+  }
+  element InterruptibleActivityRegion_node {
+    constituents { unordered { <TEXT> } }
+  }
+  element StructuredActivityNode {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! mustIsolate! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, StructuredActivityNode_edge, StructuredActivityNode_structuredNodeInput, StructuredActivityNode_structuredNodeOutput, StructuredActivityNode_variable, StructuredActivityNode_node } }
+  }
+  element StructuredActivityNode_edge {
+    constituents { unordered { ActivityEdge } }
+  }
+  element StructuredActivityNode_structuredNodeInput {
+    constituents { unordered { InputPin } }
+  }
+  element StructuredActivityNode_structuredNodeOutput {
+    constituents { unordered { OutputPin } }
+  }
+  element StructuredActivityNode_variable {
+    constituents { unordered { Variable } }
+  }
+  element StructuredActivityNode_node {
+    constituents { unordered { ActivityNode } }
+  }
+  element Action {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition } }
+  }
+  element Action_localPostcondition {
+    constituents { unordered { Constraint } }
+  }
+  element Action_localPrecondition {
+    constituents { unordered { Constraint } }
+  }
+  element ExecutableNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler } }
+  }
+  element ExecutableNode_handler {
+    constituents { unordered { ExceptionHandler } }
+  }
+  element ExceptionHandler {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, ExceptionHandler_exceptionInput, ExceptionHandler_exceptionType, ExceptionHandler_handlerBody, ExceptionHandler_protectedNode } }
+  }
+  element ExceptionHandler_exceptionInput {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExceptionHandler_exceptionType {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExceptionHandler_handlerBody {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExceptionHandler_protectedNode {
+    constituents { unordered { <TEXT> } }
+  }
+  element ObjectNode {
+    annotations { name? visibility? isLeaf! isControlType! ordering! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound } }
+  }
+  element ObjectNode_inState {
+    constituents { unordered { <TEXT> } }
+  }
+  element ObjectNode_selection {
+    constituents { unordered { <TEXT> } }
+  }
+  element ObjectNode_upperBound {
+    constituents { unordered { ValueSpecification } }
+  }
+  element InputPin {
+    annotations { name? visibility? isLeaf! isControlType! ordering! isOrdered! isUnique! isControl! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound, MultiplicityElement_lowerValue, MultiplicityElement_upperValue } }
+  }
+  element Pin {
+    annotations { name? visibility? isLeaf! isControlType! ordering! isOrdered! isUnique! isControl! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound, MultiplicityElement_lowerValue, MultiplicityElement_upperValue } }
+  }
+  element OutputPin {
+    annotations { name? visibility? isLeaf! isControlType! ordering! isOrdered! isUnique! isControl! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound, MultiplicityElement_lowerValue, MultiplicityElement_upperValue } }
+  }
+  element Variable {
+    annotations { name? visibility? isOrdered! isUnique! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TypedElement_type, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, Variable_activityScope, Variable_scope } }
+  }
+  element Variable_activityScope {
+    constituents { unordered { <TEXT> } }
+  }
+  element Variable_scope {
+    constituents { unordered { <TEXT> } }
+  }
+  element ValueSpecificationAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ValueSpecificationAction_result, ValueSpecificationAction_value } }
+  }
+  element ValueSpecificationAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ValueSpecificationAction_value {
+    constituents { unordered { ValueSpecification } }
+  }
+  element VariableAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, VariableAction_variable } }
+  }
+  element VariableAction_variable {
+    constituents { unordered { <TEXT> } }
+  }
+  element WriteLinkAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, LinkAction_endData, LinkAction_inputValue } }
+  }
+  element LinkAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, LinkAction_endData, LinkAction_inputValue } }
+  }
+  element LinkAction_endData {
+    constituents { unordered { LinkEndData } }
+  }
+  element LinkAction_inputValue {
+    constituents { unordered { InputPin } }
+  }
+  element LinkEndData {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, LinkEndData_end, LinkEndData_qualifier, LinkEndData_value } }
+  }
+  element LinkEndData_end {
+    constituents { unordered { <TEXT> } }
+  }
+  element LinkEndData_qualifier {
+    constituents { unordered { QualifierValue } }
+  }
+  element LinkEndData_value {
+    constituents { unordered { <TEXT> } }
+  }
+  element QualifierValue {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, QualifierValue_qualifier, QualifierValue_value } }
+  }
+  element QualifierValue_qualifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element QualifierValue_value {
+    constituents { unordered { <TEXT> } }
+  }
+  element WriteStructuralFeatureAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, StructuralFeatureAction_object, StructuralFeatureAction_structuralFeature, WriteStructuralFeatureAction_result, WriteStructuralFeatureAction_value } }
+  }
+  element WriteStructuralFeatureAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element WriteStructuralFeatureAction_value {
+    constituents { unordered { InputPin } }
+  }
+  element StructuralFeatureAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, StructuralFeatureAction_object, StructuralFeatureAction_structuralFeature } }
+  }
+  element StructuralFeatureAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element StructuralFeatureAction_structuralFeature {
+    constituents { unordered { <TEXT> } }
+  }
+  element WriteVariableAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, VariableAction_variable, WriteVariableAction_value } }
+  }
+  element WriteVariableAction_value {
+    constituents { unordered { InputPin } }
+  }
+  element AcceptCallAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isUnmarshall! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, AcceptEventAction_result, AcceptEventAction_trigger, AcceptCallAction_returnInformation } }
+  }
+  element AcceptCallAction_returnInformation {
+    constituents { unordered { OutputPin } }
+  }
+  element AcceptEventAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isUnmarshall! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, AcceptEventAction_result, AcceptEventAction_trigger } }
+  }
+  element AcceptEventAction_result {
+    constituents { ordered { OutputPin } }
+  }
+  element AcceptEventAction_trigger {
+    constituents { unordered { Trigger } }
+  }
+  element ActionInputPin {
+    annotations { name? visibility? isLeaf! isControlType! ordering! isOrdered! isUnique! isControl! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, ActionInputPin_fromAction } }
+  }
+  element ActionInputPin_fromAction {
+    constituents { unordered { Action } }
+  }
+  element AddStructuralFeatureValueAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isReplaceAll! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, StructuralFeatureAction_object, StructuralFeatureAction_structuralFeature, WriteStructuralFeatureAction_result, WriteStructuralFeatureAction_value, AddStructuralFeatureValueAction_insertAt } }
+  }
+  element AddStructuralFeatureValueAction_insertAt {
+    constituents { unordered { InputPin } }
+  }
+  element AddVariableValueAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isReplaceAll! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, VariableAction_variable, WriteVariableAction_value, AddVariableValueAction_insertAt } }
+  }
+  element AddVariableValueAction_insertAt {
+    constituents { unordered { InputPin } }
+  }
+  element BroadcastSignalAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, InvocationAction_onPort, BroadcastSignalAction_signal } }
+  }
+  element BroadcastSignalAction_signal {
+    constituents { unordered { <TEXT> } }
+  }
+  element InvocationAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, InvocationAction_onPort } }
+  }
+  element InvocationAction_argument {
+    constituents { ordered { InputPin } }
+  }
+  element InvocationAction_onPort {
+    constituents { unordered { <TEXT> } }
+  }
+  element CallAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isSynchronous! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, InvocationAction_onPort, CallAction_result } }
+  }
+  element CallAction_result {
+    constituents { ordered { OutputPin } }
+  }
+  element CallBehaviorAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isSynchronous! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, InvocationAction_onPort, CallAction_result, CallBehaviorAction_behavior } }
+  }
+  element CallBehaviorAction_behavior {
+    constituents { unordered { <TEXT> } }
+  }
+  element CallOperationAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isSynchronous! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, InvocationAction_onPort, CallAction_result, CallOperationAction_operation, CallOperationAction_target } }
+  }
+  element CallOperationAction_operation {
+    constituents { unordered { <TEXT> } }
+  }
+  element CallOperationAction_target {
+    constituents { unordered { InputPin } }
+  }
+  element Clause {
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, Clause_body, Clause_bodyOutput, Clause_decider, Clause_predecessorClause, Clause_successorClause, Clause_test } }
+  }
+  element Clause_body {
+    constituents { unordered { <TEXT> } }
+  }
+  element Clause_bodyOutput {
+    constituents { ordered { <TEXT> } }
+  }
+  element Clause_decider {
+    constituents { unordered { <TEXT> } }
+  }
+  element Clause_predecessorClause {
+    constituents { unordered { <TEXT> } }
+  }
+  element Clause_successorClause {
+    constituents { unordered { <TEXT> } }
+  }
+  element Clause_test {
+    constituents { unordered { <TEXT> } }
+  }
+  element ClearAssociationAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ClearAssociationAction_association, ClearAssociationAction_object } }
+  }
+  element ClearAssociationAction_association {
+    constituents { unordered { <TEXT> } }
+  }
+  element ClearAssociationAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element ClearStructuralFeatureAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, StructuralFeatureAction_object, StructuralFeatureAction_structuralFeature, ClearStructuralFeatureAction_result } }
+  }
+  element ClearStructuralFeatureAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ClearVariableAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, VariableAction_variable } }
+  }
+  element ConditionalNode {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! mustIsolate! isAssured! isDeterminate! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, StructuredActivityNode_edge, StructuredActivityNode_structuredNodeInput, StructuredActivityNode_structuredNodeOutput, StructuredActivityNode_variable, StructuredActivityNode_node, ConditionalNode_clause, ConditionalNode_result } }
+  }
+  element ConditionalNode_clause {
+    constituents { unordered { Clause } }
+  }
+  element ConditionalNode_result {
+    constituents { ordered { OutputPin } }
+  }
+  element CreateLinkAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, LinkAction_endData, LinkAction_inputValue } }
+  }
+  element LinkEndCreationData {
+    annotations { isReplaceAll! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, LinkEndData_end, LinkEndData_qualifier, LinkEndData_value, LinkEndCreationData_insertAt } }
+  }
+  element LinkEndCreationData_insertAt {
+    constituents { unordered { <TEXT> } }
+  }
+  element CreateLinkObjectAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, LinkAction_endData, LinkAction_inputValue, CreateLinkObjectAction_result } }
+  }
+  element CreateLinkObjectAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element CreateObjectAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, CreateObjectAction_classifier, CreateObjectAction_result } }
+  }
+  element CreateObjectAction_classifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element CreateObjectAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element DestroyLinkAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, LinkAction_endData, LinkAction_inputValue } }
+  }
+  element LinkEndDestructionData {
+    annotations { isDestroyDuplicates! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, LinkEndData_end, LinkEndData_qualifier, LinkEndData_value, LinkEndDestructionData_destroyAt } }
+  }
+  element LinkEndDestructionData_destroyAt {
+    constituents { unordered { <TEXT> } }
+  }
+  element DestroyObjectAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isDestroyLinks! isDestroyOwnedObjects! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, DestroyObjectAction_target } }
+  }
+  element DestroyObjectAction_target {
+    constituents { unordered { InputPin } }
+  }
+  element ExpansionNode {
+    annotations { name? visibility? isLeaf! isControlType! ordering! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound, ExpansionNode_regionAsInput, ExpansionNode_regionAsOutput } }
+  }
+  element ExpansionNode_regionAsInput {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExpansionNode_regionAsOutput {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExpansionRegion {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! mustIsolate! mode! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, StructuredActivityNode_edge, StructuredActivityNode_structuredNodeInput, StructuredActivityNode_structuredNodeOutput, StructuredActivityNode_variable, StructuredActivityNode_node, ExpansionRegion_outputElement, ExpansionRegion_inputElement } }
+  }
+  element ExpansionRegion_outputElement {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExpansionRegion_inputElement {
+    constituents { unordered { <TEXT> } }
+  }
+  element LoopNode {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! mustIsolate! isTestedFirst! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, StructuredActivityNode_edge, StructuredActivityNode_structuredNodeInput, StructuredActivityNode_structuredNodeOutput, StructuredActivityNode_variable, StructuredActivityNode_node, LoopNode_bodyOutput, LoopNode_bodyPart, LoopNode_decider, LoopNode_loopVariable, LoopNode_loopVariableInput, LoopNode_result, LoopNode_setupPart, LoopNode_test } }
+  }
+  element LoopNode_bodyOutput {
+    constituents { ordered { <TEXT> } }
+  }
+  element LoopNode_bodyPart {
+    constituents { unordered { <TEXT> } }
+  }
+  element LoopNode_decider {
+    constituents { unordered { <TEXT> } }
+  }
+  element LoopNode_loopVariable {
+    constituents { ordered { OutputPin } }
+  }
+  element LoopNode_loopVariableInput {
+    constituents { ordered { InputPin } }
+  }
+  element LoopNode_result {
+    constituents { ordered { OutputPin } }
+  }
+  element LoopNode_setupPart {
+    constituents { unordered { <TEXT> } }
+  }
+  element LoopNode_test {
+    constituents { unordered { <TEXT> } }
+  }
+  element OpaqueAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, OpaqueAction_body, OpaqueAction_inputValue, OpaqueAction_language, OpaqueAction_outputValue } }
+  }
+  element OpaqueAction_body {
+    constituents { ordered { <TEXT> } }
+  }
+  element OpaqueAction_inputValue {
+    constituents { unordered { InputPin } }
+  }
+  element OpaqueAction_language {
+    constituents { ordered { <TEXT> } }
+  }
+  element OpaqueAction_outputValue {
+    constituents { unordered { OutputPin } }
+  }
+  element RaiseExceptionAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, RaiseExceptionAction_exception } }
+  }
+  element RaiseExceptionAction_exception {
+    constituents { unordered { InputPin } }
+  }
+  element ReadExtentAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReadExtentAction_classifier, ReadExtentAction_result } }
+  }
+  element ReadExtentAction_classifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element ReadExtentAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ReadIsClassifiedObjectAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isDirect! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReadIsClassifiedObjectAction_classifier, ReadIsClassifiedObjectAction_object, ReadIsClassifiedObjectAction_result } }
+  }
+  element ReadIsClassifiedObjectAction_classifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element ReadIsClassifiedObjectAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element ReadIsClassifiedObjectAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ReadLinkAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, LinkAction_endData, LinkAction_inputValue, ReadLinkAction_result } }
+  }
+  element ReadLinkAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ReadLinkObjectEndAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReadLinkObjectEndAction_end, ReadLinkObjectEndAction_object, ReadLinkObjectEndAction_result } }
+  }
+  element ReadLinkObjectEndAction_end {
+    constituents { unordered { <TEXT> } }
+  }
+  element ReadLinkObjectEndAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element ReadLinkObjectEndAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ReadLinkObjectEndQualifierAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReadLinkObjectEndQualifierAction_object, ReadLinkObjectEndQualifierAction_qualifier, ReadLinkObjectEndQualifierAction_result } }
+  }
+  element ReadLinkObjectEndQualifierAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element ReadLinkObjectEndQualifierAction_qualifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element ReadLinkObjectEndQualifierAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ReadSelfAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReadSelfAction_result } }
+  }
+  element ReadSelfAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ReadStructuralFeatureAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, StructuralFeatureAction_object, StructuralFeatureAction_structuralFeature, ReadStructuralFeatureAction_result } }
+  }
+  element ReadStructuralFeatureAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ReadVariableAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, VariableAction_variable, ReadVariableAction_result } }
+  }
+  element ReadVariableAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element ReclassifyObjectAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isReplaceAll! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReclassifyObjectAction_newClassifier, ReclassifyObjectAction_object, ReclassifyObjectAction_oldClassifier } }
+  }
+  element ReclassifyObjectAction_newClassifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element ReclassifyObjectAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element ReclassifyObjectAction_oldClassifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element ReduceAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isOrdered! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReduceAction_collection, ReduceAction_reducer, ReduceAction_result } }
+  }
+  element ReduceAction_collection {
+    constituents { unordered { InputPin } }
+  }
+  element ReduceAction_reducer {
+    constituents { unordered { <TEXT> } }
+  }
+  element ReduceAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element RemoveStructuralFeatureValueAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isRemoveDuplicates! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, StructuralFeatureAction_object, StructuralFeatureAction_structuralFeature, WriteStructuralFeatureAction_result, WriteStructuralFeatureAction_value, RemoveStructuralFeatureValueAction_removeAt } }
+  }
+  element RemoveStructuralFeatureValueAction_removeAt {
+    constituents { unordered { InputPin } }
+  }
+  element RemoveVariableValueAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isRemoveDuplicates! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, VariableAction_variable, WriteVariableAction_value, RemoveVariableValueAction_removeAt } }
+  }
+  element RemoveVariableValueAction_removeAt {
+    constituents { unordered { InputPin } }
+  }
+  element ReplyAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReplyAction_replyToCall, ReplyAction_replyValue, ReplyAction_returnInformation } }
+  }
+  element ReplyAction_replyToCall {
+    constituents { unordered { <TEXT> } }
+  }
+  element ReplyAction_replyValue {
+    constituents { ordered { InputPin } }
+  }
+  element ReplyAction_returnInformation {
+    constituents { unordered { InputPin } }
+  }
+  element SendObjectAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, InvocationAction_onPort, SendObjectAction_request, SendObjectAction_target } }
+  }
+  element SendObjectAction_request {
+    constituents { unordered { InputPin } }
+  }
+  element SendObjectAction_target {
+    constituents { unordered { InputPin } }
+  }
+  element SendSignalAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, InvocationAction_onPort, SendSignalAction_signal, SendSignalAction_target } }
+  }
+  element SendSignalAction_signal {
+    constituents { unordered { <TEXT> } }
+  }
+  element SendSignalAction_target {
+    constituents { unordered { InputPin } }
+  }
+  element SequenceNode {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! mustIsolate! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, StructuredActivityNode_edge, StructuredActivityNode_structuredNodeInput, StructuredActivityNode_structuredNodeOutput, StructuredActivityNode_variable, StructuredActivityNode_node, SequenceNode_executableNode } }
+  }
+  element SequenceNode_executableNode {
+    constituents { ordered { ExecutableNode } }
+  }
+  element StartClassifierBehaviorAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, StartClassifierBehaviorAction_object } }
+  }
+  element StartClassifierBehaviorAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element StartObjectBehaviorAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! isSynchronous! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, InvocationAction_onPort, CallAction_result, StartObjectBehaviorAction_object } }
+  }
+  element StartObjectBehaviorAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element TestIdentityAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, TestIdentityAction_first, TestIdentityAction_result, TestIdentityAction_second } }
+  }
+  element TestIdentityAction_first {
+    constituents { unordered { InputPin } }
+  }
+  element TestIdentityAction_result {
+    constituents { unordered { OutputPin } }
+  }
+  element TestIdentityAction_second {
+    constituents { unordered { InputPin } }
+  }
+  element UnmarshallAction {
+    annotations { name? visibility? isLeaf! isLocallyReentrant! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, UnmarshallAction_object, UnmarshallAction_result, UnmarshallAction_unmarshallType } }
+  }
+  element UnmarshallAction_object {
+    constituents { unordered { InputPin } }
+  }
+  element UnmarshallAction_result {
+    constituents { ordered { OutputPin } }
+  }
+  element UnmarshallAction_unmarshallType {
+    constituents { unordered { <TEXT> } }
+  }
+  element ValuePin {
+    annotations { name? visibility? isLeaf! isControlType! ordering! isOrdered! isUnique! isControl! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, ValuePin_value } }
+  }
+  element ValuePin_value {
+    constituents { unordered { ValueSpecification } }
+  }
+  element ActivityFinalNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
+  }
+  element FinalNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
+  }
+  element ControlNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
+  }
+  element ActivityParameterNode {
+    annotations { name? visibility? isLeaf! isControlType! ordering! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound, ActivityParameterNode_parameter } }
+  }
+  element ActivityParameterNode_parameter {
+    constituents { unordered { <TEXT> } }
+  }
+  element CentralBufferNode {
+    annotations { name? visibility? isLeaf! isControlType! ordering! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound } }
+  }
+  element ControlFlow {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityEdge_activity, ActivityEdge_guard, ActivityEdge_inPartition, ActivityEdge_interrupts, ActivityEdge_inStructuredNode, ActivityEdge_target, ActivityEdge_source, ActivityEdge_redefinedEdge, ActivityEdge_weight } }
+  }
+  element DataStoreNode {
+    annotations { name? visibility? isLeaf! isControlType! ordering! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, TypedElement_type, ObjectNode_inState, ObjectNode_selection, ObjectNode_upperBound } }
+  }
+  element DecisionNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, DecisionNode_decisionInput, DecisionNode_decisionInputFlow } }
+  }
+  element DecisionNode_decisionInput {
+    constituents { unordered { <TEXT> } }
+  }
+  element DecisionNode_decisionInputFlow {
+    constituents { unordered { <TEXT> } }
+  }
+  element ObjectFlow {
+    annotations { name? visibility? isLeaf! isMulticast! isMultireceive! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityEdge_activity, ActivityEdge_guard, ActivityEdge_inPartition, ActivityEdge_interrupts, ActivityEdge_inStructuredNode, ActivityEdge_target, ActivityEdge_source, ActivityEdge_redefinedEdge, ActivityEdge_weight, ObjectFlow_selection, ObjectFlow_transformation } }
+  }
+  element ObjectFlow_selection {
+    constituents { unordered { <TEXT> } }
+  }
+  element ObjectFlow_transformation {
+    constituents { unordered { <TEXT> } }
+  }
+  element FlowFinalNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
+  }
+  element ForkNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
+  }
+  element InitialNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
+  }
+  element JoinNode {
+    annotations { name? visibility? isLeaf! isCombineDuplicate! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, JoinNode_joinSpec } }
+  }
+  element JoinNode_joinSpec {
+    constituents { unordered { ValueSpecification } }
+  }
+  element MergeNode {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_inStructuredNode, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
+  }
+  element InstanceValue {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, InstanceValue_instance } }
+  }
+  element InstanceValue_instance {
+    constituents { unordered { <TEXT> } }
+  }
+  element AnyReceiveEvent {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter } }
+  }
+  element MessageEvent {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter } }
+  }
+  element CallEvent {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, CallEvent_operation } }
+  }
+  element CallEvent_operation {
+    constituents { unordered { <TEXT> } }
+  }
+  element ChangeEvent {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, ChangeEvent_changeExpression } }
+  }
+  element ChangeEvent_changeExpression {
+    constituents { unordered { ValueSpecification } }
+  }
+  element FunctionBehavior {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isReentrant? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_specification, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior, OpaqueBehavior_body, OpaqueBehavior_language } }
+  }
+  element OpaqueBehavior {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isReentrant? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_specification, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior, OpaqueBehavior_body, OpaqueBehavior_language } }
+  }
+  element OpaqueBehavior_body {
+    constituents { ordered { <TEXT> } }
+  }
+  element OpaqueBehavior_language {
+    constituents { ordered { <TEXT> } }
+  }
+  element SignalEvent {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, SignalEvent_signal } }
+  }
+  element SignalEvent_signal {
+    constituents { unordered { <TEXT> } }
+  }
+  element TimeEvent {
+    annotations { name? visibility? isRelative! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TimeEvent_when } }
+  }
+  element TimeEvent_when {
+    constituents { unordered { TimeExpression } }
+  }
+  element TimeExpression {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, TimeExpression_expr, TimeExpression_observation } }
+  }
+  element TimeExpression_expr {
+    constituents { unordered { ValueSpecification } }
+  }
+  element TimeExpression_observation {
+    constituents { unordered { <TEXT> } }
+  }
+  element Observation {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter } }
+  }
+  element CommunicationPath {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isDerived! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, Association_memberEnd, Association_ownedEnd, Association_navigableOwnedEnd } }
+  }
+  element Device {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, DeploymentTarget_deployment, Node_nestedNode } }
+  }
+  element Node {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, DeploymentTarget_deployment, Node_nestedNode } }
+  }
+  element Node_nestedNode {
+    constituents { unordered { Node } }
+  }
+  element ExecutionEnvironment {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, DeploymentTarget_deployment, Node_nestedNode } }
+  }
+  element InformationFlow {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, InformationFlow_conveyed, InformationFlow_informationSource, InformationFlow_informationTarget, InformationFlow_realization, InformationFlow_realizingActivityEdge, InformationFlow_realizingConnector, InformationFlow_realizingMessage } }
+  }
+  element InformationFlow_conveyed {
+    constituents { unordered { <TEXT> } }
+  }
+  element InformationFlow_informationSource {
+    constituents { unordered { <TEXT> } }
+  }
+  element InformationFlow_informationTarget {
+    constituents { unordered { <TEXT> } }
+  }
+  element InformationFlow_realization {
+    constituents { unordered { <TEXT> } }
+  }
+  element InformationFlow_realizingActivityEdge {
+    constituents { unordered { <TEXT> } }
+  }
+  element InformationFlow_realizingConnector {
+    constituents { unordered { <TEXT> } }
+  }
+  element InformationFlow_realizingMessage {
+    constituents { unordered { <TEXT> } }
+  }
+  element Message {
+    annotations { name? visibility? messageSort! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Message_argument, Message_connector, Message_interaction, Message_receiveEvent, Message_sendEvent, Message_signature } }
+  }
+  element Message_argument {
+    constituents { ordered { ValueSpecification } }
+  }
+  element Message_connector {
+    constituents { unordered { <TEXT> } }
+  }
+  element Message_interaction {
+    constituents { unordered { <TEXT> } }
+  }
+  element Message_receiveEvent {
+    constituents { unordered { <TEXT> } }
+  }
+  element Message_sendEvent {
+    constituents { unordered { <TEXT> } }
+  }
+  element Message_signature {
+    constituents { unordered { <TEXT> } }
+  }
+  element Interaction {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isReentrant? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_specification, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, Interaction_lifeline, Interaction_fragment, Interaction_action, Interaction_formalGate, Interaction_message } }
+  }
+  element Interaction_lifeline {
+    constituents { unordered { Lifeline } }
+  }
+  element Interaction_fragment {
+    constituents { ordered { InteractionFragment } }
+  }
+  element Interaction_action {
+    constituents { unordered { Action } }
+  }
+  element Interaction_formalGate {
+    constituents { unordered { Gate } }
+  }
+  element Interaction_message {
+    constituents { unordered { Message } }
+  }
+  element InteractionFragment {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering } }
+  }
+  element InteractionFragment_covered {
+    constituents { unordered { <TEXT> } }
+  }
+  element InteractionFragment_enclosingOperand {
+    constituents { unordered { <TEXT> } }
+  }
+  element InteractionFragment_enclosingInteraction {
+    constituents { unordered { <TEXT> } }
+  }
+  element InteractionFragment_generalOrdering {
+    constituents { unordered { GeneralOrdering } }
+  }
+  element Lifeline {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Lifeline_decomposedAs, Lifeline_interaction, Lifeline_represents, Lifeline_selector, Lifeline_coveredBy } }
+  }
+  element Lifeline_decomposedAs {
+    constituents { unordered { <TEXT> } }
+  }
+  element Lifeline_interaction {
+    constituents { unordered { <TEXT> } }
+  }
+  element Lifeline_represents {
+    constituents { unordered { <TEXT> } }
+  }
+  element Lifeline_selector {
+    constituents { unordered { ValueSpecification } }
+  }
+  element Lifeline_coveredBy {
+    constituents { unordered { <TEXT> } }
+  }
+  element PartDecomposition {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, InteractionUse_actualGate, InteractionUse_argument, InteractionUse_refersTo, InteractionUse_returnValue, InteractionUse_returnValueRecipient } }
+  }
+  element InteractionUse {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, InteractionUse_actualGate, InteractionUse_argument, InteractionUse_refersTo, InteractionUse_returnValue, InteractionUse_returnValueRecipient } }
+  }
+  element InteractionUse_actualGate {
+    constituents { unordered { Gate } }
+  }
+  element InteractionUse_argument {
+    constituents { ordered { ValueSpecification } }
+  }
+  element InteractionUse_refersTo {
+    constituents { unordered { <TEXT> } }
+  }
+  element InteractionUse_returnValue {
+    constituents { unordered { ValueSpecification } }
+  }
+  element InteractionUse_returnValueRecipient {
+    constituents { unordered { <TEXT> } }
+  }
+  element Gate {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, MessageEnd_message } }
+  }
+  element MessageEnd {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, MessageEnd_message } }
+  }
+  element MessageEnd_message {
+    constituents { unordered { <TEXT> } }
+  }
+  element InteractionOperand {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, InteractionOperand_fragment, InteractionOperand_guard } }
+  }
+  element InteractionOperand_fragment {
+    constituents { ordered { InteractionFragment } }
+  }
+  element InteractionOperand_guard {
+    constituents { unordered { InteractionConstraint } }
+  }
+  element InteractionConstraint {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Constraint_constrainedElement, Constraint_context, Constraint_specification, InteractionConstraint_maxint, InteractionConstraint_minint } }
+  }
+  element InteractionConstraint_maxint {
+    constituents { unordered { ValueSpecification } }
+  }
+  element InteractionConstraint_minint {
+    constituents { unordered { ValueSpecification } }
+  }
+  element GeneralOrdering {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, GeneralOrdering_after, GeneralOrdering_before } }
+  }
+  element GeneralOrdering_after {
+    constituents { unordered { <TEXT> } }
+  }
+  element GeneralOrdering_before {
+    constituents { unordered { <TEXT> } }
+  }
+  element OccurrenceSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, OccurrenceSpecification_toAfter, OccurrenceSpecification_toBefore } }
+  }
+  element OccurrenceSpecification_toAfter {
+    constituents { unordered { <TEXT> } }
+  }
+  element OccurrenceSpecification_toBefore {
+    constituents { unordered { <TEXT> } }
+  }
+  element InformationItem {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, InformationItem_represented } }
+  }
+  element InformationItem_represented {
+    constituents { unordered { <TEXT> } }
+  }
+  element ActionExecutionSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, ExecutionSpecification_finish, ExecutionSpecification_start, ActionExecutionSpecification_action } }
+  }
+  element ActionExecutionSpecification_action {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExecutionSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, ExecutionSpecification_finish, ExecutionSpecification_start } }
+  }
+  element ExecutionSpecification_finish {
+    constituents { unordered { <TEXT> } }
+  }
+  element ExecutionSpecification_start {
+    constituents { unordered { <TEXT> } }
+  }
+  element BehaviorExecutionSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, ExecutionSpecification_finish, ExecutionSpecification_start, BehaviorExecutionSpecification_behavior } }
+  }
+  element BehaviorExecutionSpecification_behavior {
+    constituents { unordered { <TEXT> } }
+  }
+  element CombinedFragment {
+    annotations { name? visibility? interactionOperator! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, CombinedFragment_cfragmentGate, CombinedFragment_operand } }
+  }
+  element CombinedFragment_cfragmentGate {
+    constituents { unordered { Gate } }
+  }
+  element CombinedFragment_operand {
+    constituents { ordered { InteractionOperand } }
+  }
+  element ConsiderIgnoreFragment {
+    annotations { name? visibility? interactionOperator! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, CombinedFragment_cfragmentGate, CombinedFragment_operand, ConsiderIgnoreFragment_message } }
+  }
+  element ConsiderIgnoreFragment_message {
+    constituents { unordered { <TEXT> } }
+  }
+  element Continuation {
+    annotations { name? visibility? setting! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering } }
+  }
+  element DestructionOccurrenceSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, OccurrenceSpecification_toAfter, OccurrenceSpecification_toBefore, MessageEnd_message } }
+  }
+  element MessageOccurrenceSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, OccurrenceSpecification_toAfter, OccurrenceSpecification_toBefore, MessageEnd_message } }
+  }
+  element ExecutionOccurrenceSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, OccurrenceSpecification_toAfter, OccurrenceSpecification_toBefore, ExecutionOccurrenceSpecification_execution } }
+  }
+  element ExecutionOccurrenceSpecification_execution {
+    constituents { unordered { <TEXT> } }
+  }
+  element StateInvariant {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_enclosingOperand, InteractionFragment_enclosingInteraction, InteractionFragment_generalOrdering, StateInvariant_invariant } }
+  }
+  element StateInvariant_invariant {
+    constituents { unordered { Constraint } }
+  }
+  element FinalState {
+    annotations { name? visibility? isLeaf! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, Vertex_container, State_connection, State_connectionPoint, State_deferrableTrigger, State_doActivity, State_entry, State_exit, State_redefinedState, State_stateInvariant, State_submachine, State_region } }
+  }
+  element ProtocolTransition {
+    annotations { name? visibility? isLeaf! kind! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, Transition_effect, Transition_guard, Transition_redefinedTransition, Transition_source, Transition_target, Transition_trigger, Transition_container, ProtocolTransition_postCondition, ProtocolTransition_preCondition } }
+  }
+  element ProtocolTransition_postCondition {
+    constituents { unordered { <TEXT> } }
+  }
+  element ProtocolTransition_preCondition {
+    constituents { unordered { <TEXT> } }
+  }
+  element AssociationClass {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isDerived! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Association_memberEnd, Association_ownedEnd, Association_navigableOwnedEnd } }
+  }
+  element Component {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! isActive! isIndirectlyInstantiated! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Component_packagedElement, Component_realization } }
+  }
+  element Component_packagedElement {
+    constituents { unordered { PackageableElement } }
+  }
+  element Component_realization {
+    constituents { unordered { ComponentRealization } }
+  }
+  element ComponentRealization {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Dependency_client, Dependency_supplier, Abstraction_mapping, ComponentRealization_realizingClassifier, ComponentRealization_abstraction } }
+  }
+  element ComponentRealization_realizingClassifier {
+    constituents { unordered { <TEXT> } }
+  }
+  element ComponentRealization_abstraction {
+    constituents { unordered { <TEXT> } }
+  }
+  element Actor {
+    annotations { name? visibility? isLeaf! isAbstract! isFinalSpecialization! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_representation, Classifier_substitution, BehavioredClassifier_classifierBehavior, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior } }
+  }
+  element Duration {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, Duration_expr, Duration_observation } }
+  }
+  element Duration_expr {
+    constituents { unordered { ValueSpecification } }
+  }
+  element Duration_observation {
+    constituents { unordered { <TEXT> } }
+  }
+  element DurationConstraint {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Constraint_constrainedElement, Constraint_context, Constraint_specification, DurationConstraint_firstEvent } }
+  }
+  element DurationConstraint_firstEvent {
+    constituents { unordered { <TEXT> } }
+  }
+  element IntervalConstraint {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Constraint_constrainedElement, Constraint_context, Constraint_specification } }
+  }
+  element Interval {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, Interval_max, Interval_min } }
+  }
+  element Interval_max {
+    constituents { unordered { <TEXT> } }
+  }
+  element Interval_min {
+    constituents { unordered { <TEXT> } }
+  }
+  element DurationInterval {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, Interval_max, Interval_min } }
+  }
+  element DurationObservation {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, DurationObservation_event, DurationObservation_firstEvent } }
+  }
+  element DurationObservation_event {
+    constituents { ordered { <TEXT> } }
+  }
+  element DurationObservation_firstEvent {
+    constituents { unordered { <TEXT> } }
+  }
+  element LiteralBoolean {
+    annotations { name? visibility? value! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type } }
+  }
+  element LiteralSpecification {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type } }
+  }
+  element LiteralInteger {
+    annotations { name? visibility? value! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type } }
+  }
+  element LiteralNull {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type } }
+  }
+  element LiteralReal {
+    annotations { name? visibility? value! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type } }
+  }
+  element LiteralString {
+    annotations { name? visibility? value? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type } }
+  }
+  element LiteralUnlimitedNatural {
+    annotations { name? visibility? value! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type } }
+  }
+  element TimeConstraint {
+    annotations { name? visibility? firstEvent }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, Constraint_constrainedElement, Constraint_context, Constraint_specification } }
+  }
+  element TimeInterval {
+    annotations { name? visibility? }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TypedElement_type, Interval_max, Interval_min } }
+  }
+  element TimeObservation {
+    annotations { name? visibility? firstEvent! }
+    constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ParameterableElement_owningTemplateParameter, ParameterableElement_templateParameter, TimeObservation_event } }
+  }
+  element TimeObservation_event {
+    constituents { unordered { <TEXT> } }
+  }
+}

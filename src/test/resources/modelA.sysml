@@ -14,10 +14,10 @@ block Person
   operations
     admitted(q: Door): Boolean
       post: q.org = self.sit and
-        not self.aut->includes(q.dest) and
+        self.aut->includes(q.dest) and
         self.dap_dom->isEmpty()
   references
-    aut: Building[3]
+    aut: Building[*]
     sit: Building[1] { subsets aut }
     dap_dom: Door[0..1] <- dap
   constraints
