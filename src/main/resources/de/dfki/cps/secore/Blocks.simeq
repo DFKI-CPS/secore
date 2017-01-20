@@ -1,25 +1,24 @@
 equivspec Blocks xmlns 'http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks' {
   element Block {
-    annotations { isEncapsulated }
-    constituents { unordered { Block_base_Class } }
+    annotations { Block_isEncapsulated Block_base_Class! }
   }
   element Block_base_Class {
     constituents { unordered { <TEXT> } }
   }
   element DistributedProperty {
-    constituents { unordered { DistributedProperty_base_Property } }
+    annotations { DistributedProperty_base_Property! }
   }
   element DistributedProperty_base_Property {
     constituents { unordered { <TEXT> } }
   }
   element Dimension {
-    constituents { unordered { Dimension_base_InstanceSpecification } }
+    annotations { Dimension_base_InstanceSpecification! }
   }
   element Dimension_base_InstanceSpecification {
     constituents { unordered { <TEXT> } }
   }
   element Unit {
-    constituents { unordered { Unit_base_InstanceSpecification, Unit_dimension } }
+    annotations { Unit_base_InstanceSpecification! Unit_dimension }
   }
   element Unit_base_InstanceSpecification {
     constituents { unordered { <TEXT> } }
@@ -28,7 +27,7 @@ equivspec Blocks xmlns 'http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks' {
     constituents { unordered { <TEXT> } }
   }
   element ValueType {
-    constituents { unordered { ValueType_base_DataType, ValueType_unit, ValueType_dimension } }
+    annotations { ValueType_base_DataType! ValueType_unit ValueType_dimension }
   }
   element ValueType_base_DataType {
     constituents { unordered { <TEXT> } }
@@ -40,7 +39,8 @@ equivspec Blocks xmlns 'http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks' {
     constituents { unordered { <TEXT> } }
   }
   element NestedConnectorEnd {
-    constituents { unordered { NestedConnectorEnd_propertyPath, NestedConnectorEnd_base_ConnectorEnd } }
+    annotations { NestedConnectorEnd_base_ConnectorEnd! }
+    constituents { unordered { NestedConnectorEnd_propertyPath } }
   }
   element NestedConnectorEnd_propertyPath {
     constituents { ordered { <TEXT> } }
@@ -49,7 +49,7 @@ equivspec Blocks xmlns 'http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks' {
     constituents { unordered { <TEXT> } }
   }
   element ParticipantProperty {
-    constituents { unordered { ParticipantProperty_base_Property, ParticipantProperty_end } }
+    annotations { ParticipantProperty_base_Property! ParticipantProperty_end! }
   }
   element ParticipantProperty_base_Property {
     constituents { unordered { <TEXT> } }
@@ -58,7 +58,7 @@ equivspec Blocks xmlns 'http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks' {
     constituents { unordered { <TEXT> } }
   }
   element ConnectorProperty {
-    constituents { unordered { ConnectorProperty_base_Property, ConnectorProperty_connector } }
+    annotations { ConnectorProperty_base_Property! ConnectorProperty_connector! }
   }
   element ConnectorProperty_base_Property {
     constituents { unordered { <TEXT> } }
@@ -67,13 +67,13 @@ equivspec Blocks xmlns 'http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks' {
     constituents { unordered { <TEXT> } }
   }
   element BindingConnector {
-    constituents { unordered { BindingConnector_base_Connector } }
+    annotations { BindingConnector_base_Connector! }
   }
   element BindingConnector_base_Connector {
     constituents { unordered { <TEXT> } }
   }
   element PropertySpecificType {
-    constituents { unordered { PropertySpecificType_base_Classifier } }
+    annotations { PropertySpecificType_base_Classifier! }
   }
   element PropertySpecificType_base_Classifier {
     constituents { unordered { <TEXT> } }

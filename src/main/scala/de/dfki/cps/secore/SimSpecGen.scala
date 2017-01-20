@@ -24,13 +24,15 @@ object SimSpecGen {
         val features = cls.getEAllStructuralFeatures.asScala.filter(relevantFeature)
         val singleAttrs = features.collect {
           case attr: EAttribute if !attr.isMany =>
-            attr.getName + (if (attr.isRequired) "!" else if (attr.isUnsettable) "?" else "")
+            attr.getEContainingClass.getName + "_" + attr.getName + (if (attr.isRequired) "!" else if (attr.isUnsettable) "?" else "")
+          case ref: EReference if !ref.isMany && !ref.isContainment =>
+            ref.getEContainingClass.getName + "_" + ref.getName + (if (ref.isRequired) "!" else if (ref.isUnsettable) "?" else "")
         }
         val multiAttrs = features.collect {
           case attr: EAttribute if attr.isMany =>
             val nsPrefix = if (attr.getEContainingClass.getEPackage == pkg) "" else "[" + attr.getEContainingClass.getEPackage.getNsPrefix + "]"
             nsPrefix + attr.getEContainingClass.getName + "_" + attr.getName + nsPrefix
-          case ref: EReference =>
+          case ref: EReference if ref.isContainment || ref.isMany =>
             val nsPrefix = if (ref.getEContainingClass.getEPackage == pkg) "" else "[" + ref.getEContainingClass.getEPackage.getNsPrefix + "]"
             ref.getEContainingClass.getName + "_" + ref.getName + nsPrefix
         }

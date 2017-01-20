@@ -18,7 +18,6 @@ block Person
         self.dap_dom->isEmpty()
   references
     aut: Building[*]
-    sit: Building[2] { subsets aut }
     dap_dom: Door[0..1] <- dap
   constraints
     inv: aut->forAll(b|self.aut.building->includes(b))

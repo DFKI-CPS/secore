@@ -32,19 +32,27 @@ class Test extends FunSuite {
     val modelA = Model.load(fileA.toURI,"model",resA)
     val modelB = Model.load(fileB.toURI,"model",resB)
 
-    val sresA = new SResource(resA)
-    val sresB = new SResource(resB)
+    val stool = stools.getSTool("uml")
 
-    val stool = stools.getSTool("SysML")
-
-    val script = stool.sdiff(sresA,sresB)
+    val script = {
+      val sresA = new SResource(resA)
+      val sresB = new SResource(resB)
+      stool.sdiff(sresA,sresB)
+    }
 
     script.entries.foreach(println)
 
     println("APPLYING SCRIPT")
     applyEditScript(script)
 
-    val script2 = stool.sdiff(sresA,sresB)
+    val resB2 = new ResourceImpl()
+    resB2.getContents.addAll(resB.getContents)
+
+    val script2 = {
+      val sresA = new SResource(resA)
+      val sresB = new SResource(resB2)
+      stool.sdiff(sresA,sresB)
+    }
 
     script2.entries.foreach(println)
 
