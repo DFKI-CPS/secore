@@ -14,14 +14,14 @@ equivspec ecore xmlns 'http://www.eclipse.org/emf/2002/Ecore' {
     constituents { ordered { EObject } }
   }
   element EAnnotation_references {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element EClass {
     annotations { ENamedElement_name EClass_abstract EClass_interface }
     constituents { unordered { EModelElement_eAnnotations, EClassifier_eTypeParameters, EClass_eSuperTypes, EClass_eOperations, EClass_eStructuralFeatures, EClass_eGenericSuperTypes } }
   }
   element EClass_eSuperTypes {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element EClass_eOperations {
     constituents { ordered { EOperation } }
@@ -80,7 +80,7 @@ equivspec ecore xmlns 'http://www.eclipse.org/emf/2002/Ecore' {
     constituents { ordered { EParameter } }
   }
   element EOperation_eExceptions {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element EOperation_eGenericExceptions {
     constituents { ordered { EGenericType } }
@@ -103,11 +103,8 @@ equivspec ecore xmlns 'http://www.eclipse.org/emf/2002/Ecore' {
     annotations { ENamedElement_name ETypedElement_ordered ETypedElement_unique ETypedElement_lowerBound ETypedElement_upperBound EStructuralFeature_changeable EStructuralFeature_volatile EStructuralFeature_transient EStructuralFeature_defaultValueLiteral EStructuralFeature_unsettable EStructuralFeature_derived EReference_containment EReference_resolveProxies EReference_eOpposite }
     constituents { unordered { EModelElement_eAnnotations, EReference_eKeys } }
   }
-  element EReference_eOpposite {
-    constituents { ordered { <TEXT> } }
-  }
   element EReference_eKeys {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element EStructuralFeature {
     annotations { ENamedElement_name ETypedElement_ordered ETypedElement_unique ETypedElement_lowerBound ETypedElement_upperBound EStructuralFeature_changeable EStructuralFeature_volatile EStructuralFeature_transient EStructuralFeature_defaultValueLiteral EStructuralFeature_unsettable EStructuralFeature_derived }
@@ -132,12 +129,6 @@ equivspec ecore xmlns 'http://www.eclipse.org/emf/2002/Ecore' {
   }
   element EGenericType_eLowerBound {
     constituents { ordered { EGenericType } }
-  }
-  element EGenericType_eTypeParameter {
-    constituents { ordered { <TEXT> } }
-  }
-  element EGenericType_eClassifier {
-    constituents { ordered { <TEXT> } }
   }
   element ETypeParameter {
     annotations { ENamedElement_name }

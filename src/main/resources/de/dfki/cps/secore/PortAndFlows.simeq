@@ -2,28 +2,13 @@ equivspec PortAndFlows xmlns 'http://www.eclipse.org/papyrus/0.7.0/SysML/PortAnd
   element FlowPort {
     annotations { FlowPort_base_Port! FlowPort_isConjugated FlowPort_direction! }
   }
-  element FlowPort_base_Port {
-    constituents { unordered { <TEXT> } }
-  }
   element FlowProperty {
     annotations { FlowProperty_base_Property! FlowProperty_direction! }
-  }
-  element FlowProperty_base_Property {
-    constituents { unordered { <TEXT> } }
   }
   element FlowSpecification {
     annotations { FlowSpecification_base_Interface! }
   }
-  element FlowSpecification_base_Interface {
-    constituents { unordered { <TEXT> } }
-  }
   element ItemFlow {
     annotations { ItemFlow_base_InformationFlow! ItemFlow_itemProperty }
-  }
-  element ItemFlow_base_InformationFlow {
-    constituents { unordered { <TEXT> } }
-  }
-  element ItemFlow_itemProperty {
-    constituents { unordered { <TEXT> } }
   }
 }

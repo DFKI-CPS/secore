@@ -63,11 +63,11 @@ block Door
     passing: Person
   owned behaviors
     state machine DoorBehavior
-      initial state Waiting
-        receive incoming(p) / accept(p) -> Accepting
-        receive incoming(p) / refuse(p) -> Refusing
       state Accepting
         after 30 seconds / off_grn() -> Waiting
         receive passing(p) / pass_thru() -> Waiting
+      initial state Waiting
+        receive incoming(p) / accept(p) -> Accepting
+        receive incoming(p) / refuse(p) -> Refusing
       state Refusing
         after 30 seconds / off_red() -> Waiting

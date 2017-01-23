@@ -2,80 +2,35 @@ equivspec Blocks xmlns 'http://www.eclipse.org/papyrus/0.7.0/SysML/Blocks' {
   element Block {
     annotations { Block_isEncapsulated Block_base_Class! }
   }
-  element Block_base_Class {
-    constituents { unordered { <TEXT> } }
-  }
   element DistributedProperty {
     annotations { DistributedProperty_base_Property! }
-  }
-  element DistributedProperty_base_Property {
-    constituents { unordered { <TEXT> } }
   }
   element Dimension {
     annotations { Dimension_base_InstanceSpecification! }
   }
-  element Dimension_base_InstanceSpecification {
-    constituents { unordered { <TEXT> } }
-  }
   element Unit {
     annotations { Unit_base_InstanceSpecification! Unit_dimension }
   }
-  element Unit_base_InstanceSpecification {
-    constituents { unordered { <TEXT> } }
-  }
-  element Unit_dimension {
-    constituents { unordered { <TEXT> } }
-  }
   element ValueType {
     annotations { ValueType_base_DataType! ValueType_unit ValueType_dimension }
-  }
-  element ValueType_base_DataType {
-    constituents { unordered { <TEXT> } }
-  }
-  element ValueType_unit {
-    constituents { unordered { <TEXT> } }
-  }
-  element ValueType_dimension {
-    constituents { unordered { <TEXT> } }
   }
   element NestedConnectorEnd {
     annotations { NestedConnectorEnd_base_ConnectorEnd! }
     constituents { unordered { NestedConnectorEnd_propertyPath } }
   }
   element NestedConnectorEnd_propertyPath {
-    constituents { ordered { <TEXT> } }
-  }
-  element NestedConnectorEnd_base_ConnectorEnd {
-    constituents { unordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element ParticipantProperty {
     annotations { ParticipantProperty_base_Property! ParticipantProperty_end! }
   }
-  element ParticipantProperty_base_Property {
-    constituents { unordered { <TEXT> } }
-  }
-  element ParticipantProperty_end {
-    constituents { unordered { <TEXT> } }
-  }
   element ConnectorProperty {
     annotations { ConnectorProperty_base_Property! ConnectorProperty_connector! }
-  }
-  element ConnectorProperty_base_Property {
-    constituents { unordered { <TEXT> } }
-  }
-  element ConnectorProperty_connector {
-    constituents { unordered { <TEXT> } }
   }
   element BindingConnector {
     annotations { BindingConnector_base_Connector! }
   }
-  element BindingConnector_base_Connector {
-    constituents { unordered { <TEXT> } }
-  }
   element PropertySpecificType {
     annotations { PropertySpecificType_base_Classifier! }
-  }
-  element PropertySpecificType_base_Classifier {
-    constituents { unordered { <TEXT> } }
   }
 }

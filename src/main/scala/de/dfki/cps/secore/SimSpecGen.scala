@@ -16,6 +16,7 @@ object SimSpecGen {
   }
 
   def generateFromPackage(pkg: EPackage, out: PrintStream): Unit = {
+    val spec = new SimilaritySpec
     val ns = pkg.getNsPrefix
     out.println(s"equivspec $ns xmlns '${pkg.getNsURI}' {")
     val entries = pkg.getEClassifiers.asScala.foreach {
@@ -43,9 +44,9 @@ object SimSpecGen {
           case attr: EAttribute if attr.isMany =>
             out.println(s"  element ${cls.getName}_${attr.getName} {")
             val ordering = if (attr.isOrdered) "ordered" else "unordered"
-            out.println(s"    constituents { $ordering { <TEXT> } }")
+            out.println(s"    constituents { $ordering { SLiteral } }")
             out.println(s"  }")
-          case ref: EReference =>
+          case ref: EReference if ref.isContainment || ref.isMany =>
             out.println(s"  element ${cls.getName}_${ref.getName} {")
             val ordering = if (ref.isOrdered) "ordered" else "unordered"
             if (ref.isContainment) {
@@ -54,7 +55,7 @@ object SimSpecGen {
               val nsPrefix = if (tpkg == pkg) "" else "[" +tpkg.getNsPrefix+ "]"
               out.println(s"    constituents { $ordering { ${tpe.getName}$nsPrefix } }")
             } else {
-              out.println(s"    constituents { $ordering { <TEXT> } }")
+              out.println(s"    constituents { $ordering { SLink } }")
             }
             out.println(s"  }")
         }

@@ -1,23 +1,14 @@
 package de.dfki.cps.secore
 
-import java.io.File
-
 import de.dfki.cps.specific.sysml.{Model, Synthesis}
-import de.dfki.cps.stools.{STools}
 import org.eclipse.emf.ecore.resource.impl.{ResourceImpl, ResourceSetImpl}
 import org.scalatest.FunSuite
-import scala.collection.JavaConverters._
 
 /**
   * @author Martin Ring <martin.ring@dfki.de>
   */
 class Test extends FunSuite {
-  val files = SimSpecGen.getClass.getClassLoader.getResources("de/dfki/cps/secore").asScala
-    .map(url => new File(url.getFile))
-    .flatMap(_.listFiles().toIterable)
-    .filter(_.getName.endsWith(".simeq"))
-
-  val stools = new STools(files.toSeq :_*)
+  val stools = de.dfki.cps.secore.stools
 
   implicit val lib = new ResourceSetImpl
   Synthesis.prepareLibrary(lib)

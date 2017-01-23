@@ -18,7 +18,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { ActivityNode } }
   }
   element Activity_partition {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Activity_structuredNode {
     constituents { unordered { StructuredActivityNode } }
@@ -27,9 +27,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Behavior_specification Behavior_isReentrant? }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior } }
   }
-  element Behavior_specification {
-    constituents { unordered { <TEXT> } }
-  }
   element Behavior_ownedParameter {
     constituents { ordered { Parameter } }
   }
@@ -37,13 +34,13 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { ParameterSet } }
   }
   element Behavior_postcondition {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Behavior_precondition {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Behavior_redefinedBehavior {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Class {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! }
@@ -62,9 +59,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_substitution, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior } }
   }
-  element BehavioredClassifier_classifierBehavior {
-    constituents { unordered { <TEXT> } }
-  }
   element BehavioredClassifier_interfaceRealization {
     constituents { unordered { InterfaceRealization } }
   }
@@ -82,19 +76,16 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { Generalization } }
   }
   element Classifier_powertypeExtent {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Classifier_ownedUseCase {
     constituents { unordered { UseCase } }
   }
   element Classifier_useCase {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Classifier_redefinedClassifier {
-    constituents { unordered { <TEXT> } }
-  }
-  element Classifier_representation {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Classifier_substitution {
     constituents { unordered { Substitution } }
@@ -130,7 +121,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, Comment_annotatedElement } }
   }
   element Comment_annotatedElement {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Stereotype {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! }
@@ -148,10 +139,10 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Package_packageMerge, Package_packagedElement, Package_profileApplication, Profile_metaclassReference, Profile_metamodelReference } }
   }
   element Profile_metaclassReference {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Profile_metamodelReference {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Package {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Package_URI }
@@ -174,27 +165,12 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
   }
-  element ParameterableElement_owningTemplateParameter {
-    constituents { unordered { <TEXT> } }
-  }
-  element ParameterableElement_templateParameter {
-    constituents { unordered { <TEXT> } }
-  }
   element TemplateParameter {
     annotations { TemplateParameter_default TemplateParameter_parameteredElement! TemplateParameter_signature! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateParameter_ownedDefault, TemplateParameter_ownedParameteredElement } }
   }
-  element TemplateParameter_default {
-    constituents { unordered { <TEXT> } }
-  }
   element TemplateParameter_ownedDefault {
     constituents { unordered { ParameterableElement } }
-  }
-  element TemplateParameter_parameteredElement {
-    constituents { unordered { <TEXT> } }
-  }
-  element TemplateParameter_signature {
-    constituents { unordered { <TEXT> } }
   }
   element TemplateParameter_ownedParameteredElement {
     constituents { unordered { ParameterableElement } }
@@ -204,10 +180,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateSignature_parameter, TemplateSignature_ownedParameter } }
   }
   element TemplateSignature_parameter {
-    constituents { ordered { <TEXT> } }
-  }
-  element TemplateSignature_template {
-    constituents { unordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element TemplateSignature_ownedParameter {
     constituents { ordered { TemplateParameter } }
@@ -228,12 +201,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element TemplateBinding_parameterSubstitution {
     constituents { unordered { TemplateParameterSubstitution } }
   }
-  element TemplateBinding_signature {
-    constituents { unordered { <TEXT> } }
-  }
-  element TemplateBinding_boundElement {
-    constituents { unordered { <TEXT> } }
-  }
   element DirectedRelationship {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
   }
@@ -244,17 +211,8 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { TemplateParameterSubstitution_actual! TemplateParameterSubstitution_formal! TemplateParameterSubstitution_templateBinding! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateParameterSubstitution_ownedActual } }
   }
-  element TemplateParameterSubstitution_actual {
-    constituents { unordered { <TEXT> } }
-  }
-  element TemplateParameterSubstitution_formal {
-    constituents { unordered { <TEXT> } }
-  }
   element TemplateParameterSubstitution_ownedActual {
     constituents { unordered { ParameterableElement } }
-  }
-  element TemplateParameterSubstitution_templateBinding {
-    constituents { unordered { <TEXT> } }
   }
   element Type {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
@@ -265,26 +223,17 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_substitution, Association_memberEnd, Association_ownedEnd, Association_navigableOwnedEnd } }
   }
   element Association_memberEnd {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element Association_ownedEnd {
     constituents { ordered { Property } }
   }
   element Association_navigableOwnedEnd {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Property {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Feature_isStatic! TypedElement_type MultiplicityElement_isOrdered! MultiplicityElement_isUnique! StructuralFeature_isReadOnly! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Property_datatype Property_interface Property_aggregation! Property_associationEnd Property_isDerived! Property_isDerivedUnion! Property_isID! Property_owningAssociation Property_association }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, DeploymentTarget_deployment, Property_qualifier, Property_defaultValue, Property_redefinedProperty, Property_subsettedProperty } }
-  }
-  element Property_datatype {
-    constituents { unordered { <TEXT> } }
-  }
-  element Property_interface {
-    constituents { unordered { <TEXT> } }
-  }
-  element Property_associationEnd {
-    constituents { unordered { <TEXT> } }
   }
   element Property_qualifier {
     constituents { ordered { Property } }
@@ -292,17 +241,11 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element Property_defaultValue {
     constituents { unordered { ValueSpecification } }
   }
-  element Property_owningAssociation {
-    constituents { unordered { <TEXT> } }
-  }
   element Property_redefinedProperty {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Property_subsettedProperty {
-    constituents { unordered { <TEXT> } }
-  }
-  element Property_association {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ConnectableElement {
     annotations { NamedElement_name? NamedElement_visibility? TypedElement_type ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
@@ -312,18 +255,9 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? TypedElement_type }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
   }
-  element TypedElement_type {
-    constituents { unordered { <TEXT> } }
-  }
   element ConnectorEnd {
     annotations { MultiplicityElement_isOrdered! MultiplicityElement_isUnique! ConnectorEnd_partWithPort ConnectorEnd_role! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, MultiplicityElement_lowerValue, MultiplicityElement_upperValue } }
-  }
-  element ConnectorEnd_partWithPort {
-    constituents { unordered { <TEXT> } }
-  }
-  element ConnectorEnd_role {
-    constituents { unordered { <TEXT> } }
   }
   element MultiplicityElement {
     annotations { MultiplicityElement_isOrdered! MultiplicityElement_isUnique! }
@@ -358,27 +292,21 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { DeploymentSpecification } }
   }
   element Deployment_deployedArtifact {
-    constituents { unordered { <TEXT> } }
-  }
-  element Deployment_location {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Dependency {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Dependency_client, Dependency_supplier } }
   }
   element Dependency_client {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Dependency_supplier {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element DeploymentSpecification {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation Artifact_fileName? DeploymentSpecification_deploymentLocation? DeploymentSpecification_executionLocation? DeploymentSpecification_deployment }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_substitution, Artifact_manifestation, Artifact_nestedArtifact, Artifact_ownedAttribute, Artifact_ownedOperation } }
-  }
-  element DeploymentSpecification_deployment {
-    constituents { unordered { <TEXT> } }
   }
   element Artifact {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation Artifact_fileName? }
@@ -404,9 +332,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Manifestation_utilizedElement! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Dependency_client, Dependency_supplier, Abstraction_mapping } }
   }
-  element Manifestation_utilizedElement {
-    constituents { unordered { <TEXT> } }
-  }
   element Abstraction {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Dependency_client, Dependency_supplier, Abstraction_mapping } }
@@ -418,14 +343,11 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter TypedElement_type OpaqueExpression_behavior }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, OpaqueExpression_body, OpaqueExpression_language } }
   }
-  element OpaqueExpression_behavior {
-    constituents { unordered { <TEXT> } }
-  }
   element OpaqueExpression_body {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLiteral } }
   }
   element OpaqueExpression_language {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLiteral } }
   }
   element Parameter {
     annotations { NamedElement_name? NamedElement_visibility? TypedElement_type ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter MultiplicityElement_isOrdered! MultiplicityElement_isUnique! Parameter_direction! Parameter_effect? Parameter_isException! Parameter_isStream! }
@@ -435,39 +357,27 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { ValueSpecification } }
   }
   element Parameter_parameterSet {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Operation {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Feature_isStatic! BehavioralFeature_concurrency! BehavioralFeature_isAbstract! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Operation_bodyCondition Operation_class Operation_datatype Operation_interface Operation_isQuery! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, BehavioralFeature_method, BehavioralFeature_ownedParameter, BehavioralFeature_ownedParameterSet, BehavioralFeature_raisedException, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Operation_postcondition, Operation_precondition, Operation_redefinedOperation } }
   }
-  element Operation_bodyCondition {
-    constituents { unordered { <TEXT> } }
-  }
-  element Operation_class {
-    constituents { unordered { <TEXT> } }
-  }
-  element Operation_datatype {
-    constituents { unordered { <TEXT> } }
-  }
-  element Operation_interface {
-    constituents { unordered { <TEXT> } }
-  }
   element Operation_postcondition {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Operation_precondition {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Operation_redefinedOperation {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element BehavioralFeature {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Feature_isStatic! BehavioralFeature_concurrency! BehavioralFeature_isAbstract! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, BehavioralFeature_method, BehavioralFeature_ownedParameter, BehavioralFeature_ownedParameterSet, BehavioralFeature_raisedException } }
   }
   element BehavioralFeature_method {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element BehavioralFeature_ownedParameter {
     constituents { ordered { Parameter } }
@@ -476,7 +386,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { ParameterSet } }
   }
   element BehavioralFeature_raisedException {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Feature {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Feature_isStatic! }
@@ -494,17 +404,14 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { Constraint } }
   }
   element ParameterSet_parameter {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Constraint {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Constraint_context }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Constraint_constrainedElement, Constraint_specification } }
   }
   element Constraint_constrainedElement {
-    constituents { ordered { <TEXT> } }
-  }
-  element Constraint_context {
-    constituents { unordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element Constraint_specification {
     constituents { unordered { ValueSpecification } }
@@ -536,7 +443,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { ProtocolStateMachine } }
   }
   element Interface_redefinedInterface {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Interface_ownedOperation {
     constituents { ordered { Operation } }
@@ -544,9 +451,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element Reception {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Feature_isStatic! BehavioralFeature_concurrency! BehavioralFeature_isAbstract! Reception_signal! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, BehavioralFeature_method, BehavioralFeature_ownedParameter, BehavioralFeature_ownedParameterSet, BehavioralFeature_raisedException } }
-  }
-  element Reception_signal {
-    constituents { unordered { <TEXT> } }
   }
   element Signal {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
@@ -570,43 +474,25 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { Pseudostate } }
   }
   element StateMachine_submachineState {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element StateMachine_region {
     constituents { unordered { Region } }
   }
   element StateMachine_extendedStateMachine {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Pseudostate {
     annotations { NamedElement_name? NamedElement_visibility? Vertex_container Pseudostate_state Pseudostate_kind! Pseudostate_stateMachine }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
   }
-  element Pseudostate_state {
-    constituents { unordered { <TEXT> } }
-  }
-  element Pseudostate_stateMachine {
-    constituents { unordered { <TEXT> } }
-  }
   element Vertex {
     annotations { NamedElement_name? NamedElement_visibility? Vertex_container }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
   }
-  element Vertex_container {
-    constituents { unordered { <TEXT> } }
-  }
   element Region {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Region_extendedRegion Region_state Region_stateMachine }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, Region_transition, Region_subvertex } }
-  }
-  element Region_extendedRegion {
-    constituents { unordered { <TEXT> } }
-  }
-  element Region_state {
-    constituents { unordered { <TEXT> } }
-  }
-  element Region_stateMachine {
-    constituents { unordered { <TEXT> } }
   }
   element Region_transition {
     constituents { unordered { Transition } }
@@ -636,15 +522,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element State_exit {
     constituents { unordered { Behavior } }
   }
-  element State_redefinedState {
-    constituents { unordered { <TEXT> } }
-  }
-  element State_stateInvariant {
-    constituents { unordered { <TEXT> } }
-  }
-  element State_submachine {
-    constituents { unordered { <TEXT> } }
-  }
   element State_region {
     constituents { unordered { Region } }
   }
@@ -653,23 +530,17 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ConnectionPointReference_entry, ConnectionPointReference_exit } }
   }
   element ConnectionPointReference_entry {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ConnectionPointReference_exit {
-    constituents { unordered { <TEXT> } }
-  }
-  element ConnectionPointReference_state {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Trigger {
     annotations { NamedElement_name? NamedElement_visibility? Trigger_event! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Trigger_port } }
   }
-  element Trigger_event {
-    constituents { unordered { <TEXT> } }
-  }
   element Trigger_port {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Event {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
@@ -679,11 +550,8 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Feature_isStatic! TypedElement_type MultiplicityElement_isOrdered! MultiplicityElement_isUnique! StructuralFeature_isReadOnly! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Property_datatype Property_interface Property_aggregation! Property_associationEnd Property_isDerived! Property_isDerivedUnion! Property_isID! Property_owningAssociation Property_association Port_isBehavior! Port_isConjugated! Port_isService! Port_protocol }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, DeploymentTarget_deployment, Property_qualifier, Property_defaultValue, Property_redefinedProperty, Property_subsettedProperty, Port_redefinedPort } }
   }
-  element Port_protocol {
-    constituents { unordered { <TEXT> } }
-  }
   element Port_redefinedPort {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Transition {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Transition_guard Transition_kind! Transition_redefinedTransition Transition_source! Transition_target! Transition_container! }
@@ -692,33 +560,12 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element Transition_effect {
     constituents { unordered { Behavior } }
   }
-  element Transition_guard {
-    constituents { unordered { <TEXT> } }
-  }
-  element Transition_redefinedTransition {
-    constituents { unordered { <TEXT> } }
-  }
-  element Transition_source {
-    constituents { unordered { <TEXT> } }
-  }
-  element Transition_target {
-    constituents { unordered { <TEXT> } }
-  }
   element Transition_trigger {
     constituents { unordered { Trigger } }
-  }
-  element Transition_container {
-    constituents { unordered { <TEXT> } }
   }
   element ProtocolConformance {
     annotations { ProtocolConformance_generalMachine! ProtocolConformance_specificMachine! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
-  }
-  element ProtocolConformance_generalMachine {
-    constituents { unordered { <TEXT> } }
-  }
-  element ProtocolConformance_specificMachine {
-    constituents { unordered { <TEXT> } }
   }
   element OperationTemplateParameter {
     annotations { TemplateParameter_default TemplateParameter_parameteredElement! TemplateParameter_signature! }
@@ -732,21 +579,9 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { PackageMerge_mergedPackage! PackageMerge_receivingPackage! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
   }
-  element PackageMerge_mergedPackage {
-    constituents { unordered { <TEXT> } }
-  }
-  element PackageMerge_receivingPackage {
-    constituents { unordered { <TEXT> } }
-  }
   element ProfileApplication {
     annotations { ProfileApplication_appliedProfile! ProfileApplication_isStrict! ProfileApplication_applyingPackage! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
-  }
-  element ProfileApplication_appliedProfile {
-    constituents { unordered { <TEXT> } }
-  }
-  element ProfileApplication_applyingPackage {
-    constituents { unordered { <TEXT> } }
   }
   element Enumeration {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
@@ -759,15 +594,12 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter EnumerationLiteral_enumeration! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, DeploymentTarget_deployment, InstanceSpecification_classifier, InstanceSpecification_slot, InstanceSpecification_specification } }
   }
-  element EnumerationLiteral_enumeration {
-    constituents { unordered { <TEXT> } }
-  }
   element InstanceSpecification {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, DeploymentTarget_deployment, InstanceSpecification_classifier, InstanceSpecification_slot, InstanceSpecification_specification } }
   }
   element InstanceSpecification_classifier {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InstanceSpecification_slot {
     constituents { unordered { Slot } }
@@ -779,14 +611,8 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { Slot_definingFeature! Slot_owningInstance! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, Slot_value } }
   }
-  element Slot_definingFeature {
-    constituents { unordered { <TEXT> } }
-  }
   element Slot_value {
     constituents { ordered { ValueSpecification } }
-  }
-  element Slot_owningInstance {
-    constituents { unordered { <TEXT> } }
   }
   element PrimitiveType {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
@@ -796,21 +622,9 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { ElementImport_alias? ElementImport_importedElement! ElementImport_importingNamespace! ElementImport_visibility! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
   }
-  element ElementImport_importedElement {
-    constituents { unordered { <TEXT> } }
-  }
-  element ElementImport_importingNamespace {
-    constituents { unordered { <TEXT> } }
-  }
   element PackageImport {
     annotations { PackageImport_importedPackage! PackageImport_importingNamespace! PackageImport_visibility! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
-  }
-  element PackageImport_importedPackage {
-    constituents { unordered { <TEXT> } }
-  }
-  element PackageImport_importingNamespace {
-    constituents { unordered { <TEXT> } }
   }
   element Extension {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation Association_isDerived! }
@@ -827,9 +641,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element StringExpression {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter TypedElement_type Expression_symbol? StringExpression_owningExpression }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Expression_operand, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, StringExpression_subExpression } }
-  }
-  element StringExpression_owningExpression {
-    constituents { unordered { <TEXT> } }
   }
   element StringExpression_subExpression {
     constituents { ordered { StringExpression } }
@@ -852,15 +663,12 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element CollaborationUse_roleBinding {
     constituents { unordered { Dependency } }
   }
-  element CollaborationUse_type {
-    constituents { unordered { <TEXT> } }
-  }
   element Collaboration {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Collaboration_collaborationRole } }
   }
   element Collaboration_collaborationRole {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element StructuredClassifier {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
@@ -877,46 +685,34 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Connector_contract, Connector_end, Connector_redefinedConnector } }
   }
   element Connector_contract {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Connector_end {
     constituents { ordered { ConnectorEnd } }
   }
   element Connector_redefinedConnector {
-    constituents { unordered { <TEXT> } }
-  }
-  element Connector_type {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Generalization {
     annotations { Generalization_general! Generalization_isSubstitutable Generalization_specific! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, Generalization_generalizationSet } }
   }
-  element Generalization_general {
-    constituents { unordered { <TEXT> } }
-  }
   element Generalization_generalizationSet {
-    constituents { unordered { <TEXT> } }
-  }
-  element Generalization_specific {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element GeneralizationSet {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter GeneralizationSet_isCovering! GeneralizationSet_isDisjoint! GeneralizationSet_powertype }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, GeneralizationSet_generalization } }
   }
-  element GeneralizationSet_powertype {
-    constituents { unordered { <TEXT> } }
-  }
   element GeneralizationSet_generalization {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element RedefinableTemplateSignature {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! TemplateSignature_template! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, TemplateSignature_parameter, TemplateSignature_ownedParameter, RedefinableTemplateSignature_extendedSignature } }
   }
   element RedefinableTemplateSignature_extendedSignature {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element UseCase {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior }
@@ -932,7 +728,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { Include } }
   }
   element UseCase_subject {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Extend {
     annotations { NamedElement_name? NamedElement_visibility? Extend_extendedCase! Extend_extension! }
@@ -941,41 +737,20 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element Extend_condition {
     constituents { unordered { Constraint } }
   }
-  element Extend_extendedCase {
-    constituents { unordered { <TEXT> } }
-  }
   element Extend_extensionLocation {
-    constituents { ordered { <TEXT> } }
-  }
-  element Extend_extension {
-    constituents { unordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element ExtensionPoint {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ExtensionPoint_useCase! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
   }
-  element ExtensionPoint_useCase {
-    constituents { unordered { <TEXT> } }
-  }
   element Include {
     annotations { NamedElement_name? NamedElement_visibility? Include_addition! Include_includingCase! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
   }
-  element Include_addition {
-    constituents { unordered { <TEXT> } }
-  }
-  element Include_includingCase {
-    constituents { unordered { <TEXT> } }
-  }
   element Substitution {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Substitution_contract! Substitution_substitutingClassifier! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Dependency_client, Dependency_supplier, Abstraction_mapping } }
-  }
-  element Substitution_contract {
-    constituents { unordered { <TEXT> } }
-  }
-  element Substitution_substitutingClassifier {
-    constituents { unordered { <TEXT> } }
   }
   element Realization {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
@@ -986,17 +761,11 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, TemplateParameter_ownedDefault, TemplateParameter_ownedParameteredElement, ClassifierTemplateParameter_constrainingClassifier } }
   }
   element ClassifierTemplateParameter_constrainingClassifier {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InterfaceRealization {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter InterfaceRealization_contract! InterfaceRealization_implementingClassifier! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Dependency_client, Dependency_supplier, Abstraction_mapping } }
-  }
-  element InterfaceRealization_contract {
-    constituents { unordered { <TEXT> } }
-  }
-  element InterfaceRealization_implementingClassifier {
-    constituents { unordered { <TEXT> } }
   }
   element EncapsulatedClassifier {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
@@ -1010,29 +779,14 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityEdge_activity ActivityEdge_interrupts ActivityEdge_inStructuredNode ActivityEdge_target! ActivityEdge_source! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityEdge_guard, ActivityEdge_inPartition, ActivityEdge_redefinedEdge, ActivityEdge_weight } }
   }
-  element ActivityEdge_activity {
-    constituents { unordered { <TEXT> } }
-  }
   element ActivityEdge_guard {
     constituents { unordered { ValueSpecification } }
   }
   element ActivityEdge_inPartition {
-    constituents { unordered { <TEXT> } }
-  }
-  element ActivityEdge_interrupts {
-    constituents { unordered { <TEXT> } }
-  }
-  element ActivityEdge_inStructuredNode {
-    constituents { unordered { <TEXT> } }
-  }
-  element ActivityEdge_target {
-    constituents { unordered { <TEXT> } }
-  }
-  element ActivityEdge_source {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActivityEdge_redefinedEdge {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActivityEdge_weight {
     constituents { unordered { ValueSpecification } }
@@ -1042,51 +796,42 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityPartition_node, ActivityPartition_subpartition, ActivityPartition_edge } }
   }
   element ActivityPartition_node {
-    constituents { unordered { <TEXT> } }
-  }
-  element ActivityPartition_represents {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActivityPartition_subpartition {
     constituents { unordered { ActivityPartition } }
   }
-  element ActivityPartition_superPartition {
-    constituents { unordered { <TEXT> } }
-  }
   element ActivityPartition_edge {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActivityNode {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
   }
   element ActivityNode_inInterruptibleRegion {
-    constituents { unordered { <TEXT> } }
-  }
-  element ActivityNode_inStructuredNode {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActivityNode_incoming {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActivityNode_outgoing {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActivityNode_redefinedNode {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActivityNode_inPartition {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InterruptibleActivityRegion {
     annotations { NamedElement_name? NamedElement_visibility? }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InterruptibleActivityRegion_interruptingEdge, InterruptibleActivityRegion_node } }
   }
   element InterruptibleActivityRegion_interruptingEdge {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InterruptibleActivityRegion_node {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element StructuredActivityNode {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! StructuredActivityNode_mustIsolate! }
@@ -1128,27 +873,15 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { ExceptionHandler_exceptionInput! ExceptionHandler_handlerBody! ExceptionHandler_protectedNode! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, ExceptionHandler_exceptionType } }
   }
-  element ExceptionHandler_exceptionInput {
-    constituents { unordered { <TEXT> } }
-  }
   element ExceptionHandler_exceptionType {
-    constituents { unordered { <TEXT> } }
-  }
-  element ExceptionHandler_handlerBody {
-    constituents { unordered { <TEXT> } }
-  }
-  element ExceptionHandler_protectedNode {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ObjectNode {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ObjectNode_inState, ObjectNode_upperBound } }
   }
   element ObjectNode_inState {
-    constituents { unordered { <TEXT> } }
-  }
-  element ObjectNode_selection {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ObjectNode_upperBound {
     constituents { unordered { ValueSpecification } }
@@ -1169,12 +902,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? TypedElement_type ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter MultiplicityElement_isOrdered! MultiplicityElement_isUnique! Variable_activityScope Variable_scope }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, MultiplicityElement_lowerValue, MultiplicityElement_upperValue } }
   }
-  element Variable_activityScope {
-    constituents { unordered { <TEXT> } }
-  }
-  element Variable_scope {
-    constituents { unordered { <TEXT> } }
-  }
   element ValueSpecificationAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ValueSpecificationAction_result, ValueSpecificationAction_value } }
@@ -1188,9 +915,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element VariableAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! VariableAction_variable! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition } }
-  }
-  element VariableAction_variable {
-    constituents { unordered { <TEXT> } }
   }
   element WriteLinkAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! }
@@ -1210,24 +934,12 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { LinkEndData_end! LinkEndData_value }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, LinkEndData_qualifier } }
   }
-  element LinkEndData_end {
-    constituents { unordered { <TEXT> } }
-  }
   element LinkEndData_qualifier {
     constituents { unordered { QualifierValue } }
-  }
-  element LinkEndData_value {
-    constituents { unordered { <TEXT> } }
   }
   element QualifierValue {
     annotations { QualifierValue_qualifier! QualifierValue_value! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment } }
-  }
-  element QualifierValue_qualifier {
-    constituents { unordered { <TEXT> } }
-  }
-  element QualifierValue_value {
-    constituents { unordered { <TEXT> } }
   }
   element WriteStructuralFeatureAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! StructuralFeatureAction_structuralFeature! }
@@ -1245,9 +957,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   }
   element StructuralFeatureAction_object {
     constituents { unordered { InputPin } }
-  }
-  element StructuralFeatureAction_structuralFeature {
-    constituents { unordered { <TEXT> } }
   }
   element WriteVariableAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! VariableAction_variable! }
@@ -1298,18 +1007,12 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! InvocationAction_onPort BroadcastSignalAction_signal! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument } }
   }
-  element BroadcastSignalAction_signal {
-    constituents { unordered { <TEXT> } }
-  }
   element InvocationAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! InvocationAction_onPort }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument } }
   }
   element InvocationAction_argument {
     constituents { ordered { InputPin } }
-  }
-  element InvocationAction_onPort {
-    constituents { unordered { <TEXT> } }
   }
   element CallAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! InvocationAction_onPort CallAction_isSynchronous! }
@@ -1322,15 +1025,9 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! InvocationAction_onPort CallAction_isSynchronous! CallBehaviorAction_behavior! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, CallAction_result } }
   }
-  element CallBehaviorAction_behavior {
-    constituents { unordered { <TEXT> } }
-  }
   element CallOperationAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! InvocationAction_onPort CallAction_isSynchronous! CallOperationAction_operation! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, CallAction_result, CallOperationAction_target } }
-  }
-  element CallOperationAction_operation {
-    constituents { unordered { <TEXT> } }
   }
   element CallOperationAction_target {
     constituents { unordered { InputPin } }
@@ -1340,29 +1037,23 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, Clause_body, Clause_bodyOutput, Clause_predecessorClause, Clause_successorClause, Clause_test } }
   }
   element Clause_body {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Clause_bodyOutput {
-    constituents { ordered { <TEXT> } }
-  }
-  element Clause_decider {
-    constituents { unordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element Clause_predecessorClause {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Clause_successorClause {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Clause_test {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ClearAssociationAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! ClearAssociationAction_association! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ClearAssociationAction_object } }
-  }
-  element ClearAssociationAction_association {
-    constituents { unordered { <TEXT> } }
   }
   element ClearAssociationAction_object {
     constituents { unordered { InputPin } }
@@ -1396,9 +1087,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { LinkEndData_end! LinkEndData_value LinkEndCreationData_insertAt LinkEndCreationData_isReplaceAll! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, LinkEndData_qualifier } }
   }
-  element LinkEndCreationData_insertAt {
-    constituents { unordered { <TEXT> } }
-  }
   element CreateLinkObjectAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, LinkAction_endData, LinkAction_inputValue, CreateLinkObjectAction_result } }
@@ -1409,9 +1097,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element CreateObjectAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! CreateObjectAction_classifier! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, CreateObjectAction_result } }
-  }
-  element CreateObjectAction_classifier {
-    constituents { unordered { <TEXT> } }
   }
   element CreateObjectAction_result {
     constituents { unordered { OutputPin } }
@@ -1424,9 +1109,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { LinkEndData_end! LinkEndData_value LinkEndDestructionData_destroyAt LinkEndDestructionData_isDestroyDuplicates! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, LinkEndData_qualifier } }
   }
-  element LinkEndDestructionData_destroyAt {
-    constituents { unordered { <TEXT> } }
-  }
   element DestroyObjectAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! DestroyObjectAction_isDestroyLinks! DestroyObjectAction_isDestroyOwnedObjects! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, DestroyObjectAction_target } }
@@ -1438,34 +1120,25 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection ExpansionNode_regionAsInput ExpansionNode_regionAsOutput }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ObjectNode_inState, ObjectNode_upperBound } }
   }
-  element ExpansionNode_regionAsInput {
-    constituents { unordered { <TEXT> } }
-  }
-  element ExpansionNode_regionAsOutput {
-    constituents { unordered { <TEXT> } }
-  }
   element ExpansionRegion {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! StructuredActivityNode_mustIsolate! ExpansionRegion_mode! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, StructuredActivityNode_edge, StructuredActivityNode_structuredNodeInput, StructuredActivityNode_structuredNodeOutput, StructuredActivityNode_variable, StructuredActivityNode_node, ExpansionRegion_outputElement, ExpansionRegion_inputElement } }
   }
   element ExpansionRegion_outputElement {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ExpansionRegion_inputElement {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element LoopNode {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! StructuredActivityNode_mustIsolate! LoopNode_decider! LoopNode_isTestedFirst! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, StructuredActivityNode_edge, StructuredActivityNode_structuredNodeInput, StructuredActivityNode_structuredNodeOutput, StructuredActivityNode_variable, StructuredActivityNode_node, LoopNode_bodyOutput, LoopNode_bodyPart, LoopNode_loopVariable, LoopNode_loopVariableInput, LoopNode_result, LoopNode_setupPart, LoopNode_test } }
   }
   element LoopNode_bodyOutput {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element LoopNode_bodyPart {
-    constituents { unordered { <TEXT> } }
-  }
-  element LoopNode_decider {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element LoopNode_loopVariable {
     constituents { ordered { OutputPin } }
@@ -1477,23 +1150,23 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { ordered { OutputPin } }
   }
   element LoopNode_setupPart {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element LoopNode_test {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element OpaqueAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, OpaqueAction_body, OpaqueAction_inputValue, OpaqueAction_language, OpaqueAction_outputValue } }
   }
   element OpaqueAction_body {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLiteral } }
   }
   element OpaqueAction_inputValue {
     constituents { unordered { InputPin } }
   }
   element OpaqueAction_language {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLiteral } }
   }
   element OpaqueAction_outputValue {
     constituents { unordered { OutputPin } }
@@ -1509,18 +1182,12 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! ReadExtentAction_classifier! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReadExtentAction_result } }
   }
-  element ReadExtentAction_classifier {
-    constituents { unordered { <TEXT> } }
-  }
   element ReadExtentAction_result {
     constituents { unordered { OutputPin } }
   }
   element ReadIsClassifiedObjectAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! ReadIsClassifiedObjectAction_classifier! ReadIsClassifiedObjectAction_isDirect! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReadIsClassifiedObjectAction_object, ReadIsClassifiedObjectAction_result } }
-  }
-  element ReadIsClassifiedObjectAction_classifier {
-    constituents { unordered { <TEXT> } }
   }
   element ReadIsClassifiedObjectAction_object {
     constituents { unordered { InputPin } }
@@ -1539,9 +1206,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! ReadLinkObjectEndAction_end! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReadLinkObjectEndAction_object, ReadLinkObjectEndAction_result } }
   }
-  element ReadLinkObjectEndAction_end {
-    constituents { unordered { <TEXT> } }
-  }
   element ReadLinkObjectEndAction_object {
     constituents { unordered { InputPin } }
   }
@@ -1554,9 +1218,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   }
   element ReadLinkObjectEndQualifierAction_object {
     constituents { unordered { InputPin } }
-  }
-  element ReadLinkObjectEndQualifierAction_qualifier {
-    constituents { unordered { <TEXT> } }
   }
   element ReadLinkObjectEndQualifierAction_result {
     constituents { unordered { OutputPin } }
@@ -1587,13 +1248,13 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReclassifyObjectAction_newClassifier, ReclassifyObjectAction_object, ReclassifyObjectAction_oldClassifier } }
   }
   element ReclassifyObjectAction_newClassifier {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ReclassifyObjectAction_object {
     constituents { unordered { InputPin } }
   }
   element ReclassifyObjectAction_oldClassifier {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ReduceAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! ReduceAction_isOrdered! ReduceAction_reducer! }
@@ -1601,9 +1262,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   }
   element ReduceAction_collection {
     constituents { unordered { InputPin } }
-  }
-  element ReduceAction_reducer {
-    constituents { unordered { <TEXT> } }
   }
   element ReduceAction_result {
     constituents { unordered { OutputPin } }
@@ -1626,9 +1284,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! ReplyAction_replyToCall! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, ReplyAction_replyValue, ReplyAction_returnInformation } }
   }
-  element ReplyAction_replyToCall {
-    constituents { unordered { <TEXT> } }
-  }
   element ReplyAction_replyValue {
     constituents { ordered { InputPin } }
   }
@@ -1648,9 +1303,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element SendSignalAction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode Action_isLocallyReentrant! InvocationAction_onPort SendSignalAction_signal! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ExecutableNode_handler, Action_localPostcondition, Action_localPrecondition, InvocationAction_argument, SendSignalAction_target } }
-  }
-  element SendSignalAction_signal {
-    constituents { unordered { <TEXT> } }
   }
   element SendSignalAction_target {
     constituents { unordered { InputPin } }
@@ -1699,9 +1351,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element UnmarshallAction_result {
     constituents { ordered { OutputPin } }
   }
-  element UnmarshallAction_unmarshallType {
-    constituents { unordered { <TEXT> } }
-  }
   element ValuePin {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection MultiplicityElement_isOrdered! MultiplicityElement_isUnique! Pin_isControl! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ObjectNode_inState, ObjectNode_upperBound, MultiplicityElement_lowerValue, MultiplicityElement_upperValue, ValuePin_value } }
@@ -1725,9 +1374,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection ActivityParameterNode_parameter! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ObjectNode_inState, ObjectNode_upperBound } }
   }
-  element ActivityParameterNode_parameter {
-    constituents { unordered { <TEXT> } }
-  }
   element CentralBufferNode {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition, ObjectNode_inState, ObjectNode_upperBound } }
@@ -1744,21 +1390,9 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode DecisionNode_decisionInput DecisionNode_decisionInputFlow }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityNode_inInterruptibleRegion, ActivityNode_incoming, ActivityNode_outgoing, ActivityNode_redefinedNode, ActivityNode_inPartition } }
   }
-  element DecisionNode_decisionInput {
-    constituents { unordered { <TEXT> } }
-  }
-  element DecisionNode_decisionInputFlow {
-    constituents { unordered { <TEXT> } }
-  }
   element ObjectFlow {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityEdge_activity ActivityEdge_interrupts ActivityEdge_inStructuredNode ActivityEdge_target! ActivityEdge_source! ObjectFlow_isMulticast! ObjectFlow_isMultireceive! ObjectFlow_selection ObjectFlow_transformation }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, ActivityEdge_guard, ActivityEdge_inPartition, ActivityEdge_redefinedEdge, ActivityEdge_weight } }
-  }
-  element ObjectFlow_selection {
-    constituents { unordered { <TEXT> } }
-  }
-  element ObjectFlow_transformation {
-    constituents { unordered { <TEXT> } }
   }
   element FlowFinalNode {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ActivityNode_inStructuredNode }
@@ -1787,9 +1421,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter TypedElement_type InstanceValue_instance! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
   }
-  element InstanceValue_instance {
-    constituents { unordered { <TEXT> } }
-  }
   element AnyReceiveEvent {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
@@ -1801,9 +1432,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element CallEvent {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter CallEvent_operation! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
-  }
-  element CallEvent_operation {
-    constituents { unordered { <TEXT> } }
   }
   element ChangeEvent {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
@@ -1821,17 +1449,14 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_substitution, StructuredClassifier_ownedAttribute, StructuredClassifier_ownedConnector, BehavioredClassifier_interfaceRealization, BehavioredClassifier_ownedBehavior, Class_ownedOperation, Class_nestedClassifier, Class_ownedReception, Behavior_ownedParameter, Behavior_ownedParameterSet, Behavior_postcondition, Behavior_precondition, Behavior_redefinedBehavior, OpaqueBehavior_body, OpaqueBehavior_language } }
   }
   element OpaqueBehavior_body {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLiteral } }
   }
   element OpaqueBehavior_language {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLiteral } }
   }
   element SignalEvent {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter SignalEvent_signal! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
-  }
-  element SignalEvent_signal {
-    constituents { unordered { <TEXT> } }
   }
   element TimeEvent {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter TimeEvent_isRelative! }
@@ -1848,7 +1473,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { ValueSpecification } }
   }
   element TimeExpression_observation {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Observation {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter }
@@ -1878,25 +1503,25 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InformationFlow_conveyed, InformationFlow_informationSource, InformationFlow_informationTarget, InformationFlow_realization, InformationFlow_realizingActivityEdge, InformationFlow_realizingConnector, InformationFlow_realizingMessage } }
   }
   element InformationFlow_conveyed {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InformationFlow_informationSource {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InformationFlow_informationTarget {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InformationFlow_realization {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InformationFlow_realizingActivityEdge {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InformationFlow_realizingConnector {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InformationFlow_realizingMessage {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Message {
     annotations { NamedElement_name? NamedElement_visibility? Message_connector Message_interaction! Message_messageSort! Message_receiveEvent Message_sendEvent Message_signature }
@@ -1904,21 +1529,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   }
   element Message_argument {
     constituents { ordered { ValueSpecification } }
-  }
-  element Message_connector {
-    constituents { unordered { <TEXT> } }
-  }
-  element Message_interaction {
-    constituents { unordered { <TEXT> } }
-  }
-  element Message_receiveEvent {
-    constituents { unordered { <TEXT> } }
-  }
-  element Message_sendEvent {
-    constituents { unordered { <TEXT> } }
-  }
-  element Message_signature {
-    constituents { unordered { <TEXT> } }
   }
   element Interaction {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Behavior_specification Behavior_isReentrant? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction }
@@ -1944,13 +1554,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_generalOrdering } }
   }
   element InteractionFragment_covered {
-    constituents { unordered { <TEXT> } }
-  }
-  element InteractionFragment_enclosingOperand {
-    constituents { unordered { <TEXT> } }
-  }
-  element InteractionFragment_enclosingInteraction {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InteractionFragment_generalOrdering {
     constituents { unordered { GeneralOrdering } }
@@ -1959,20 +1563,11 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? Lifeline_decomposedAs Lifeline_interaction! Lifeline_represents }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Lifeline_selector, Lifeline_coveredBy } }
   }
-  element Lifeline_decomposedAs {
-    constituents { unordered { <TEXT> } }
-  }
-  element Lifeline_interaction {
-    constituents { unordered { <TEXT> } }
-  }
-  element Lifeline_represents {
-    constituents { unordered { <TEXT> } }
-  }
   element Lifeline_selector {
     constituents { unordered { ValueSpecification } }
   }
   element Lifeline_coveredBy {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element PartDecomposition {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction InteractionUse_refersTo! InteractionUse_returnValueRecipient }
@@ -1988,14 +1583,8 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element InteractionUse_argument {
     constituents { ordered { ValueSpecification } }
   }
-  element InteractionUse_refersTo {
-    constituents { unordered { <TEXT> } }
-  }
   element InteractionUse_returnValue {
     constituents { unordered { ValueSpecification } }
-  }
-  element InteractionUse_returnValueRecipient {
-    constituents { unordered { <TEXT> } }
   }
   element Gate {
     annotations { NamedElement_name? NamedElement_visibility? MessageEnd_message }
@@ -2004,9 +1593,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element MessageEnd {
     annotations { NamedElement_name? NamedElement_visibility? MessageEnd_message }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
-  }
-  element MessageEnd_message {
-    constituents { unordered { <TEXT> } }
   }
   element InteractionOperand {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction }
@@ -2032,52 +1618,34 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? GeneralOrdering_after! GeneralOrdering_before! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
   }
-  element GeneralOrdering_after {
-    constituents { unordered { <TEXT> } }
-  }
-  element GeneralOrdering_before {
-    constituents { unordered { <TEXT> } }
-  }
   element OccurrenceSpecification {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_generalOrdering, OccurrenceSpecification_toAfter, OccurrenceSpecification_toBefore } }
   }
   element OccurrenceSpecification_toAfter {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element OccurrenceSpecification_toBefore {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element InformationItem {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, TemplateableElement_templateBinding, TemplateableElement_ownedTemplateSignature, Classifier_collaborationUse, Classifier_generalization, Classifier_powertypeExtent, Classifier_ownedUseCase, Classifier_useCase, Classifier_redefinedClassifier, Classifier_substitution, InformationItem_represented } }
   }
   element InformationItem_represented {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element ActionExecutionSpecification {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction ExecutionSpecification_finish! ExecutionSpecification_start! ActionExecutionSpecification_action! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_generalOrdering } }
   }
-  element ActionExecutionSpecification_action {
-    constituents { unordered { <TEXT> } }
-  }
   element ExecutionSpecification {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction ExecutionSpecification_finish! ExecutionSpecification_start! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_generalOrdering } }
   }
-  element ExecutionSpecification_finish {
-    constituents { unordered { <TEXT> } }
-  }
-  element ExecutionSpecification_start {
-    constituents { unordered { <TEXT> } }
-  }
   element BehaviorExecutionSpecification {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction ExecutionSpecification_finish! ExecutionSpecification_start! BehaviorExecutionSpecification_behavior }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_generalOrdering } }
-  }
-  element BehaviorExecutionSpecification_behavior {
-    constituents { unordered { <TEXT> } }
   }
   element CombinedFragment {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction CombinedFragment_interactionOperator! }
@@ -2094,7 +1662,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_generalOrdering, CombinedFragment_cfragmentGate, CombinedFragment_operand, ConsiderIgnoreFragment_message } }
   }
   element ConsiderIgnoreFragment_message {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Continuation {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction Continuation_setting! }
@@ -2112,9 +1680,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction ExecutionOccurrenceSpecification_execution! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_generalOrdering, OccurrenceSpecification_toAfter, OccurrenceSpecification_toBefore } }
   }
-  element ExecutionOccurrenceSpecification_execution {
-    constituents { unordered { <TEXT> } }
-  }
   element StateInvariant {
     annotations { NamedElement_name? NamedElement_visibility? InteractionFragment_enclosingOperand InteractionFragment_enclosingInteraction }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, InteractionFragment_covered, InteractionFragment_generalOrdering, StateInvariant_invariant } }
@@ -2129,12 +1694,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element ProtocolTransition {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! Transition_guard Transition_kind! Transition_redefinedTransition Transition_source! Transition_target! Transition_container! ProtocolTransition_postCondition ProtocolTransition_preCondition }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Namespace_ownedRule, Namespace_elementImport, Namespace_packageImport, Transition_effect, Transition_trigger } }
-  }
-  element ProtocolTransition_postCondition {
-    constituents { unordered { <TEXT> } }
-  }
-  element ProtocolTransition_preCondition {
-    constituents { unordered { <TEXT> } }
   }
   element AssociationClass {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Association_isDerived! }
@@ -2155,10 +1714,7 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Dependency_client, Dependency_supplier, Abstraction_mapping, ComponentRealization_realizingClassifier } }
   }
   element ComponentRealization_realizingClassifier {
-    constituents { unordered { <TEXT> } }
-  }
-  element ComponentRealization_abstraction {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element Actor {
     annotations { NamedElement_name? NamedElement_visibility? RedefinableElement_isLeaf! ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior }
@@ -2172,14 +1728,14 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { ValueSpecification } }
   }
   element Duration_observation {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLink } }
   }
   element DurationConstraint {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Constraint_context }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, Constraint_constrainedElement, Constraint_specification, DurationConstraint_firstEvent } }
   }
   element DurationConstraint_firstEvent {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLiteral } }
   }
   element IntervalConstraint {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter Constraint_context }
@@ -2188,12 +1744,6 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element Interval {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter TypedElement_type Interval_max! Interval_min! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
-  }
-  element Interval_max {
-    constituents { unordered { <TEXT> } }
-  }
-  element Interval_min {
-    constituents { unordered { <TEXT> } }
   }
   element DurationInterval {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter TypedElement_type Interval_max! Interval_min! }
@@ -2204,10 +1754,10 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression, DurationObservation_event, DurationObservation_firstEvent } }
   }
   element DurationObservation_event {
-    constituents { ordered { <TEXT> } }
+    constituents { ordered { SLink } }
   }
   element DurationObservation_firstEvent {
-    constituents { unordered { <TEXT> } }
+    constituents { unordered { SLiteral } }
   }
   element LiteralBoolean {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter TypedElement_type LiteralBoolean_value! }
@@ -2248,8 +1798,5 @@ equivspec uml xmlns 'http://www.eclipse.org/uml2/5.0.0/UML' {
   element TimeObservation {
     annotations { NamedElement_name? NamedElement_visibility? ParameterableElement_owningTemplateParameter ParameterableElement_templateParameter TimeObservation_event! TimeObservation_firstEvent! }
     constituents { unordered { EModelElement_eAnnotations[ecore], Element_ownedComment, NamedElement_nameExpression } }
-  }
-  element TimeObservation_event {
-    constituents { unordered { <TEXT> } }
   }
 }

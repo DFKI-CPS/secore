@@ -1,18 +1,33 @@
 package de.dfki.cps
 
-import de.dfki.cps.stools.SAtomicString
+import java.io.File
+import java.util
+
+import de.dfki.cps.stools.{SAtomicString, STools}
 import de.dfki.cps.stools.editscript._
+import de.dfki.cps.stools.similarityspec.SimilaritySpec
 import org.eclipse.emf.common.util.{EList, URI}
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.emf.ecore.{EAttribute, EObject, EReference}
 
 import scala.collection.JavaConverters._
 import scala.collection.mutable
+import scala.io.Source
 
 /**
   * @author Martin Ring <martin.ring@dfki.de>
   */
 package object secore {
+  lazy val stools = {
+    val specs = Seq("Blocks","ecore","PortAndFlows","SysML","uml")
+    val content = specs.foldLeft(new util.LinkedList[SimilaritySpec]()) { (specs,spec) =>
+      val stream = getClass.getClassLoader.getResourceAsStream(s"de/dfki/cps/secore/$spec.simeq")
+      specs.addAll(SimilaritySpec.fromString(Source.fromInputStream(stream).mkString))
+      specs
+    }
+    new STools(content)
+  }
+
   def applyEditScript(editScript: SEditScript) = {
     var deferredResolutions: mutable.Buffer[() => Unit] = mutable.Buffer.empty
     editScript.entries.foreach {
@@ -27,7 +42,6 @@ package object secore {
             obj.underlying.eSet(n.underlying,nv)
           case UpdateAnnotation(_,o: SReferenceValue,n: SReferenceValue) =>
             val uri = URI.createURI(n.value)
-            //println("uri: " + uri + " (" + uri.hasAuthority + ")")
             if (!uri.hasAuthority) deferredResolutions.append { () =>
               val value = o.parent.underlying.eResource().getEObject(n.value)
               obj.underlying.eSet(o.underlying,value)
@@ -110,8 +124,6 @@ package object secore {
               case o: SObject =>
                 o.underlying
             }
-            println(ref)
-            println(ref2)
             val v = ref.parent.underlying.eGet(ref2.underlying).asInstanceOf[EList[EObject]]
             v.removeAll(values.asJava)
         }
