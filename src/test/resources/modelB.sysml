@@ -18,11 +18,11 @@ block Person
         self.dap_dom->isEmpty()
   references
     aut: Building[*]
+    sit: Building[1] { subsets aut }
     dap_dom: Door[0..1] <- dap
   constraints
     inv: aut->forAll(b|self.aut.building->includes(b))
     inv: aut->includes(dap_dom.dest)
-    inv: sit->includes(dap_dom.org)
     inv: Person.allInstances()->
              forAll(p1, p2 |p1.dap_dom->notEmpty()
                         and p1.dap_dom = p2.dap_dom
@@ -34,10 +34,9 @@ block Door
       derive: dap->notEmpty()
     red: Boolean
   operations
-    accept(p1: Person, p2: Person)
+    accept(p: Person)
       pre: not (green or red)
-      pre: p1.admitted(self) and p2.admitted(self)
-      pre: p1 <> p2
+      pre: p.admitted(self)
       post: dap = p and p.dap_dom = self
     refuse(p: Person)
       pre: not (green or red)
@@ -57,9 +56,9 @@ block Door
   references
     dap:  Person[0..2] <- dap_dom
     org:  Building[1] <- org_dom
-    dest: Person[1]
+    dest: Building[1]
   ports
-    incoming: Building
+    incoming: Person
     passing: Person
   owned behaviors
     state machine DoorBehavior
@@ -67,7 +66,7 @@ block Door
         after 30 seconds / off_grn() -> Waiting
         receive passing(p) / pass_thru() -> Waiting
       initial state Waiting
-        receive incoming(p) / accept(p) -> Accepting
+        receive incoming(p) / accept(p) -> Waiting
         receive incoming(p) / refuse(p) -> Refusing
       state Refusing
         after 30 seconds / off_red() -> Waiting

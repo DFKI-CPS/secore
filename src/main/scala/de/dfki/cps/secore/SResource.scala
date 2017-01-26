@@ -24,4 +24,5 @@ class SResource(val underlying: Resource) extends SElement[Resource] {
     res.setEditScript(getEditScript)
     res
   }
+  override def toString = "Resource"
 }

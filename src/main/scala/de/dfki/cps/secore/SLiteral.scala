@@ -6,11 +6,12 @@ import de.dfki.cps.stools.{SAnnotation, SElement}
   * @author Martin Ring <martin.ring@dfki.de>
   */
 class SLiteral(val parent: SAttribute, val index: Int, val underlying: AnyRef) extends SElement[AnyRef] {
+  override def getEquivSpec(): String = "specific"
   def tpe = parent.underlying.getEAttributeType
   def factory = tpe.getEPackage.getEFactoryInstance
   def children: Seq[SElement[_]] = Nil
   def label: String = factory.convertToString(tpe,underlying)
-  override def getType = "SLiteral"
+  override def getType = "<TEXT>"
   def namespace: String = ""
   def annotations: Seq[SAnnotation[_]] = Nil
   def copy(): SElement[_] = {

@@ -8,8 +8,7 @@ import org.scalatest.FunSuite
   * @author Martin Ring <martin.ring@dfki.de>
   */
 class Test extends FunSuite {
-  val stools = de.dfki.cps.secore.stools
-
+  val stool = de.dfki.cps.secore.stools.getSTool("specific")
   implicit val lib = new ResourceSetImpl
   Synthesis.prepareLibrary(lib)
 
@@ -23,7 +22,6 @@ class Test extends FunSuite {
     val modelA = Model.load(fileA.toURI,"model",resA)
     val modelB = Model.load(fileB.toURI,"model",resB)
 
-    val stool = stools.getSTool("uml")
 
     val script = {
       val sresA = new SResource(resA)
@@ -46,6 +44,5 @@ class Test extends FunSuite {
     }
 
     script2.entries.foreach(println)
-
   }
 }

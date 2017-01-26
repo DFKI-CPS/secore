@@ -10,6 +10,7 @@ import scala.collection.JavaConverters._
  * @author Martin Ring <martin.ring@dfki.de>
  */
 class SObject(val underlying: EObject) extends SElement[EObject] {
+  override def getEquivSpec(): String = "specific"
   def getObject(): EObject = underlying
 
   def features = underlying.eClass().getEAllStructuralFeatures.asScala
@@ -29,7 +30,7 @@ class SObject(val underlying: EObject) extends SElement[EObject] {
 
 
   def label = underlying.eClass().getName
-  def namespace = underlying.eClass().getEPackage.getNsURI
+  def namespace = ""// underlying.eClass().getEPackage.getNsURI
 
   def annotations = features.collect {
     case attr: EAttribute if !attr.isMany =>

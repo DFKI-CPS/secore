@@ -12,7 +12,7 @@ class SAttributeValue(val parent: SObject, val underlying: EAttribute) extends S
 
   def name: String = underlying.getEContainingClass.getName + "_" + underlying.getName
   def value: String = factory.convertToString(tpe,Option(parent.underlying.eGet(underlying)).getOrElse(underlying.getDefaultValue))
-  def namespace = underlying.getEContainingClass.getEPackage.getNsURI
+  def namespace = ""//underlying.getEContainingClass.getEPackage.getNsURI
 
   override def toString = underlying.getEContainingClass.getEPackage.getNsPrefix + ":" + name
 
@@ -27,6 +27,7 @@ class SAttributeValue(val parent: SObject, val underlying: EAttribute) extends S
   */
 class SAttribute(val parent: SObject, val underlying: EAttribute) extends SElement[EAttribute] {
   assert(underlying.isMany)
+  override def getEquivSpec(): String = "specific"
 
   def children: Seq[SElement[_]] = {
     val list = parent.underlying.eGet(underlying).asInstanceOf[EList[AnyRef]].asScala
@@ -37,7 +38,7 @@ class SAttribute(val parent: SObject, val underlying: EAttribute) extends SEleme
 
   def label: String = underlying.getEContainingClass.getName + "_" + underlying.getName
 
-  def namespace: String = underlying.getEContainingClass.getEPackage.getNsURI
+  def namespace: String = ""//underlying.getEContainingClass.getEPackage.getNsURI
 
   def annotations: Seq[SAnnotation[_]] = Nil
 
