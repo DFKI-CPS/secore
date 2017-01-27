@@ -8,10 +8,10 @@ equivspec specific {
     constituents { unordered { EAnnotation_details EAnnotation_contents } }
   }
   element EAnnotation_details {
-    constituents { ordered { EStringToStringMapEntry } }
+    constituents { ordered { _ } }
   }
   element EAnnotation_contents {
-    constituents { ordered { EObject } }
+    constituents { ordered { _ } }
   }
   element EAnnotation_references {
     constituents { ordered { <TEXT> } }
@@ -24,20 +24,16 @@ equivspec specific {
     constituents { ordered { <TEXT> } }
   }
   element EClass_eOperations {
-    constituents { ordered { EOperation } }
+    constituents { ordered { _ } }
   }
   element EClass_eStructuralFeatures {
-    constituents { ordered { EAttribute EReference } }
+    constituents { ordered { _ } }
   }
   element EClass_eGenericSuperTypes {
-    constituents { ordered { EGenericType } }
-  }
-  element EClassifier {
-    annotations { ENamedElement_name }
-    constituents { unordered { EClassifier_eTypeParameters } }
+    constituents { ordered { _ } }
   }
   element EClassifier_eTypeParameters {
-    constituents { ordered { ETypeParameter } }
+    constituents { ordered { _ } }
   }
   element EDataType {
     annotations { ENamedElement_name EDataType_serializable }
@@ -48,17 +44,15 @@ equivspec specific {
     constituents { unordered { EClassifier_eTypeParameters EEnum_eLiterals } }
   }
   element EEnum_eLiterals {
-    constituents { ordered { EEnumLiteral } }
+    constituents { ordered { _ } }
   }
   element EEnumLiteral {
     annotations { ENamedElement_name EEnumLiteral_value EEnumLiteral_literal }
   }
   element EFactory {
   }
-  element EModelElement {
-  }
-  element ENamedElement {
-    annotations { ENamedElement_name }
+  element EModelElement_eAnnotations {
+    constituents { ordered { _ } }
   }
   element EObject {
   }
@@ -67,26 +61,26 @@ equivspec specific {
     constituents { unordered { EOperation_eTypeParameters EOperation_eParameters EOperation_eGenericExceptions } }
   }
   element EOperation_eTypeParameters {
-    constituents { ordered { ETypeParameter } }
+    constituents { ordered { _ } }
   }
   element EOperation_eParameters {
-    constituents { ordered { EParameter } }
+    constituents { ordered { _ } }
   }
   element EOperation_eExceptions {
     constituents { ordered { <TEXT> } }
   }
   element EOperation_eGenericExceptions {
-    constituents { ordered { EGenericType } }
+    constituents { ordered { _ } }
   }
   element EPackage {
     annotations { ENamedElement_name EPackage_nsURI EPackage_nsPrefix }
     constituents { unordered { EPackage_eClassifiers EPackage_eSubpackages } }
   }
   element EPackage_eClassifiers {
-    constituents { ordered { EClass EDataType EEnum } }
+    constituents { ordered { _ } }
   }
   element EPackage_eSubpackages {
-    constituents { ordered { EPackage } }
+    constituents { ordered { _ } }
   }
   element EParameter {
     annotations { ENamedElement_name ETypedElement_ordered ETypedElement_unique ETypedElement_lowerBound ETypedElement_upperBound }
@@ -97,12 +91,6 @@ equivspec specific {
   element EReference_eKeys {
     constituents { ordered { <TEXT> } }
   }
-  element EStructuralFeature {
-    annotations { ENamedElement_name ETypedElement_ordered ETypedElement_unique ETypedElement_lowerBound ETypedElement_upperBound EStructuralFeature_changeable EStructuralFeature_volatile EStructuralFeature_transient EStructuralFeature_defaultValueLiteral EStructuralFeature_unsettable EStructuralFeature_derived }
-  }
-  element ETypedElement {
-    annotations { ENamedElement_name ETypedElement_ordered ETypedElement_unique ETypedElement_lowerBound ETypedElement_upperBound }
-  }
   element EStringToStringMapEntry {
     annotations { EStringToStringMapEntry_key EStringToStringMapEntry_value }
   }
@@ -111,54 +99,48 @@ equivspec specific {
     constituents { unordered { EGenericType_eUpperBound EGenericType_eTypeArguments EGenericType_eLowerBound } }
   }
   element EGenericType_eUpperBound {
-    constituents { ordered { EGenericType } }
+    constituents { ordered { _ } }
   }
   element EGenericType_eTypeArguments {
-    constituents { ordered { EGenericType } }
+    constituents { ordered { _ } }
   }
   element EGenericType_eLowerBound {
-    constituents { ordered { EGenericType } }
+    constituents { ordered { _ } }
   }
   element ETypeParameter {
     annotations { ENamedElement_name }
     constituents { unordered { ETypeParameter_eBounds } }
   }
   element ETypeParameter_eBounds {
-    constituents { ordered { EGenericType } }
-  }
-  element ActivityContent {
+    constituents { ordered { _ } }
   }
   element Activity {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Behavior_specification Behavior_isReentrant? Activity_isReadOnly! Activity_isSingleExecution! }
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception Behavior_ownedParameter Behavior_ownedParameterSet Activity_ownedGroup Activity_edge Activity_variable Activity_ownedNode Activity_structuredNode } }
   }
   element Activity_ownedGroup {
-    constituents { unordered { ActivityPartition InterruptibleActivityRegion StructuredActivityNode ConditionalNode ExpansionRegion LoopNode SequenceNode } }
+    constituents { unordered { _ } }
   }
   element Activity_edge {
-    constituents { unordered { ControlFlow ObjectFlow } }
+    constituents { unordered { _ } }
   }
   element Activity_variable {
-    constituents { unordered { Variable } }
+    constituents { unordered { _ } }
   }
   element Activity_ownedNode {
-    constituents { unordered { StructuredActivityNode InputPin OutputPin ValueSpecificationAction AcceptCallAction AcceptEventAction ActionInputPin AddStructuralFeatureValueAction AddVariableValueAction BroadcastSignalAction CallBehaviorAction CallOperationAction ClearAssociationAction ClearStructuralFeatureAction ClearVariableAction ConditionalNode CreateLinkAction CreateLinkObjectAction CreateObjectAction DestroyLinkAction DestroyObjectAction ExpansionNode ExpansionRegion LoopNode OpaqueAction RaiseExceptionAction ReadExtentAction ReadIsClassifiedObjectAction ReadLinkAction ReadLinkObjectEndAction ReadLinkObjectEndQualifierAction ReadSelfAction ReadStructuralFeatureAction ReadVariableAction ReclassifyObjectAction ReduceAction RemoveStructuralFeatureValueAction RemoveVariableValueAction ReplyAction SendObjectAction SendSignalAction SequenceNode StartClassifierBehaviorAction StartObjectBehaviorAction TestIdentityAction UnmarshallAction ValuePin ActivityFinalNode ActivityParameterNode CentralBufferNode DataStoreNode DecisionNode FlowFinalNode ForkNode InitialNode JoinNode MergeNode } }
+    constituents { unordered { _ } }
   }
   element Activity_partition {
     constituents { unordered { <TEXT> } }
   }
   element Activity_structuredNode {
-    constituents { unordered { StructuredActivityNode ConditionalNode ExpansionRegion LoopNode SequenceNode } }
-  }
-  element Behavior {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Behavior_specification Behavior_isReentrant? }
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception Behavior_ownedParameter Behavior_ownedParameterSet } }
+    constituents { unordered { _ } }
   }
   element Behavior_ownedParameter {
-    constituents { ordered { Parameter } }
+    constituents { ordered { _ } }
   }
   element Behavior_ownedParameterSet {
-    constituents { unordered { ParameterSet } }
+    constituents { unordered { _ } }
   }
   element Behavior_postcondition {
     constituents { unordered { <TEXT> } }
@@ -170,43 +152,34 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element Class {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! }
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception } }
+    annotations { NamedElement_name! }
   }
   element Class_ownedOperation {
-    constituents { ordered { Operation } }
+    constituents { ordered { _ } }
   }
   element Class_nestedClassifier {
-    constituents { ordered { Activity Class Stereotype Association DeploymentSpecification Artifact DataType Interface Signal ProtocolStateMachine StateMachine Enumeration PrimitiveType Extension Collaboration UseCase FunctionBehavior OpaqueBehavior CommunicationPath Device Node ExecutionEnvironment Interaction InformationItem AssociationClass Component Actor } }
+    constituents { ordered { _ } }
   }
   element Class_ownedReception {
-    constituents { unordered { Reception } }
-  }
-  element BehavioredClassifier {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior }
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior } }
+    constituents { unordered { _ } }
   }
   element BehavioredClassifier_interfaceRealization {
-    constituents { unordered { InterfaceRealization } }
+    constituents { unordered { _ } }
   }
   element BehavioredClassifier_ownedBehavior {
-    constituents { unordered { Activity ProtocolStateMachine StateMachine FunctionBehavior OpaqueBehavior Interaction } }
-  }
-  element Classifier {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution } }
+    constituents { unordered { _ } }
   }
   element Classifier_collaborationUse {
-    constituents { unordered { CollaborationUse } }
+    constituents { unordered { _ } }
   }
   element Classifier_generalization {
-    constituents { unordered { Generalization } }
+    constituents { unordered { _ } }
   }
   element Classifier_powertypeExtent {
     constituents { unordered { <TEXT> } }
   }
   element Classifier_ownedUseCase {
-    constituents { unordered { UseCase } }
+    constituents { unordered { _ } }
   }
   element Classifier_useCase {
     constituents { unordered { <TEXT> } }
@@ -215,15 +188,22 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element Classifier_substitution {
-    constituents { unordered { Substitution } }
+    constituents { unordered { _ } }
   }
-  element Namespace {
-    annotations { NamedElement_name? }
+  element Namespace_ownedRule {
+    constituents { unordered { _ } }
   }
-  element NamedElement {
-    annotations { NamedElement_name? }
+  element Namespace_elementImport {
+    constituents { unordered { _ } }
   }
-  element Element {
+  element Namespace_packageImport {
+    constituents { unordered { _ } }
+  }
+  element NamedElement_nameExpression {
+    constituents { unordered { _ } }
+  }
+  element Element_ownedComment {
+    constituents { unordered { _ } }
   }
   element Comment {
     annotations { Comment_body? }
@@ -236,7 +216,7 @@ equivspec specific {
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception Stereotype_icon } }
   }
   element Stereotype_icon {
-    constituents { unordered { Image } }
+    constituents { unordered { _ } }
   }
   element Image {
     annotations { Image_content? Image_format? Image_location? }
@@ -252,33 +232,26 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element Package {
-    annotations { NamedElement_name? ParameterableElement_templateParameter Package_URI }
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Package_packageMerge Package_packagedElement Package_profileApplication } }
+    annotations { NamedElement_name! }
   }
   element Package_packageMerge {
-    constituents { unordered { PackageMerge } }
+    constituents { unordered { _ } }
   }
   element Package_packagedElement {
-    constituents { unordered { Activity Class Stereotype Profile Package Association Deployment Dependency DeploymentSpecification Artifact Manifestation Abstraction OpaqueExpression Constraint DataType Interface Signal ProtocolStateMachine StateMachine Enumeration EnumerationLiteral InstanceSpecification PrimitiveType Extension Model StringExpression Expression Usage Collaboration GeneralizationSet UseCase Substitution Realization InterfaceRealization InstanceValue AnyReceiveEvent CallEvent ChangeEvent FunctionBehavior OpaqueBehavior SignalEvent TimeEvent TimeExpression CommunicationPath Device Node ExecutionEnvironment InformationFlow Interaction InteractionConstraint InformationItem AssociationClass Component ComponentRealization Actor Duration DurationConstraint IntervalConstraint Interval DurationInterval DurationObservation LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeConstraint TimeInterval TimeObservation } }
+    constituents { unordered { _ } }
   }
   element Package_profileApplication {
-    constituents { unordered { ProfileApplication } }
-  }
-  element PackageableElement {
-    annotations { NamedElement_name? ParameterableElement_templateParameter }
-  }
-  element ParameterableElement {
-    annotations { ParameterableElement_templateParameter }
+    constituents { unordered { _ } }
   }
   element TemplateParameter {
     annotations { TemplateParameter_default TemplateParameter_parameteredElement! }
     constituents { unordered { TemplateParameter_ownedDefault TemplateParameter_ownedParameteredElement } }
   }
   element TemplateParameter_ownedDefault {
-    constituents { unordered { Activity Class Stereotype Profile Package Association Property Deployment Dependency DeploymentSpecification Artifact Manifestation Abstraction OpaqueExpression Parameter Operation Constraint DataType Interface Signal ProtocolStateMachine StateMachine Port Enumeration EnumerationLiteral InstanceSpecification PrimitiveType Extension ExtensionEnd Model StringExpression Expression Usage Collaboration GeneralizationSet UseCase Substitution Realization InterfaceRealization Variable InstanceValue AnyReceiveEvent CallEvent ChangeEvent FunctionBehavior OpaqueBehavior SignalEvent TimeEvent TimeExpression CommunicationPath Device Node ExecutionEnvironment InformationFlow Interaction InteractionConstraint InformationItem AssociationClass Component ComponentRealization Actor Duration DurationConstraint IntervalConstraint Interval DurationInterval DurationObservation LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeConstraint TimeInterval TimeObservation } }
+    constituents { unordered { _ } }
   }
   element TemplateParameter_ownedParameteredElement {
-    constituents { unordered { Activity Class Stereotype Profile Package Association Property Deployment Dependency DeploymentSpecification Artifact Manifestation Abstraction OpaqueExpression Parameter Operation Constraint DataType Interface Signal ProtocolStateMachine StateMachine Port Enumeration EnumerationLiteral InstanceSpecification PrimitiveType Extension ExtensionEnd Model StringExpression Expression Usage Collaboration GeneralizationSet UseCase Substitution Realization InterfaceRealization Variable InstanceValue AnyReceiveEvent CallEvent ChangeEvent FunctionBehavior OpaqueBehavior SignalEvent TimeEvent TimeExpression CommunicationPath Device Node ExecutionEnvironment InformationFlow Interaction InteractionConstraint InformationItem AssociationClass Component ComponentRealization Actor Duration DurationConstraint IntervalConstraint Interval DurationInterval DurationObservation LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeConstraint TimeInterval TimeObservation } }
+    constituents { unordered { _ } }
   }
   element TemplateSignature {
     constituents { unordered { TemplateSignature_ownedParameter } }
@@ -287,37 +260,27 @@ equivspec specific {
     constituents { ordered { <TEXT> } }
   }
   element TemplateSignature_ownedParameter {
-    constituents { ordered { TemplateParameter ConnectableElementTemplateParameter OperationTemplateParameter ClassifierTemplateParameter } }
-  }
-  element TemplateableElement {
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature } }
+    constituents { ordered { _ } }
   }
   element TemplateableElement_templateBinding {
-    constituents { unordered { TemplateBinding } }
+    constituents { unordered { _ } }
   }
   element TemplateableElement_ownedTemplateSignature {
-    constituents { unordered { TemplateSignature RedefinableTemplateSignature } }
+    constituents { unordered { _ } }
   }
   element TemplateBinding {
     annotations { TemplateBinding_signature! }
     constituents { unordered { TemplateBinding_parameterSubstitution } }
   }
   element TemplateBinding_parameterSubstitution {
-    constituents { unordered { TemplateParameterSubstitution } }
-  }
-  element DirectedRelationship {
-  }
-  element Relationship {
+    constituents { unordered { _ } }
   }
   element TemplateParameterSubstitution {
     annotations { TemplateParameterSubstitution_actual! TemplateParameterSubstitution_formal! }
     constituents { unordered { TemplateParameterSubstitution_ownedActual } }
   }
   element TemplateParameterSubstitution_ownedActual {
-    constituents { unordered { Activity Class Stereotype Profile Package Association Property Deployment Dependency DeploymentSpecification Artifact Manifestation Abstraction OpaqueExpression Parameter Operation Constraint DataType Interface Signal ProtocolStateMachine StateMachine Port Enumeration EnumerationLiteral InstanceSpecification PrimitiveType Extension ExtensionEnd Model StringExpression Expression Usage Collaboration GeneralizationSet UseCase Substitution Realization InterfaceRealization Variable InstanceValue AnyReceiveEvent CallEvent ChangeEvent FunctionBehavior OpaqueBehavior SignalEvent TimeEvent TimeExpression CommunicationPath Device Node ExecutionEnvironment InformationFlow Interaction InteractionConstraint InformationItem AssociationClass Component ComponentRealization Actor Duration DurationConstraint IntervalConstraint Interval DurationInterval DurationObservation LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeConstraint TimeInterval TimeObservation } }
-  }
-  element Type {
-    annotations { NamedElement_name? ParameterableElement_templateParameter }
+    constituents { unordered { _ } }
   }
   element Association {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation Association_isDerived! }
@@ -327,20 +290,19 @@ equivspec specific {
     constituents { ordered { <TEXT> } }
   }
   element Association_ownedEnd {
-    constituents { ordered { Property Port ExtensionEnd } }
+    constituents { ordered { _ } }
   }
   element Association_navigableOwnedEnd {
     constituents { unordered { <TEXT> } }
   }
   element Property {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Feature_isStatic! TypedElement_type MultiplicityElement_isOrdered! MultiplicityElement_isUnique! StructuralFeature_isReadOnly! ParameterableElement_templateParameter Property_aggregation! Property_isDerived! Property_isDerivedUnion! Property_isID! Property_association }
-    constituents { unordered { MultiplicityElement_lowerValue MultiplicityElement_upperValue DeploymentTarget_deployment Property_qualifier Property_defaultValue } }
+    annotations { NamedElement_name! }
   }
   element Property_qualifier {
-    constituents { ordered { Property Port ExtensionEnd } }
+    constituents { ordered { _ } }
   }
   element Property_defaultValue {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element Property_redefinedProperty {
     constituents { unordered { <TEXT> } }
@@ -348,46 +310,29 @@ equivspec specific {
   element Property_subsettedProperty {
     constituents { unordered { <TEXT> } }
   }
-  element ConnectableElement {
-    annotations { NamedElement_name? TypedElement_type ParameterableElement_templateParameter }
-  }
-  element TypedElement {
-    annotations { NamedElement_name? TypedElement_type }
-  }
   element ConnectorEnd {
     annotations { MultiplicityElement_isOrdered! MultiplicityElement_isUnique! ConnectorEnd_partWithPort ConnectorEnd_role! }
     constituents { unordered { MultiplicityElement_lowerValue MultiplicityElement_upperValue } }
   }
-  element MultiplicityElement {
-    annotations { MultiplicityElement_isOrdered! MultiplicityElement_isUnique! }
-    constituents { unordered { MultiplicityElement_lowerValue MultiplicityElement_upperValue } }
-  }
   element MultiplicityElement_lowerValue {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element MultiplicityElement_upperValue {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
-  }
-  element ValueSpecification {
-    annotations { NamedElement_name? ParameterableElement_templateParameter TypedElement_type }
+    constituents { unordered { _ } }
   }
   element ConnectableElementTemplateParameter {
     annotations { TemplateParameter_default TemplateParameter_parameteredElement! }
     constituents { unordered { TemplateParameter_ownedDefault TemplateParameter_ownedParameteredElement } }
   }
-  element DeploymentTarget {
-    annotations { NamedElement_name? }
-    constituents { unordered { DeploymentTarget_deployment } }
-  }
   element DeploymentTarget_deployment {
-    constituents { unordered { Deployment } }
+    constituents { unordered { _ } }
   }
   element Deployment {
     annotations { NamedElement_name? ParameterableElement_templateParameter }
     constituents { unordered { Deployment_configuration } }
   }
   element Deployment_configuration {
-    constituents { unordered { DeploymentSpecification } }
+    constituents { unordered { _ } }
   }
   element Deployment_deployedArtifact {
     constituents { unordered { <TEXT> } }
@@ -410,19 +355,16 @@ equivspec specific {
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution Artifact_manifestation Artifact_nestedArtifact Artifact_ownedAttribute Artifact_ownedOperation } }
   }
   element Artifact_manifestation {
-    constituents { unordered { Manifestation } }
+    constituents { unordered { _ } }
   }
   element Artifact_nestedArtifact {
-    constituents { unordered { Artifact DeploymentSpecification } }
+    constituents { unordered { _ } }
   }
   element Artifact_ownedAttribute {
-    constituents { ordered { Property Port ExtensionEnd } }
+    constituents { ordered { _ } }
   }
   element Artifact_ownedOperation {
-    constituents { ordered { Operation } }
-  }
-  element DeployedArtifact {
-    annotations { NamedElement_name? }
+    constituents { ordered { _ } }
   }
   element Manifestation {
     annotations { NamedElement_name? ParameterableElement_templateParameter Manifestation_utilizedElement! }
@@ -433,7 +375,7 @@ equivspec specific {
     constituents { unordered { Abstraction_mapping } }
   }
   element Abstraction_mapping {
-    constituents { unordered { OpaqueExpression } }
+    constituents { unordered { _ } }
   }
   element OpaqueExpression {
     annotations { NamedElement_name? ParameterableElement_templateParameter TypedElement_type OpaqueExpression_behavior }
@@ -450,14 +392,13 @@ equivspec specific {
     constituents { unordered { MultiplicityElement_lowerValue MultiplicityElement_upperValue Parameter_defaultValue } }
   }
   element Parameter_defaultValue {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element Parameter_parameterSet {
     constituents { unordered { <TEXT> } }
   }
   element Operation {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Feature_isStatic! BehavioralFeature_concurrency! BehavioralFeature_isAbstract! ParameterableElement_templateParameter Operation_bodyCondition Operation_isQuery! }
-    constituents { unordered { BehavioralFeature_ownedParameter BehavioralFeature_ownedParameterSet TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature } }
+    annotations { NamedElement_name! }
   }
   element Operation_postcondition {
     constituents { unordered { <TEXT> } }
@@ -468,34 +409,24 @@ equivspec specific {
   element Operation_redefinedOperation {
     constituents { unordered { <TEXT> } }
   }
-  element BehavioralFeature {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Feature_isStatic! BehavioralFeature_concurrency! BehavioralFeature_isAbstract! }
-    constituents { unordered { BehavioralFeature_ownedParameter BehavioralFeature_ownedParameterSet } }
-  }
   element BehavioralFeature_method {
     constituents { unordered { <TEXT> } }
   }
   element BehavioralFeature_ownedParameter {
-    constituents { ordered { Parameter } }
+    constituents { ordered { _ } }
   }
   element BehavioralFeature_ownedParameterSet {
-    constituents { unordered { ParameterSet } }
+    constituents { unordered { _ } }
   }
   element BehavioralFeature_raisedException {
     constituents { unordered { <TEXT> } }
-  }
-  element Feature {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Feature_isStatic! }
-  }
-  element RedefinableElement {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! }
   }
   element ParameterSet {
     annotations { NamedElement_name? }
     constituents { unordered { ParameterSet_condition } }
   }
   element ParameterSet_condition {
-    constituents { unordered { Constraint InteractionConstraint DurationConstraint IntervalConstraint TimeConstraint } }
+    constituents { unordered { _ } }
   }
   element ParameterSet_parameter {
     constituents { unordered { <TEXT> } }
@@ -508,39 +439,39 @@ equivspec specific {
     constituents { ordered { <TEXT> } }
   }
   element Constraint_specification {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element DataType {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution DataType_ownedAttribute DataType_ownedOperation } }
   }
   element DataType_ownedAttribute {
-    constituents { ordered { Property Port ExtensionEnd } }
+    constituents { ordered { _ } }
   }
   element DataType_ownedOperation {
-    constituents { ordered { Operation } }
+    constituents { ordered { _ } }
   }
   element Interface {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution Interface_nestedClassifier Interface_ownedAttribute Interface_ownedReception Interface_protocol Interface_ownedOperation } }
   }
   element Interface_nestedClassifier {
-    constituents { ordered { Activity Class Stereotype Association DeploymentSpecification Artifact DataType Interface Signal ProtocolStateMachine StateMachine Enumeration PrimitiveType Extension Collaboration UseCase FunctionBehavior OpaqueBehavior CommunicationPath Device Node ExecutionEnvironment Interaction InformationItem AssociationClass Component Actor } }
+    constituents { ordered { _ } }
   }
   element Interface_ownedAttribute {
-    constituents { ordered { Property Port ExtensionEnd } }
+    constituents { ordered { _ } }
   }
   element Interface_ownedReception {
-    constituents { unordered { Reception } }
+    constituents { unordered { _ } }
   }
   element Interface_protocol {
-    constituents { unordered { ProtocolStateMachine } }
+    constituents { unordered { _ } }
   }
   element Interface_redefinedInterface {
     constituents { unordered { <TEXT> } }
   }
   element Interface_ownedOperation {
-    constituents { ordered { Operation } }
+    constituents { ordered { _ } }
   }
   element Reception {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Feature_isStatic! BehavioralFeature_concurrency! BehavioralFeature_isAbstract! Reception_signal! }
@@ -551,27 +482,26 @@ equivspec specific {
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution Signal_ownedAttribute } }
   }
   element Signal_ownedAttribute {
-    constituents { ordered { Property Port ExtensionEnd } }
+    constituents { ordered { _ } }
   }
   element ProtocolStateMachine {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Behavior_specification Behavior_isReentrant? }
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception Behavior_ownedParameter Behavior_ownedParameterSet StateMachine_connectionPoint StateMachine_region ProtocolStateMachine_conformance } }
   }
   element ProtocolStateMachine_conformance {
-    constituents { unordered { ProtocolConformance } }
+    constituents { unordered { _ } }
   }
   element StateMachine {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Behavior_specification Behavior_isReentrant? }
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception Behavior_ownedParameter Behavior_ownedParameterSet StateMachine_connectionPoint StateMachine_region } }
+    annotations { NamedElement_name! }
   }
   element StateMachine_connectionPoint {
-    constituents { unordered { Pseudostate } }
+    constituents { unordered { _ } }
   }
   element StateMachine_submachineState {
     constituents { unordered { <TEXT> } }
   }
   element StateMachine_region {
-    constituents { unordered { Region } }
+    constituents { unordered { _ } }
   }
   element StateMachine_extendedStateMachine {
     constituents { unordered { <TEXT> } }
@@ -579,43 +509,39 @@ equivspec specific {
   element Pseudostate {
     annotations { NamedElement_name? Pseudostate_kind! }
   }
-  element Vertex {
-    annotations { NamedElement_name? }
-  }
   element Region {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Region_extendedRegion }
     constituents { unordered { Region_transition Region_subvertex } }
   }
   element Region_transition {
-    constituents { unordered { Transition ProtocolTransition } }
+    constituents { unordered { _ } }
   }
   element Region_subvertex {
-    constituents { unordered { Pseudostate State ConnectionPointReference FinalState } }
+    constituents { unordered { _ } }
   }
   element State {
-    annotations { NamedElement_name! RedefinableElement_isLeaf! State_redefinedState State_stateInvariant State_submachine }
-    constituents { unordered { State_connection State_connectionPoint State_deferrableTrigger State_doActivity State_entry State_exit State_region } }
+    annotations { NamedElement_name! }
   }
   element State_connection {
-    constituents { unordered { ConnectionPointReference } }
+    constituents { unordered { _ } }
   }
   element State_connectionPoint {
-    constituents { unordered { Pseudostate } }
+    constituents { unordered { _ } }
   }
   element State_deferrableTrigger {
-    constituents { unordered { Trigger } }
+    constituents { unordered { _ } }
   }
   element State_doActivity {
-    constituents { unordered { Activity ProtocolStateMachine StateMachine FunctionBehavior OpaqueBehavior Interaction } }
+    constituents { unordered { _ } }
   }
   element State_entry {
-    constituents { unordered { Activity ProtocolStateMachine StateMachine FunctionBehavior OpaqueBehavior Interaction } }
+    constituents { unordered { _ } }
   }
   element State_exit {
-    constituents { unordered { Activity ProtocolStateMachine StateMachine FunctionBehavior OpaqueBehavior Interaction } }
+    constituents { unordered { _ } }
   }
   element State_region {
-    constituents { unordered { Region } }
+    constituents { unordered { _ } }
   }
   element ConnectionPointReference {
     annotations { NamedElement_name? }
@@ -632,9 +558,6 @@ equivspec specific {
   element Trigger_port {
     constituents { unordered { <TEXT> } }
   }
-  element Event {
-    annotations { NamedElement_name? ParameterableElement_templateParameter }
-  }
   element Port {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Feature_isStatic! TypedElement_type MultiplicityElement_isOrdered! MultiplicityElement_isUnique! StructuralFeature_isReadOnly! ParameterableElement_templateParameter Property_aggregation! Property_isDerived! Property_isDerivedUnion! Property_isID! Property_association Port_isBehavior! Port_isConjugated! Port_isService! Port_protocol }
     constituents { unordered { MultiplicityElement_lowerValue MultiplicityElement_upperValue DeploymentTarget_deployment Property_qualifier Property_defaultValue } }
@@ -647,10 +570,10 @@ equivspec specific {
     constituents { unordered { Transition_effect Transition_trigger } }
   }
   element Transition_effect {
-    constituents { unordered { Activity ProtocolStateMachine StateMachine FunctionBehavior OpaqueBehavior Interaction } }
+    constituents { unordered { _ } }
   }
   element Transition_trigger {
-    constituents { unordered { Trigger } }
+    constituents { unordered { _ } }
   }
   element ProtocolConformance {
     annotations { ProtocolConformance_generalMachine! }
@@ -658,10 +581,6 @@ equivspec specific {
   element OperationTemplateParameter {
     annotations { TemplateParameter_default TemplateParameter_parameteredElement! }
     constituents { unordered { TemplateParameter_ownedDefault TemplateParameter_ownedParameteredElement } }
-  }
-  element StructuralFeature {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Feature_isStatic! TypedElement_type MultiplicityElement_isOrdered! MultiplicityElement_isUnique! StructuralFeature_isReadOnly! }
-    constituents { unordered { MultiplicityElement_lowerValue MultiplicityElement_upperValue } }
   }
   element PackageMerge {
     annotations { PackageMerge_mergedPackage! }
@@ -674,7 +593,7 @@ equivspec specific {
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution DataType_ownedAttribute DataType_ownedOperation Enumeration_ownedLiteral } }
   }
   element Enumeration_ownedLiteral {
-    constituents { ordered { EnumerationLiteral } }
+    constituents { ordered { _ } }
   }
   element EnumerationLiteral {
     annotations { NamedElement_name? ParameterableElement_templateParameter }
@@ -688,17 +607,17 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element InstanceSpecification_slot {
-    constituents { unordered { Slot } }
+    constituents { unordered { _ } }
   }
   element InstanceSpecification_specification {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element Slot {
     annotations { Slot_definingFeature! }
     constituents { unordered { Slot_value } }
   }
   element Slot_value {
-    constituents { ordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { ordered { _ } }
   }
   element PrimitiveType {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
@@ -727,14 +646,14 @@ equivspec specific {
     constituents { unordered { Expression_operand TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature StringExpression_subExpression } }
   }
   element StringExpression_subExpression {
-    constituents { ordered { StringExpression } }
+    constituents { ordered { _ } }
   }
   element Expression {
     annotations { NamedElement_name? ParameterableElement_templateParameter TypedElement_type Expression_symbol? }
     constituents { unordered { Expression_operand } }
   }
   element Expression_operand {
-    constituents { ordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { ordered { _ } }
   }
   element Usage {
     annotations { NamedElement_name? ParameterableElement_templateParameter }
@@ -744,7 +663,7 @@ equivspec specific {
     constituents { unordered { CollaborationUse_roleBinding } }
   }
   element CollaborationUse_roleBinding {
-    constituents { unordered { Dependency Deployment Manifestation Abstraction Usage Substitution Realization InterfaceRealization ComponentRealization } }
+    constituents { unordered { _ } }
   }
   element Collaboration {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior }
@@ -753,15 +672,11 @@ equivspec specific {
   element Collaboration_collaborationRole {
     constituents { unordered { <TEXT> } }
   }
-  element StructuredClassifier {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector } }
-  }
   element StructuredClassifier_ownedAttribute {
-    constituents { ordered { Property Port ExtensionEnd } }
+    constituents { ordered { _ } }
   }
   element StructuredClassifier_ownedConnector {
-    constituents { unordered { Connector } }
+    constituents { unordered { _ } }
   }
   element Connector {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Feature_isStatic! Connector_type }
@@ -771,7 +686,7 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element Connector_end {
-    constituents { ordered { ConnectorEnd } }
+    constituents { ordered { _ } }
   }
   element Connector_redefinedConnector {
     constituents { unordered { <TEXT> } }
@@ -800,13 +715,13 @@ equivspec specific {
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior UseCase_extend UseCase_extensionPoint UseCase_include } }
   }
   element UseCase_extend {
-    constituents { unordered { Extend } }
+    constituents { unordered { _ } }
   }
   element UseCase_extensionPoint {
-    constituents { unordered { ExtensionPoint } }
+    constituents { unordered { _ } }
   }
   element UseCase_include {
-    constituents { unordered { Include } }
+    constituents { unordered { _ } }
   }
   element UseCase_subject {
     constituents { unordered { <TEXT> } }
@@ -816,7 +731,7 @@ equivspec specific {
     constituents { unordered { Extend_condition } }
   }
   element Extend_condition {
-    constituents { unordered { Constraint InteractionConstraint DurationConstraint IntervalConstraint TimeConstraint } }
+    constituents { unordered { _ } }
   }
   element Extend_extensionLocation {
     constituents { ordered { <TEXT> } }
@@ -846,19 +761,8 @@ equivspec specific {
     annotations { NamedElement_name? ParameterableElement_templateParameter InterfaceRealization_contract! }
     constituents { unordered { Abstraction_mapping } }
   }
-  element EncapsulatedClassifier {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation }
-    constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector } }
-  }
-  element ActivityGroup {
-    annotations { NamedElement_name? }
-  }
-  element ActivityEdge {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! ActivityEdge_interrupts ActivityEdge_target! ActivityEdge_source! }
-    constituents { unordered { ActivityEdge_guard ActivityEdge_weight } }
-  }
   element ActivityEdge_guard {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element ActivityEdge_inPartition {
     constituents { unordered { <TEXT> } }
@@ -867,7 +771,7 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element ActivityEdge_weight {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element ActivityPartition {
     annotations { NamedElement_name? ActivityPartition_isDimension! ActivityPartition_isExternal! ActivityPartition_represents }
@@ -877,13 +781,10 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element ActivityPartition_subpartition {
-    constituents { unordered { ActivityPartition } }
+    constituents { unordered { _ } }
   }
   element ActivityPartition_edge {
     constituents { unordered { <TEXT> } }
-  }
-  element ActivityNode {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! }
   }
   element ActivityNode_inInterruptibleRegion {
     constituents { unordered { <TEXT> } }
@@ -914,36 +815,28 @@ equivspec specific {
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuredActivityNode_edge StructuredActivityNode_structuredNodeInput StructuredActivityNode_structuredNodeOutput StructuredActivityNode_variable StructuredActivityNode_node } }
   }
   element StructuredActivityNode_edge {
-    constituents { unordered { ControlFlow ObjectFlow } }
+    constituents { unordered { _ } }
   }
   element StructuredActivityNode_structuredNodeInput {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element StructuredActivityNode_structuredNodeOutput {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element StructuredActivityNode_variable {
-    constituents { unordered { Variable } }
+    constituents { unordered { _ } }
   }
   element StructuredActivityNode_node {
-    constituents { unordered { StructuredActivityNode InputPin OutputPin ValueSpecificationAction AcceptCallAction AcceptEventAction ActionInputPin AddStructuralFeatureValueAction AddVariableValueAction BroadcastSignalAction CallBehaviorAction CallOperationAction ClearAssociationAction ClearStructuralFeatureAction ClearVariableAction ConditionalNode CreateLinkAction CreateLinkObjectAction CreateObjectAction DestroyLinkAction DestroyObjectAction ExpansionNode ExpansionRegion LoopNode OpaqueAction RaiseExceptionAction ReadExtentAction ReadIsClassifiedObjectAction ReadLinkAction ReadLinkObjectEndAction ReadLinkObjectEndQualifierAction ReadSelfAction ReadStructuralFeatureAction ReadVariableAction ReclassifyObjectAction ReduceAction RemoveStructuralFeatureValueAction RemoveVariableValueAction ReplyAction SendObjectAction SendSignalAction SequenceNode StartClassifierBehaviorAction StartObjectBehaviorAction TestIdentityAction UnmarshallAction ValuePin ActivityFinalNode ActivityParameterNode CentralBufferNode DataStoreNode DecisionNode FlowFinalNode ForkNode InitialNode JoinNode MergeNode } }
-  }
-  element Action {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition } }
+    constituents { unordered { _ } }
   }
   element Action_localPostcondition {
-    constituents { unordered { Constraint InteractionConstraint DurationConstraint IntervalConstraint TimeConstraint } }
+    constituents { unordered { _ } }
   }
   element Action_localPrecondition {
-    constituents { unordered { Constraint InteractionConstraint DurationConstraint IntervalConstraint TimeConstraint } }
-  }
-  element ExecutableNode {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! }
-    constituents { unordered { ExecutableNode_handler } }
+    constituents { unordered { _ } }
   }
   element ExecutableNode_handler {
-    constituents { unordered { ExceptionHandler } }
+    constituents { unordered { _ } }
   }
   element ExceptionHandler {
     annotations { ExceptionHandler_exceptionInput! ExceptionHandler_handlerBody! }
@@ -951,21 +844,13 @@ equivspec specific {
   element ExceptionHandler_exceptionType {
     constituents { unordered { <TEXT> } }
   }
-  element ObjectNode {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection }
-    constituents { unordered { ObjectNode_upperBound } }
-  }
   element ObjectNode_inState {
     constituents { unordered { <TEXT> } }
   }
   element ObjectNode_upperBound {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element InputPin {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection MultiplicityElement_isOrdered! MultiplicityElement_isUnique! Pin_isControl! }
-    constituents { unordered { ObjectNode_upperBound MultiplicityElement_lowerValue MultiplicityElement_upperValue } }
-  }
-  element Pin {
     annotations { NamedElement_name? RedefinableElement_isLeaf! TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection MultiplicityElement_isOrdered! MultiplicityElement_isUnique! Pin_isControl! }
     constituents { unordered { ObjectNode_upperBound MultiplicityElement_lowerValue MultiplicityElement_upperValue } }
   }
@@ -982,118 +867,86 @@ equivspec specific {
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ValueSpecificationAction_result ValueSpecificationAction_value } }
   }
   element ValueSpecificationAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ValueSpecificationAction_value {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
-  }
-  element VariableAction {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! VariableAction_variable! }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition } }
-  }
-  element WriteLinkAction {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition LinkAction_endData LinkAction_inputValue } }
-  }
-  element LinkAction {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition LinkAction_endData LinkAction_inputValue } }
+    constituents { unordered { _ } }
   }
   element LinkAction_endData {
-    constituents { unordered { LinkEndData LinkEndCreationData LinkEndDestructionData } }
+    constituents { unordered { _ } }
   }
   element LinkAction_inputValue {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element LinkEndData {
     annotations { LinkEndData_end! LinkEndData_value }
     constituents { unordered { LinkEndData_qualifier } }
   }
   element LinkEndData_qualifier {
-    constituents { unordered { QualifierValue } }
+    constituents { unordered { _ } }
   }
   element QualifierValue {
     annotations { QualifierValue_qualifier! QualifierValue_value! }
   }
-  element WriteStructuralFeatureAction {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! StructuralFeatureAction_structuralFeature! }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuralFeatureAction_object WriteStructuralFeatureAction_result WriteStructuralFeatureAction_value } }
-  }
   element WriteStructuralFeatureAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element WriteStructuralFeatureAction_value {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
-  }
-  element StructuralFeatureAction {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! StructuralFeatureAction_structuralFeature! }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuralFeatureAction_object } }
+    constituents { unordered { _ } }
   }
   element StructuralFeatureAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
-  }
-  element WriteVariableAction {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! VariableAction_variable! }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition WriteVariableAction_value } }
+    constituents { unordered { _ } }
   }
   element WriteVariableAction_value {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element AcceptCallAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! AcceptEventAction_isUnmarshall! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition AcceptEventAction_result AcceptEventAction_trigger AcceptCallAction_returnInformation } }
   }
   element AcceptCallAction_returnInformation {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element AcceptEventAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! AcceptEventAction_isUnmarshall! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition AcceptEventAction_result AcceptEventAction_trigger } }
   }
   element AcceptEventAction_result {
-    constituents { ordered { OutputPin } }
+    constituents { ordered { _ } }
   }
   element AcceptEventAction_trigger {
-    constituents { unordered { Trigger } }
+    constituents { unordered { _ } }
   }
   element ActionInputPin {
     annotations { NamedElement_name? RedefinableElement_isLeaf! TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection MultiplicityElement_isOrdered! MultiplicityElement_isUnique! Pin_isControl! }
     constituents { unordered { ObjectNode_upperBound MultiplicityElement_lowerValue MultiplicityElement_upperValue ActionInputPin_fromAction } }
   }
   element ActionInputPin_fromAction {
-    constituents { unordered { StructuredActivityNode ValueSpecificationAction AcceptCallAction AcceptEventAction AddStructuralFeatureValueAction AddVariableValueAction BroadcastSignalAction CallBehaviorAction CallOperationAction ClearAssociationAction ClearStructuralFeatureAction ClearVariableAction ConditionalNode CreateLinkAction CreateLinkObjectAction CreateObjectAction DestroyLinkAction DestroyObjectAction ExpansionRegion LoopNode OpaqueAction RaiseExceptionAction ReadExtentAction ReadIsClassifiedObjectAction ReadLinkAction ReadLinkObjectEndAction ReadLinkObjectEndQualifierAction ReadSelfAction ReadStructuralFeatureAction ReadVariableAction ReclassifyObjectAction ReduceAction RemoveStructuralFeatureValueAction RemoveVariableValueAction ReplyAction SendObjectAction SendSignalAction SequenceNode StartClassifierBehaviorAction StartObjectBehaviorAction TestIdentityAction UnmarshallAction } }
+    constituents { unordered { _ } }
   }
   element AddStructuralFeatureValueAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! StructuralFeatureAction_structuralFeature! AddStructuralFeatureValueAction_isReplaceAll! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuralFeatureAction_object WriteStructuralFeatureAction_result WriteStructuralFeatureAction_value AddStructuralFeatureValueAction_insertAt } }
   }
   element AddStructuralFeatureValueAction_insertAt {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element AddVariableValueAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! VariableAction_variable! AddVariableValueAction_isReplaceAll! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition WriteVariableAction_value AddVariableValueAction_insertAt } }
   }
   element AddVariableValueAction_insertAt {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element BroadcastSignalAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! InvocationAction_onPort BroadcastSignalAction_signal! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition InvocationAction_argument } }
   }
-  element InvocationAction {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! InvocationAction_onPort }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition InvocationAction_argument } }
-  }
   element InvocationAction_argument {
-    constituents { ordered { InputPin ActionInputPin ValuePin } }
-  }
-  element CallAction {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! InvocationAction_onPort CallAction_isSynchronous! }
-    constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition InvocationAction_argument CallAction_result } }
+    constituents { ordered { _ } }
   }
   element CallAction_result {
-    constituents { ordered { OutputPin } }
+    constituents { ordered { _ } }
   }
   element CallBehaviorAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! InvocationAction_onPort CallAction_isSynchronous! CallBehaviorAction_behavior! }
@@ -1104,7 +957,7 @@ equivspec specific {
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition InvocationAction_argument CallAction_result CallOperationAction_target } }
   }
   element CallOperationAction_target {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element Clause {
     annotations { Clause_decider! }
@@ -1129,14 +982,14 @@ equivspec specific {
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ClearAssociationAction_object } }
   }
   element ClearAssociationAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ClearStructuralFeatureAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! StructuralFeatureAction_structuralFeature! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuralFeatureAction_object ClearStructuralFeatureAction_result } }
   }
   element ClearStructuralFeatureAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ClearVariableAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! VariableAction_variable! }
@@ -1147,10 +1000,10 @@ equivspec specific {
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuredActivityNode_edge StructuredActivityNode_structuredNodeInput StructuredActivityNode_structuredNodeOutput StructuredActivityNode_variable StructuredActivityNode_node ConditionalNode_clause ConditionalNode_result } }
   }
   element ConditionalNode_clause {
-    constituents { unordered { Clause } }
+    constituents { unordered { _ } }
   }
   element ConditionalNode_result {
-    constituents { ordered { OutputPin } }
+    constituents { ordered { _ } }
   }
   element CreateLinkAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
@@ -1165,14 +1018,14 @@ equivspec specific {
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition LinkAction_endData LinkAction_inputValue CreateLinkObjectAction_result } }
   }
   element CreateLinkObjectAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element CreateObjectAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! CreateObjectAction_classifier! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition CreateObjectAction_result } }
   }
   element CreateObjectAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element DestroyLinkAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
@@ -1187,7 +1040,7 @@ equivspec specific {
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition DestroyObjectAction_target } }
   }
   element DestroyObjectAction_target {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ExpansionNode {
     annotations { NamedElement_name? RedefinableElement_isLeaf! TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection ExpansionNode_regionAsInput ExpansionNode_regionAsOutput }
@@ -1214,13 +1067,13 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element LoopNode_loopVariable {
-    constituents { ordered { OutputPin } }
+    constituents { ordered { _ } }
   }
   element LoopNode_loopVariableInput {
-    constituents { ordered { InputPin ActionInputPin ValuePin } }
+    constituents { ordered { _ } }
   }
   element LoopNode_result {
-    constituents { ordered { OutputPin } }
+    constituents { ordered { _ } }
   }
   element LoopNode_setupPart {
     constituents { unordered { <TEXT> } }
@@ -1236,85 +1089,85 @@ equivspec specific {
     constituents { ordered { <TEXT> } }
   }
   element OpaqueAction_inputValue {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element OpaqueAction_language {
     constituents { ordered { <TEXT> } }
   }
   element OpaqueAction_outputValue {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element RaiseExceptionAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition RaiseExceptionAction_exception } }
   }
   element RaiseExceptionAction_exception {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ReadExtentAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! ReadExtentAction_classifier! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ReadExtentAction_result } }
   }
   element ReadExtentAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ReadIsClassifiedObjectAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! ReadIsClassifiedObjectAction_classifier! ReadIsClassifiedObjectAction_isDirect! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ReadIsClassifiedObjectAction_object ReadIsClassifiedObjectAction_result } }
   }
   element ReadIsClassifiedObjectAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ReadIsClassifiedObjectAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ReadLinkAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition LinkAction_endData LinkAction_inputValue ReadLinkAction_result } }
   }
   element ReadLinkAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ReadLinkObjectEndAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! ReadLinkObjectEndAction_end! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ReadLinkObjectEndAction_object ReadLinkObjectEndAction_result } }
   }
   element ReadLinkObjectEndAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ReadLinkObjectEndAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ReadLinkObjectEndQualifierAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! ReadLinkObjectEndQualifierAction_qualifier! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ReadLinkObjectEndQualifierAction_object ReadLinkObjectEndQualifierAction_result } }
   }
   element ReadLinkObjectEndQualifierAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ReadLinkObjectEndQualifierAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ReadSelfAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ReadSelfAction_result } }
   }
   element ReadSelfAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ReadStructuralFeatureAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! StructuralFeatureAction_structuralFeature! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuralFeatureAction_object ReadStructuralFeatureAction_result } }
   }
   element ReadStructuralFeatureAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ReadVariableAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! VariableAction_variable! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ReadVariableAction_result } }
   }
   element ReadVariableAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element ReclassifyObjectAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! ReclassifyObjectAction_isReplaceAll! }
@@ -1324,7 +1177,7 @@ equivspec specific {
     constituents { unordered { <TEXT> } }
   }
   element ReclassifyObjectAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ReclassifyObjectAction_oldClassifier {
     constituents { unordered { <TEXT> } }
@@ -1334,110 +1187,104 @@ equivspec specific {
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ReduceAction_collection ReduceAction_result } }
   }
   element ReduceAction_collection {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ReduceAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element RemoveStructuralFeatureValueAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! StructuralFeatureAction_structuralFeature! RemoveStructuralFeatureValueAction_isRemoveDuplicates! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuralFeatureAction_object WriteStructuralFeatureAction_result WriteStructuralFeatureAction_value RemoveStructuralFeatureValueAction_removeAt } }
   }
   element RemoveStructuralFeatureValueAction_removeAt {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element RemoveVariableValueAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! VariableAction_variable! RemoveVariableValueAction_isRemoveDuplicates! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition WriteVariableAction_value RemoveVariableValueAction_removeAt } }
   }
   element RemoveVariableValueAction_removeAt {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element ReplyAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! ReplyAction_replyToCall! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition ReplyAction_replyValue ReplyAction_returnInformation } }
   }
   element ReplyAction_replyValue {
-    constituents { ordered { InputPin ActionInputPin ValuePin } }
+    constituents { ordered { _ } }
   }
   element ReplyAction_returnInformation {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element SendObjectAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! InvocationAction_onPort }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition InvocationAction_argument SendObjectAction_request SendObjectAction_target } }
   }
   element SendObjectAction_request {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element SendObjectAction_target {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element SendSignalAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! InvocationAction_onPort SendSignalAction_signal! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition InvocationAction_argument SendSignalAction_target } }
   }
   element SendSignalAction_target {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element SequenceNode {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! StructuredActivityNode_mustIsolate! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StructuredActivityNode_edge StructuredActivityNode_structuredNodeInput StructuredActivityNode_structuredNodeOutput StructuredActivityNode_variable StructuredActivityNode_node SequenceNode_executableNode } }
   }
   element SequenceNode_executableNode {
-    constituents { ordered { StructuredActivityNode ValueSpecificationAction AcceptCallAction AcceptEventAction AddStructuralFeatureValueAction AddVariableValueAction BroadcastSignalAction CallBehaviorAction CallOperationAction ClearAssociationAction ClearStructuralFeatureAction ClearVariableAction ConditionalNode CreateLinkAction CreateLinkObjectAction CreateObjectAction DestroyLinkAction DestroyObjectAction ExpansionRegion LoopNode OpaqueAction RaiseExceptionAction ReadExtentAction ReadIsClassifiedObjectAction ReadLinkAction ReadLinkObjectEndAction ReadLinkObjectEndQualifierAction ReadSelfAction ReadStructuralFeatureAction ReadVariableAction ReclassifyObjectAction ReduceAction RemoveStructuralFeatureValueAction RemoveVariableValueAction ReplyAction SendObjectAction SendSignalAction SequenceNode StartClassifierBehaviorAction StartObjectBehaviorAction TestIdentityAction UnmarshallAction } }
+    constituents { ordered { _ } }
   }
   element StartClassifierBehaviorAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition StartClassifierBehaviorAction_object } }
   }
   element StartClassifierBehaviorAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element StartObjectBehaviorAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! InvocationAction_onPort CallAction_isSynchronous! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition InvocationAction_argument CallAction_result StartObjectBehaviorAction_object } }
   }
   element StartObjectBehaviorAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element TestIdentityAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition TestIdentityAction_first TestIdentityAction_result TestIdentityAction_second } }
   }
   element TestIdentityAction_first {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element TestIdentityAction_result {
-    constituents { unordered { OutputPin } }
+    constituents { unordered { _ } }
   }
   element TestIdentityAction_second {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element UnmarshallAction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! Action_isLocallyReentrant! UnmarshallAction_unmarshallType! }
     constituents { unordered { ExecutableNode_handler Action_localPostcondition Action_localPrecondition UnmarshallAction_object UnmarshallAction_result } }
   }
   element UnmarshallAction_object {
-    constituents { unordered { InputPin ActionInputPin ValuePin } }
+    constituents { unordered { _ } }
   }
   element UnmarshallAction_result {
-    constituents { ordered { OutputPin } }
+    constituents { ordered { _ } }
   }
   element ValuePin {
     annotations { NamedElement_name? RedefinableElement_isLeaf! TypedElement_type ObjectNode_isControlType! ObjectNode_ordering! ObjectNode_selection MultiplicityElement_isOrdered! MultiplicityElement_isUnique! Pin_isControl! }
     constituents { unordered { ObjectNode_upperBound MultiplicityElement_lowerValue MultiplicityElement_upperValue ValuePin_value } }
   }
   element ValuePin_value {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element ActivityFinalNode {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! }
-  }
-  element FinalNode {
-    annotations { NamedElement_name? RedefinableElement_isLeaf! }
-  }
-  element ControlNode {
     annotations { NamedElement_name? RedefinableElement_isLeaf! }
   }
   element ActivityParameterNode {
@@ -1477,7 +1324,7 @@ equivspec specific {
     constituents { unordered { JoinNode_joinSpec } }
   }
   element JoinNode_joinSpec {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element MergeNode {
     annotations { NamedElement_name? RedefinableElement_isLeaf! }
@@ -1488,9 +1335,6 @@ equivspec specific {
   element AnyReceiveEvent {
     annotations { NamedElement_name? ParameterableElement_templateParameter }
   }
-  element MessageEvent {
-    annotations { NamedElement_name? ParameterableElement_templateParameter }
-  }
   element CallEvent {
     annotations { NamedElement_name? ParameterableElement_templateParameter CallEvent_operation! }
   }
@@ -1499,7 +1343,7 @@ equivspec specific {
     constituents { unordered { ChangeEvent_changeExpression } }
   }
   element ChangeEvent_changeExpression {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element FunctionBehavior {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Behavior_specification Behavior_isReentrant? }
@@ -1523,20 +1367,17 @@ equivspec specific {
     constituents { unordered { TimeEvent_when } }
   }
   element TimeEvent_when {
-    constituents { unordered { TimeExpression } }
+    constituents { unordered { _ } }
   }
   element TimeExpression {
     annotations { NamedElement_name? ParameterableElement_templateParameter TypedElement_type }
     constituents { unordered { TimeExpression_expr } }
   }
   element TimeExpression_expr {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element TimeExpression_observation {
     constituents { unordered { <TEXT> } }
-  }
-  element Observation {
-    annotations { NamedElement_name? ParameterableElement_templateParameter }
   }
   element CommunicationPath {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation Association_isDerived! }
@@ -1551,7 +1392,7 @@ equivspec specific {
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception DeploymentTarget_deployment Node_nestedNode } }
   }
   element Node_nestedNode {
-    constituents { unordered { Node Device ExecutionEnvironment } }
+    constituents { unordered { _ } }
   }
   element ExecutionEnvironment {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! }
@@ -1586,43 +1427,39 @@ equivspec specific {
     constituents { unordered { Message_argument } }
   }
   element Message_argument {
-    constituents { ordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { ordered { _ } }
   }
   element Interaction {
     annotations { NamedElement_name? RedefinableElement_isLeaf! ParameterableElement_templateParameter Classifier_isAbstract! Classifier_isFinalSpecialization! Classifier_representation BehavioredClassifier_classifierBehavior Class_isActive! Behavior_specification Behavior_isReentrant? }
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception Behavior_ownedParameter Behavior_ownedParameterSet InteractionFragment_generalOrdering Interaction_lifeline Interaction_fragment Interaction_action Interaction_formalGate Interaction_message } }
   }
   element Interaction_lifeline {
-    constituents { unordered { Lifeline } }
+    constituents { unordered { _ } }
   }
   element Interaction_fragment {
-    constituents { ordered { Interaction PartDecomposition InteractionUse InteractionOperand OccurrenceSpecification ActionExecutionSpecification BehaviorExecutionSpecification CombinedFragment ConsiderIgnoreFragment Continuation DestructionOccurrenceSpecification MessageOccurrenceSpecification ExecutionOccurrenceSpecification StateInvariant } }
+    constituents { ordered { _ } }
   }
   element Interaction_action {
-    constituents { unordered { StructuredActivityNode ValueSpecificationAction AcceptCallAction AcceptEventAction AddStructuralFeatureValueAction AddVariableValueAction BroadcastSignalAction CallBehaviorAction CallOperationAction ClearAssociationAction ClearStructuralFeatureAction ClearVariableAction ConditionalNode CreateLinkAction CreateLinkObjectAction CreateObjectAction DestroyLinkAction DestroyObjectAction ExpansionRegion LoopNode OpaqueAction RaiseExceptionAction ReadExtentAction ReadIsClassifiedObjectAction ReadLinkAction ReadLinkObjectEndAction ReadLinkObjectEndQualifierAction ReadSelfAction ReadStructuralFeatureAction ReadVariableAction ReclassifyObjectAction ReduceAction RemoveStructuralFeatureValueAction RemoveVariableValueAction ReplyAction SendObjectAction SendSignalAction SequenceNode StartClassifierBehaviorAction StartObjectBehaviorAction TestIdentityAction UnmarshallAction } }
+    constituents { unordered { _ } }
   }
   element Interaction_formalGate {
-    constituents { unordered { Gate } }
+    constituents { unordered { _ } }
   }
   element Interaction_message {
-    constituents { unordered { Message } }
-  }
-  element InteractionFragment {
-    annotations { NamedElement_name? }
-    constituents { unordered { InteractionFragment_generalOrdering } }
+    constituents { unordered { _ } }
   }
   element InteractionFragment_covered {
     constituents { unordered { <TEXT> } }
   }
   element InteractionFragment_generalOrdering {
-    constituents { unordered { GeneralOrdering } }
+    constituents { unordered { _ } }
   }
   element Lifeline {
     annotations { NamedElement_name? Lifeline_decomposedAs Lifeline_represents }
     constituents { unordered { Lifeline_selector } }
   }
   element Lifeline_selector {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element Lifeline_coveredBy {
     constituents { unordered { <TEXT> } }
@@ -1636,18 +1473,15 @@ equivspec specific {
     constituents { unordered { InteractionFragment_generalOrdering InteractionUse_actualGate InteractionUse_argument InteractionUse_returnValue } }
   }
   element InteractionUse_actualGate {
-    constituents { unordered { Gate } }
+    constituents { unordered { _ } }
   }
   element InteractionUse_argument {
-    constituents { ordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { ordered { _ } }
   }
   element InteractionUse_returnValue {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element Gate {
-    annotations { NamedElement_name? MessageEnd_message }
-  }
-  element MessageEnd {
     annotations { NamedElement_name? MessageEnd_message }
   }
   element InteractionOperand {
@@ -1655,20 +1489,20 @@ equivspec specific {
     constituents { unordered { InteractionFragment_generalOrdering InteractionOperand_fragment InteractionOperand_guard } }
   }
   element InteractionOperand_fragment {
-    constituents { ordered { Interaction PartDecomposition InteractionUse InteractionOperand OccurrenceSpecification ActionExecutionSpecification BehaviorExecutionSpecification CombinedFragment ConsiderIgnoreFragment Continuation DestructionOccurrenceSpecification MessageOccurrenceSpecification ExecutionOccurrenceSpecification StateInvariant } }
+    constituents { ordered { _ } }
   }
   element InteractionOperand_guard {
-    constituents { unordered { InteractionConstraint } }
+    constituents { unordered { _ } }
   }
   element InteractionConstraint {
     annotations { NamedElement_name? ParameterableElement_templateParameter }
     constituents { unordered { Constraint_specification InteractionConstraint_maxint InteractionConstraint_minint } }
   }
   element InteractionConstraint_maxint {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element InteractionConstraint_minint {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element GeneralOrdering {
     annotations { NamedElement_name? GeneralOrdering_after! GeneralOrdering_before! }
@@ -1694,10 +1528,6 @@ equivspec specific {
     annotations { NamedElement_name? ExecutionSpecification_finish! ExecutionSpecification_start! ActionExecutionSpecification_action! }
     constituents { unordered { InteractionFragment_generalOrdering } }
   }
-  element ExecutionSpecification {
-    annotations { NamedElement_name? ExecutionSpecification_finish! ExecutionSpecification_start! }
-    constituents { unordered { InteractionFragment_generalOrdering } }
-  }
   element BehaviorExecutionSpecification {
     annotations { NamedElement_name? ExecutionSpecification_finish! ExecutionSpecification_start! BehaviorExecutionSpecification_behavior }
     constituents { unordered { InteractionFragment_generalOrdering } }
@@ -1707,10 +1537,10 @@ equivspec specific {
     constituents { unordered { InteractionFragment_generalOrdering CombinedFragment_cfragmentGate CombinedFragment_operand } }
   }
   element CombinedFragment_cfragmentGate {
-    constituents { unordered { Gate } }
+    constituents { unordered { _ } }
   }
   element CombinedFragment_operand {
-    constituents { ordered { InteractionOperand } }
+    constituents { ordered { _ } }
   }
   element ConsiderIgnoreFragment {
     annotations { NamedElement_name? CombinedFragment_interactionOperator! }
@@ -1740,7 +1570,7 @@ equivspec specific {
     constituents { unordered { InteractionFragment_generalOrdering StateInvariant_invariant } }
   }
   element StateInvariant_invariant {
-    constituents { unordered { Constraint InteractionConstraint DurationConstraint IntervalConstraint TimeConstraint } }
+    constituents { unordered { _ } }
   }
   element FinalState {
     annotations { NamedElement_name? RedefinableElement_isLeaf! State_redefinedState State_stateInvariant State_submachine }
@@ -1759,10 +1589,10 @@ equivspec specific {
     constituents { unordered { TemplateableElement_templateBinding TemplateableElement_ownedTemplateSignature Classifier_collaborationUse Classifier_generalization Classifier_ownedUseCase Classifier_substitution StructuredClassifier_ownedAttribute StructuredClassifier_ownedConnector BehavioredClassifier_interfaceRealization BehavioredClassifier_ownedBehavior Class_ownedOperation Class_nestedClassifier Class_ownedReception Component_packagedElement Component_realization } }
   }
   element Component_packagedElement {
-    constituents { unordered { Activity Class Stereotype Profile Package Association Deployment Dependency DeploymentSpecification Artifact Manifestation Abstraction OpaqueExpression Constraint DataType Interface Signal ProtocolStateMachine StateMachine Enumeration EnumerationLiteral InstanceSpecification PrimitiveType Extension Model StringExpression Expression Usage Collaboration GeneralizationSet UseCase Substitution Realization InterfaceRealization InstanceValue AnyReceiveEvent CallEvent ChangeEvent FunctionBehavior OpaqueBehavior SignalEvent TimeEvent TimeExpression CommunicationPath Device Node ExecutionEnvironment InformationFlow Interaction InteractionConstraint InformationItem AssociationClass Component ComponentRealization Actor Duration DurationConstraint IntervalConstraint Interval DurationInterval DurationObservation LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeConstraint TimeInterval TimeObservation } }
+    constituents { unordered { _ } }
   }
   element Component_realization {
-    constituents { unordered { ComponentRealization } }
+    constituents { unordered { _ } }
   }
   element ComponentRealization {
     annotations { NamedElement_name? ParameterableElement_templateParameter }
@@ -1780,7 +1610,7 @@ equivspec specific {
     constituents { unordered { Duration_expr } }
   }
   element Duration_expr {
-    constituents { unordered { OpaqueExpression StringExpression Expression InstanceValue TimeExpression Duration Interval DurationInterval LiteralBoolean LiteralInteger LiteralNull LiteralReal LiteralString LiteralUnlimitedNatural TimeInterval } }
+    constituents { unordered { _ } }
   }
   element Duration_observation {
     constituents { unordered { <TEXT> } }
@@ -1814,9 +1644,6 @@ equivspec specific {
   }
   element LiteralBoolean {
     annotations { NamedElement_name? ParameterableElement_templateParameter TypedElement_type LiteralBoolean_value! }
-  }
-  element LiteralSpecification {
-    annotations { NamedElement_name? ParameterableElement_templateParameter TypedElement_type }
   }
   element LiteralInteger {
     annotations { NamedElement_name? ParameterableElement_templateParameter TypedElement_type LiteralInteger_value! }

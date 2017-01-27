@@ -22,7 +22,6 @@ class SLink(val parent: SReference, val index: Int, val underlying: EObject) ext
   def children: Seq[SElement[_]] = Nil
   def label: String = SLink.getUri(underlying,parent.parent)
   override def getType = "<TEXT>"
-  override def getEquivSpec(): String = "specific"
   def namespace: String = ""
   def annotations: Seq[SAnnotation[_]] = Nil
   def copy(): SElement[_] = {
@@ -33,4 +32,5 @@ class SLink(val parent: SReference, val index: Int, val underlying: EObject) ext
     res
   }
   override def toString = s"[SLink '$label']"
+  override def getEquivSpec = "charlist"
 }

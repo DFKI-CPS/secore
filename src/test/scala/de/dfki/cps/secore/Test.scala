@@ -9,6 +9,7 @@ import org.scalatest.FunSuite
   */
 class Test extends FunSuite {
   val stool = de.dfki.cps.secore.stools.getSTool("specific")
+
   implicit val lib = new ResourceSetImpl
   Synthesis.prepareLibrary(lib)
 
@@ -21,7 +22,6 @@ class Test extends FunSuite {
 
     val modelA = Model.load(fileA.toURI,"model",resA)
     val modelB = Model.load(fileB.toURI,"model",resB)
-
 
     val script = {
       val sresA = new SResource(resA)

@@ -1,5 +1,7 @@
 package de.dfki.cps
 
+import java.io.FileInputStream
+
 import de.dfki.cps.stools.{SAtomicString, STools}
 import de.dfki.cps.stools.editscript._
 import de.dfki.cps.stools.similarityspec.SimilaritySpec
@@ -65,16 +67,6 @@ package object secore {
         assert(entry.appendAnnotations.isEmpty)
         assert(entry.removeAnnotations.isEmpty)
         assert(entry.updateAnnotations.isEmpty)
-        entry.appendElements.foreach {
-          case AppendElements(_,elems) =>
-            val tpe = attr.underlying.getEAttributeType
-            val factory = tpe.getEPackage.getEFactoryInstance
-            val values = elems.asScala.map {
-              case s: SLiteral => s.underlying
-            }
-            val v = attr.parent.underlying.eGet(attr.underlying).asInstanceOf[EList[AnyRef]]
-            v.addAll(values.asJava)
-        }
         entry.removeElements.foreach {
           case RemoveElements(_,elems) =>
             val tpe = attr.underlying.getEAttributeType
@@ -85,6 +77,16 @@ package object secore {
             }
             val v = attr.parent.underlying.eGet(attr.underlying).asInstanceOf[EList[AnyRef]]
             v.removeAll(values.asJava)
+        }
+        entry.appendElements.foreach {
+          case AppendElements(_,elems) =>
+            val tpe = attr.underlying.getEAttributeType
+            val factory = tpe.getEPackage.getEFactoryInstance
+            val values = elems.asScala.map {
+              case s: SLiteral => s.underlying
+            }
+            val v = attr.parent.underlying.eGet(attr.underlying).asInstanceOf[EList[AnyRef]]
+            v.addAll(values.asJava)
         }
         entry.insertBefore.foreach {
           case (_,InsertBefore(ref: SLiteral, elems)) =>
@@ -122,6 +124,22 @@ package object secore {
             val v = ref.parent.underlying.eGet(ref2.underlying).asInstanceOf[EList[EObject]]
             v.removeAll(values.asJava)
         }
+        /*entry.insertBefore.foreach {
+          case (_,InsertBefore(refr: SObject, elems)) =>
+            val values = elems.asScala.map {
+              case s: SObject => EcoreUtil.copy(s.underlying)
+            }
+            ref.parent.underlying.eGet(ref.underlying).asInstanceOf[EList[EObject]]
+              .addAll(ref.index,values.asJava)
+        }
+        entry.insertAfter.foreach {
+          case (_,InsertAfter(refr: SObject, elems)) =>
+            val values = elems.asScala.map {
+              case s: SObject => EcoreUtil.copy(s.underlying)
+            }
+            ref.parent.underlying.eGet(ref.underlying).asInstanceOf[EList[EObject]]
+              .addAll(ref.index + 1,values.asJava)
+        }*/
       case (ref: SReference, entry) =>
         entry.removeElements.foreach {
           case RemoveElements(_,elems) => deferredResolutions.append { () =>

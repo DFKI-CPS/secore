@@ -6,7 +6,6 @@ import de.dfki.cps.stools.{SAnnotation, SElement}
   * @author Martin Ring <martin.ring@dfki.de>
   */
 class SLiteral(val parent: SAttribute, val index: Int, val underlying: AnyRef) extends SElement[AnyRef] {
-  override def getEquivSpec(): String = "specific"
   def tpe = parent.underlying.getEAttributeType
   def factory = tpe.getEPackage.getEFactoryInstance
   def children: Seq[SElement[_]] = Nil
@@ -22,4 +21,5 @@ class SLiteral(val parent: SAttribute, val index: Int, val underlying: AnyRef) e
     res
   }
   override def toString = s"[SLiteral:${tpe.getName} '$label']"
+  override def getEquivSpec = "charlist"
 }

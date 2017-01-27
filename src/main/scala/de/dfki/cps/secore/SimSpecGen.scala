@@ -11,23 +11,32 @@ import scala.collection.JavaConverters._
   * @author Martin Ring <martin.ring@dfki.de>
   */
 object SimSpecGen {
+  import EcorePackage.{ eINSTANCE => ecore }
+  import UMLPackage.{ eINSTANCE => uml }
+
   val globalFeatureFilter = Set[EStructuralFeature](
-    EcorePackage.eINSTANCE.getEModelElement_EAnnotations,
-    UMLPackage.eINSTANCE.getElement_OwnedComment,
-    UMLPackage.eINSTANCE.getNamedElement_NameExpression,
-    UMLPackage.eINSTANCE.getNamedElement_Visibility
-  ) ++ UMLPackage.eINSTANCE.getNamespace.getEStructuralFeatures.asScala
+    ecore.getEModelElement_EAnnotations,
+    uml.getElement_OwnedComment,
+    uml.getNamedElement_NameExpression,
+    uml.getNamedElement_Visibility
+  ) ++ uml.getNamespace.getEStructuralFeatures.asScala
 
   val nameAttributes = Seq[EStructuralFeature](
-    UMLPackage.eINSTANCE.getNamedElement_Name
+    uml.getNamedElement_Name
   )
 
-  val named = Set[EClass](
-    UMLPackage.eINSTANCE.getState
+
+  val ids = Map[EClass,Set[EStructuralFeature]](
+    uml.getPackage -> Set(uml.getNamedElement_Name),
+    uml.getClass_ -> Set(uml.getNamedElement_Name),
+    uml.getProperty -> Set(uml.getNamedElement_Name),
+    uml.getOperation -> Set(uml.getNamedElement_Name),
+    uml.getStateMachine -> Set(uml.getNamedElement_Name),
+    uml.getState -> Set(uml.getNamedElement_Name)
   )
 
   def relevantFeature(f: EStructuralFeature): Boolean = {
-    !f.isDerived && !f.isTransient && !f.isVolatile && f.isChangeable && !globalFeatureFilter.contains(f)
+    !f.isDerived && !f.isTransient && !f.isVolatile && f.isChangeable
   }
 
   def generateFromPackages(name: String, pkgs: Iterable[EPackage], out: PrintStream): Unit = {
@@ -45,38 +54,41 @@ object SimSpecGen {
     val subclasses = classes.map { cls =>
       (cls, classes.filter(_.getEAllSuperTypes.contains(cls)).filter(!_.isAbstract).toSeq)
     }.toMap
-    subclasses.foreach { case (cls,sub) =>
-      println(cls.getName + ": ")
-      sub.map(_.getName).foreach(x => println("  " + x))
-    }
     pkgs.foreach { pkg =>
       val prefix = pkg.getNsPrefix
       pkg.getEClassifiers.asScala.foreach {
         case cls: EClass =>
-          val elem = /*prefix + ":" +*/ cls.getName
-          out.println(s"  element $elem {")
-          val features = cls.getEAllStructuralFeatures.asScala.filter(relevantFeature)
-          val singleAttrs = features.collect {
-            case attr: EAttribute if named.contains(cls) && nameAttributes.contains(attr) =>
-              attr.getEContainingClass.getName + "_" + attr.getName + "!"
-            case attr: EAttribute if !attr.isMany =>
-              //attr.getEContainingClass.getEPackage.getNsPrefix + ":" +
-              attr.getEContainingClass.getName + "_" + attr.getName + (if (attr.isRequired) "!" else if (attr.isUnsettable) "?" else "")
-            case ref: EReference if !ref.isMany && !ref.isContainment && !Option(ref.getEOpposite).exists(_.isContainment) =>
-              //ref.getEContainingClass.getEPackage.getNsPrefix + ":" +
-                ref.getEContainingClass.getName + "_" + ref.getName + (if (ref.isRequired) "!" else if (ref.isUnsettable) "?" else "")
+          if (!cls.isAbstract) {
+            /*if (subclasses(cls).nonEmpty)
+              println("WARN: CANNOT HANDLE NONABSTRACT SUPERCLASSES: " + cls.getName)*/
+            val elem = /*prefix + ":" +*/ cls.getName
+            out.println(s"  element $elem {")
+            val strong = ids.isDefinedAt(cls)
+            val features = ids.getOrElse(cls,
+              cls.getEAllStructuralFeatures.asScala.filter(relevantFeature).filter(!globalFeatureFilter.contains(_))
+            )
+            val singleAttrs = features.collect {
+              case attr: EAttribute if !attr.isMany =>
+                //attr.getEContainingClass.getEPackage.getNsPrefix + ":" +
+                attr.getEContainingClass.getName + "_" + attr.getName + (if (attr.isRequired || strong) "!" else if (attr.isUnsettable) "?" else "")
+              case ref: EReference if !ref.isMany && !ref.isContainment && !Option(ref.getEOpposite).exists(_.isContainment) =>
+                //ref.getEContainingClass.getEPackage.getNsPrefix + ":" +
+                ref.getEContainingClass.getName + "_" + ref.getName + (if (ref.isRequired || strong) "!" else if (ref.isUnsettable) "?" else "")
+            }
+            val multiAttrs = features.collect {
+              case attr: EAttribute if attr.isMany =>
+                val nsPrefix = "" //attr.getEContainingClass.getEPackage.getNsPrefix + ":"
+                nsPrefix + attr.getEContainingClass.getName + "_" + attr.getName
+              case ref: EReference if ref.isContainment => //|| ref.isMany =>
+                val nsPrefix = "" //ref.getEContainingClass.getEPackage.getNsPrefix + ":"
+                nsPrefix + ref.getEContainingClass.getName + "_" + ref.getName
+            }
+            if (singleAttrs.nonEmpty) out.println(s"    annotations { ${singleAttrs.mkString(" ")} }")
+            if (multiAttrs.nonEmpty) out.println(s"    constituents { unordered { ${multiAttrs.mkString(" ")} } }")
+            out.println("  }")
+          } else {
+
           }
-          val multiAttrs = features.collect {
-            case attr: EAttribute if attr.isMany =>
-              val nsPrefix = ""//attr.getEContainingClass.getEPackage.getNsPrefix + ":"
-              nsPrefix + attr.getEContainingClass.getName + "_" + attr.getName
-            case ref: EReference if ref.isContainment => //|| ref.isMany =>
-              val nsPrefix = ""//ref.getEContainingClass.getEPackage.getNsPrefix + ":"
-              nsPrefix + ref.getEContainingClass.getName + "_" + ref.getName
-          }
-          if (singleAttrs.nonEmpty) out.println(s"    annotations { ${singleAttrs.mkString(" ")} }")
-          if (multiAttrs.nonEmpty) out.println(s"    constituents { unordered { ${multiAttrs.mkString(" ")} } }")
-          out.println("  }")
           cls.getEStructuralFeatures.asScala.filter(relevantFeature).collect {
             case attr: EAttribute if attr.isMany =>
               val elem = /*prefix + ":" +*/ cls.getName + "_" + attr.getName
@@ -96,7 +108,7 @@ object SimSpecGen {
                   val nsPrefix = tpkg.getNsPrefix
                   /*nsPrefix + ":" + */tpe.getName
                 }
-                out.println(s"    constituents { $ordering { ${cs.mkString(" ")} } }")
+                out.println(s"    constituents { $ordering { _ } }")
               } else {
                 out.println(s"    constituents { $ordering { <TEXT> } }")
               }

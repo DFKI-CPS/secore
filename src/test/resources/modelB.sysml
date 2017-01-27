@@ -1,15 +1,6 @@
 bdd [package] acs [ACS]
 -----------------------------------------------------------
 
-block Building
-  references
-    gate: Building[*] <- building
-      derive: org_dom.dest
-    building: Building[*] <- gate
-    org_dom: Door[*] <- org
-  constraints
-    inv: not gate->includes(self)
-
 block Person
   operations
     admitted(q: Door): Boolean
@@ -27,6 +18,15 @@ block Person
              forAll(p1, p2 |p1.dap_dom->notEmpty()
                         and p1.dap_dom = p2.dap_dom
                     implies p1 = p2)
+
+block Building
+  references
+    gate: Building[*] <- building
+      derive: org_dom.dest
+    building: Building[*] <- gate
+    org_dom: Door[*] <- org
+  constraints
+    inv: not gate->includes(self)
 
 block Door
   values
@@ -66,7 +66,7 @@ block Door
         after 30 seconds / off_grn() -> Waiting
         receive passing(p) / pass_thru() -> Waiting
       initial state Waiting
-        receive incoming(p) / accept(p) -> Waiting
         receive incoming(p) / refuse(p) -> Refusing
+        receive incoming(p) / accept(p) -> Accepting
       state Refusing
         after 30 seconds / off_red() -> Waiting
