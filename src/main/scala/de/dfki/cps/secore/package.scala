@@ -136,7 +136,7 @@ package object secore {
           case (_,InsertAfter(refr: SObject, elems)) =>
             val values = elems.asScala.map {
               case s: SObject => EcoreUtil.copy(s.underlying)
-            }
+             }
             ref.parent.underlying.eGet(ref.underlying).asInstanceOf[EList[EObject]]
               .addAll(ref.index + 1,values.asJava)
         }*/

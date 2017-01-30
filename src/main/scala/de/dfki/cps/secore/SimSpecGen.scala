@@ -65,7 +65,10 @@ object SimSpecGen {
             out.println(s"  element $elem {")
             val strong = ids.isDefinedAt(cls)
             val features = ids.getOrElse(cls,
-              cls.getEAllStructuralFeatures.asScala.filter(relevantFeature).filter(!globalFeatureFilter.contains(_))
+              cls.getEAllStructuralFeatures.asScala
+                .filter(relevantFeature)
+                .filter(!globalFeatureFilter.contains(_))
+                .toSet
             )
             val singleAttrs = features.collect {
               case attr: EAttribute if !attr.isMany =>
