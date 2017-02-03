@@ -1,7 +1,7 @@
 organization := "de.dfki.cps"
 name := "secore"
 scalaVersion := "2.11.8"
-version := "1.0.2"
+version := "1.0.3"
 licenses += ("MIT", url("http://opensource.org/licenses/MIT"))
 bintrayOrganization := Some("dfki-cps")
 

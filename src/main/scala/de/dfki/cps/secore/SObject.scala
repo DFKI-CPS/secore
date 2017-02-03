@@ -15,7 +15,7 @@ class SObject(val underlying: EObject) extends SElement[EObject] {
 
   def features = underlying.eClass().getEAllStructuralFeatures.asScala
     .filter(f => !f.isTransient && !f.isDerived && !f.isVolatile)
-    .filter(f => underlying.eIsSet(f) || f.isMany || f.isInstanceOf[EAttribute] && !f.isUnsettable && f.getDefaultValue != null)
+    .filter(f => f.isInstanceOf[EReference] && f.asInstanceOf[EReference].isContainment || f.isMany || f.isInstanceOf[EAttribute] && !f.isUnsettable && f.getDefaultValue != null || underlying.eIsSet(f))
 
   def children =
     features.collect {

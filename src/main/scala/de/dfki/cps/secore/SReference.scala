@@ -29,8 +29,8 @@ class SReference(val parent: SObject, val underlying: EReference) extends SEleme
         case (obj,i) => new SLink(this,i,obj)
       }
   } else if (underlying.isContainment) {
-    val obj = parent.underlying.eGet(underlying).asInstanceOf[EObject]
-    List(new SObject(obj))
+    val obj = Option(parent.underlying.eGet(underlying))
+    obj.map(_.asInstanceOf[EObject]).map(new SObject(_)).toList
   } else sys.error("SReference may not be instantiated with single valued non-containment (Use SReferenceValue instead)")
 
   def label: String = underlying.getEContainingClass.getName + "_" + underlying.getName
